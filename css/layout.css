@@ -1,0 +1,198 @@
+/* SILENCE — layout.css: сетка, шапка, подвал, ритм секций. */
+
+.container {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter-lg);
+}
+@media (max-width: 720px) {
+  .container { padding-inline: var(--gutter); }
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gutter);
+}
+@media (max-width: 720px) {
+  .grid-12 { grid-template-columns: repeat(4, 1fr); }
+}
+
+.section {
+  padding-block: var(--rhythm);
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .section { padding-block: var(--rhythm-lg); }
+}
+.section--tight { padding-block: var(--space-8); }
+
+/* --- шапка --- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding-block: var(--space-4);
+}
+.site-header__logo { display: flex; align-items: center; gap: var(--space-3); }
+.site-header__logo img { height: 32px; width: auto; }
+.site-nav { display: flex; align-items: center; gap: var(--space-6); }
+.site-nav__list { display: flex; gap: var(--space-5); }
+.site-nav__list a {
+  font-size: var(--fs-caption);
+  color: var(--text-muted);
+  transition: color var(--dur-fast) var(--ease);
+}
+.site-nav__list a:hover, .site-nav__list a[aria-current='page'] { color: var(--text); }
+.site-header__actions { display: flex; align-items: center; gap: var(--space-4); }
+.site-header__contact-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+.site-header__address {
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+.site-header__phone {
+  font-weight: var(--fw-medium);
+  white-space: nowrap;
+}
+@media (max-width: 720px) {
+  .site-header__address { display: none; }
+}
+@media (max-width: 900px) {
+  .site-nav__list { display: none; }
+}
+
+/* --- подвал --- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding-block: var(--space-7);
+}
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  justify-content: space-between;
+  align-items: center;
+}
+.site-footer__links { display: flex; gap: var(--space-5); flex-wrap: wrap; }
+.site-footer__links a { color: var(--text-muted); font-size: var(--fs-caption); }
+.site-footer__links a:hover { color: var(--text); }
+
+/* --- переключатели язык/тема --- */
+.switch-group { display: flex; gap: var(--space-2); }
+.switch-btn {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-caption);
+  color: var(--text-muted);
+  border: 1px solid transparent;
+}
+.switch-btn[aria-pressed='true'] {
+  color: var(--text);
+  border-color: var(--border);
+  background: var(--bg-raised);
+}
+.switch-btn--icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+.switch-btn--icon svg { display: block; }
+.switch-btn:hover { color: var(--text); }
+
+/* --- фон интерьера под секцией (assets/rooms): реальный <picture>, а не
+   CSS background-image — так работает responsive-источник и loading=lazy.
+   Каждая секция — один статичный кадр; смена кадра происходит только
+   при переходе к следующей такой секции, никакого слайдера внутри одной. --- */
+.section--room { position: relative; overflow: hidden; }
+.section__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+.section__bg img { width: 100%; height: 100%; object-fit: cover; }
+.section--room::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--scrim);
+  z-index: -1;
+}
+.section--room, .section--room .lead, .section--room .caption { color: var(--album-chrome-text); }
+
+/* --- responsive контейнеры для карточных сеток --- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+@media (max-width: 900px) {
+  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .cards-grid { grid-template-columns: 1fr; }
+}
+
+/* --- структура главной страницы v12 --- */
+.section-heading {
+  max-width: 760px;
+  margin-block-end: clamp(24px, 3vw, 40px);
+}
+.section-heading h2 { margin-block-end: var(--space-3); }
+.section-heading .lead { max-width: 62ch; }
+.section-heading--compact { margin-block-end: var(--space-5); }
+.section--scenarios { background: var(--bg-raised); }
+.section--picker { background: var(--bg); }
+.section--proof { background: var(--bg-raised); }
+.section--scenarios .cards-grid { gap: clamp(16px, 2vw, 28px); }
+.section--scenarios .scenario-card { min-height: 100%; }
+.section--cta { padding-block: clamp(40px, 6vw, 72px); }
+.cta-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-raised);
+  box-shadow: var(--shadow-md);
+}
+.cta-band__copy { max-width: 62ch; }
+.cta-band__copy h2 { margin-block-end: var(--space-3); }
+@media (max-width: 720px) {
+  .cta-band { align-items: flex-start; flex-direction: column; }
+  .cta-band .btn { width: 100%; justify-content: center; }
+}
+
+/* --- mobile navigation --- */
+.mobile-menu-btn { display:none; width:42px; height:42px; border:1px solid var(--border); border-radius:var(--radius-md); align-items:center; justify-content:center; flex-direction:column; gap:5px; }
+.mobile-menu-btn span { width:18px; height:2px; background:var(--text); display:block; }
+.mobile-menu { position:absolute; top:100%; left:0; right:0; background:var(--bg); border-bottom:1px solid var(--border); padding:var(--space-4) var(--gutter); box-shadow:var(--shadow-md); }
+.mobile-menu[hidden] { display:none; }
+.mobile-menu__list { display:flex; flex-direction:column; gap:0; }
+.mobile-menu__list a { display:block; padding:var(--space-4) 0; border-bottom:1px solid var(--border); font-weight:var(--fw-medium); }
+.mobile-menu__extras { display:flex; justify-content:space-between; gap:var(--space-3); padding-top:var(--space-4); }
+@media (max-width:900px) {
+  .mobile-menu-btn { display:inline-flex; }
+  .site-nav > .switch-group { display:none; }
+  .site-header__contact-block { display:none; }
+  .site-header__inner { gap:var(--space-3); }
+  .site-header__actions { margin-left:auto; }
+}

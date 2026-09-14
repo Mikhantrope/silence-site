@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://mc.yandex.ru https://www.google-analytics.com; font-src 'self'; style-src 'self' 'sha256-qdAuu1c7y0w9Ii+0IHAg4mUo2l/5RqjUE0SqWdE0sbE='; script-src 'self' https://www.googletagmanager.com https://mc.yandex.ru; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://mc.yandex.ru">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#14171A">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <style>
+:root,[data-theme='dark']{--bg:#14171A;--bg-raised:#1D2226;--bg-overlay:#1A1E22;--border:#2A3034;--text:#ECEDEA;--text-muted:#9BA39F;--accent:#3FAE9C;--accent-strong:#58C2AF;--accent-on:#0D211E;--scrim:rgba(10,12,14,.62);--danger:#FF6B5E;--shadow-sm:0 1px 2px rgba(0,0,0,.32);--shadow-md:0 8px 24px rgba(0,0,0,.36);--shadow-lg:0 24px 64px rgba(0,0,0,.44)}[data-theme='light']{--bg:#F1F2EF;--bg-raised:#FFFFFF;--bg-overlay:#E7E9E5;--border:#D8DBD6;--text:#14171A;--text-muted:#565D59;--accent:#1F7A6C;--accent-strong:#185F54;--accent-on:#FFFFFF;--scrim:rgba(20,23,26,.46);--danger:#B8362A;--shadow-sm:0 1px 2px rgba(20,23,26,.08);--shadow-md:0 8px 24px rgba(20,23,26,.10);--shadow-lg:0 24px 64px rgba(20,23,26,.14)}:root{--font-body:'Commissioner',system-ui,sans-serif;--fs-caption:.9375rem;--fs-body:1.0625rem;--fs-lead:1.25rem;--fs-h3:1.75rem;--fs-h2:2.5rem;--fs-h1:3.5rem;--lh-text:1.5;--lh-heading:1.15;--fw-light:300;--fw-regular:400;--fw-medium:500;--fw-semibold:600;--content-max:1280px;--gutter:24px;--gutter-lg:48px;--rhythm:64px;--rhythm-lg:88px;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--radius-sm:6px;--radius-md:12px;--radius-lg:20px;--radius-pill:999px;--ease:cubic-bezier(.4,0,.2,1);--dur-fast:150ms;--dur-base:200ms;--dur-slow:250ms;--album-scrim:rgba(10,12,14,.9);--album-chrome-bg:rgba(255,255,255,.08);--album-chrome-border:rgba(255,255,255,.2);--album-chrome-text:#FFFFFF}
+*,*::before,*::after{box-sizing:border-box}html,body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}body{font-family:var(--font-body);font-size:var(--fs-body);line-height:var(--lh-text);font-weight:var(--fw-regular);color:var(--text);background:var(--bg);min-height:100vh}img,picture,svg,video{display:block;max-width:100%}ul,ol{padding:0;list-style:none}a{color:inherit;text-decoration:none}button,input{font:inherit;color:inherit}button{background:none;border:none;cursor:pointer}h1,h2,h3{line-height:var(--lh-heading);font-weight:var(--fw-semibold)}h1{font-size:var(--fs-h1)}.lead{font-size:var(--fs-lead);font-weight:var(--fw-light)}.caption{font-size:var(--fs-caption);color:var(--text-muted)}:focus{outline:none}:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:var(--radius-sm)}.skip-link{position:absolute;left:var(--space-4);top:-100px;background:var(--accent);color:var(--accent-on);padding:var(--space-3) var(--space-5);border-radius:var(--radius-sm);font-weight:var(--fw-medium);z-index:200;transition:top var(--dur-base) var(--ease)}.skip-link:focus{top:var(--space-4)}
+.container{max-width:var(--content-max);margin-inline:auto;padding-inline:var(--gutter-lg)}@media (max-width:720px){.container{padding-inline:var(--gutter)}}.section{padding-block:clamp(48px,7vw,88px);position:relative}@media (min-width:1024px){.section{padding-block:clamp(64px,8vw,104px)}}.site-header{position:sticky;top:0;z-index:100;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-5);padding-block:var(--space-4)}.site-header__logo{display:flex;align-items:center;gap:var(--space-3)}.site-header__logo img{height:32px;width:auto}.site-nav{display:flex;align-items:center;gap:var(--space-6)}.site-nav__list{display:flex;gap:var(--space-5)}.site-nav__list a{font-size:var(--fs-caption);color:var(--text-muted);transition:color var(--dur-fast) var(--ease)}.site-header__actions{display:flex;align-items:center;gap:var(--space-4)}.site-header__phone{font-weight:var(--fw-medium);white-space:nowrap}.switch-group{display:flex;gap:var(--space-2)}.switch-btn{padding:var(--space-2) var(--space-3);border-radius:var(--radius-pill);font-size:var(--fs-caption);color:var(--text-muted);border:1px solid transparent}.switch-btn[aria-pressed='true']{color:var(--text);border-color:var(--border);background:var(--bg-raised)}.section--room{position:relative;overflow:hidden}.section__bg{position:absolute;inset:0;z-index:-2}.section__bg img{width:100%;height:100%;object-fit:cover}.section--room::after{content:'';position:absolute;inset:0;background:var(--scrim);z-index:-1}.section--room,.section--room .lead,.section--room .caption{color:var(--album-chrome-text)}
+.hero-cutaway{padding-block:clamp(32px,5vw,64px) clamp(56px,8vw,104px)}.hero__text{display:flex;flex-direction:column;gap:var(--space-4);max-width:760px;margin-block-end:clamp(28px,4vw,52px)}.hero__eyebrow{margin:0}.hero__offer{max-width:18ch;font-size:clamp(2.2rem,5vw,4.5rem);line-height:1.02;letter-spacing:-.035em}.hero__subtitle{max-width:52ch}.hero__actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-block-start:var(--space-2)}.cutaway{margin-block-start:0;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);gap:clamp(24px,4vw,64px);align-items:center}@media(max-width:900px){.cutaway{grid-template-columns:1fr}}.cutaway__figure{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--border);background:var(--bg-raised)}.cutaway__img{width:100%;height:auto;display:block}
+.btn{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-3) var(--space-6);border-radius:var(--radius-pill);font-weight:var(--fw-medium);font-size:var(--fs-body);transition:transform var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease)}.btn--primary{background:var(--accent);color:var(--accent-on)}.btn--primary:hover{background:var(--accent-strong)}.btn--secondary{background:transparent;color:var(--text);border:1px solid var(--border)}.btn--secondary:hover{border-color:var(--accent);color:var(--accent)}.btn:active{transform:scale(.98)}
+  </style>
+  <title>SILENCE — звукоизоляция стен, потолка и пола в Астане</title>
+  <meta name="description" content="Заглушаем шум соседей в Астане: подбираем систему под ваш тип шума, монтируем на существующую стену без демонтажа. Расчёт и протоколы испытаний по СН РК.">
+  <link rel="canonical" href="__SITE_URL__/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SILENCE">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="SILENCE — звукоизоляция стен, потолка и пола в Астане">
+  <meta property="og:description" content="Заглушаем шум соседей в Астане: подбираем систему под ваш тип шума, монтируем на существующую стену без демонтажа.">
+  <meta property="og:image" content="__SITE_URL__/assets/rooms/section.webp">
+  <meta property="og:url" content="__SITE_URL__/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image:alt" content="SILENCE — звукоизоляция и акустические решения">
+  <meta name="twitter:title" content="SILENCE — звукоизоляция стен, потолка и пола в Астане">
+  <meta name="twitter:description" content="Заглушаем шум соседей в Астане: подбираем систему под ваш тип шума, монтируем на существующую стену без демонтажа.">
+  <meta name="twitter:image" content="__SITE_URL__/assets/rooms/section.webp">
+  <script src="js/theme-init.js"></script>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "SILENCE",
+  "url": "__SITE_URL__/",
+  "image": "__SITE_URL__/assets/logo.png",
+  "telephone": "+7 776 17 888 17",
+  "areaServed": {
+    "@type": "City",
+    "name": "Astana"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Prospekt Bauyrzhan Momyshuly, 15/2",
+    "addressLocality": "Astana",
+    "addressCountry": "KZ"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Насколько сильно система «съест» комнату?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Бескаркасные панели — от 29 до 40 мм с каждой стороны. Каркасные толще, точную цифру считаем на замере." }
+    },
+    {
+      "@type": "Question",
+      "name": "Это точно поможет с моим шумом?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Rw — лабораторный тест, а не гарантия для вашей квартиры. Часть звука идёт в обход, но выбранная система заметно снижает то, что вы слышите сейчас." }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько это будет стоить?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Цена зависит от системы и площади. Ориентировочный диапазон — в калькуляторе выше, точную сумму называем после замера." }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько занимает монтаж?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Срок зависит от площади и типа системы — точный график получаете после замера, не раньше." }
+    },
+    {
+      "@type": "Question",
+      "name": "Будет ли грязно и шумно во время работ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Бригада закрывает мебель и полы плёнкой и убирает за собой. Шум от инструмента будет — это стройка, не бесшумный процесс." }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли демонтировать систему, если я снимаю квартиру?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Зависит от выбранной системы — уточняем на этапе консультации, единого ответа для всех решений нет." }
+    },
+    {
+      "@type": "Question",
+      "name": "Даёте ли вы гарантию?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Условия гарантии фиксируются в договоре на конкретный проект — обсуждаем их на этапе расчёта." }
+    },
+    {
+      "@type": "Question",
+      "name": "Работаете ли вы за пределами Астаны?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Уточните по телефону или в WhatsApp — зависит от объёма работ и расстояния." }
+    }
+  ]
+}
+  </script>
+</head>
+<body data-page="index">
+  <a class="skip-link" href="#main" data-i18n="skip"></a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__logo" href="index.html">
+        <img src="assets/logo.png" alt="SILENCE" width="120" height="32">
+      </a>
+      <nav class="site-nav" data-i18n-attr="aria-label:navCat">
+        <ul class="site-nav__list">
+          <li><a href="catalog.html" data-i18n="navCat"></a></li>
+          <li><a href="systems.html" data-i18n="navSystems"></a></li>
+          <li><a href="pro.html" data-i18n="navPro"></a></li>
+          <li><a href="projects.html" data-i18n="navGal"></a></li>
+          <li><a href="contacts.html" data-i18n="navContacts"></a></li>
+        </ul>
+        <div class="switch-group" data-role="lang-switch">
+          <button class="switch-btn" type="button" data-lang="ru" aria-pressed="false">RU</button>
+          <button class="switch-btn" type="button" data-lang="kz" aria-pressed="false">KZ</button>
+          <button class="switch-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <div class="switch-group" data-role="theme-switch">
+          <button class="switch-btn switch-btn--icon" type="button" data-theme-choice="dark" aria-pressed="false" data-i18n-attr="aria-label:themeDark">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1Z"/></svg>
+          </button>
+          <button class="switch-btn switch-btn--icon" type="button" data-theme-choice="light" aria-pressed="false" data-i18n-attr="aria-label:themeLight">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0-15a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Zm0 18a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1ZM4.22 4.22a1 1 0 0 1 1.42 0l.7.7a1 1 0 1 1-1.42 1.42l-.7-.7a1 1 0 0 1 0-1.42Zm14.14 14.14a1 1 0 0 1 1.42 0l.7.7a1 1 0 0 1-1.42 1.42l-.7-.7a1 1 0 0 1 0-1.42ZM1 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H2a1 1 0 0 1-1-1Zm18 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1ZM4.22 19.78a1 1 0 0 1 0-1.42l.7-.7a1 1 0 1 1 1.42 1.42l-.7.7a1 1 0 0 1-1.42 0Zm14.14-14.14a1 1 0 0 1 0-1.42l.7-.7a1 1 0 1 1 1.42 1.42l-.7.7a1 1 0 0 1-1.42 0Z"/></svg>
+          </button>
+        </div>
+      </nav>
+      <div class="site-header__actions">
+        <div class="site-header__contact-block">
+          <span class="site-header__address caption u-muted" data-i18n="headerAddress"></span>
+          <a class="site-header__phone" data-bind="phone" href="#" data-analytics="phone_click_header"></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section hero-cutaway" data-mount="section-cutaway">
+      <div class="container">
+        <div class="hero__text">
+          <p class="caption u-accent hero__eyebrow" data-i18n="made"></p>
+          <h1 class="hero__offer" data-i18n="offerTitle"></h1>
+          <p class="lead hero__subtitle" data-i18n="offerSubtitle"></p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="contacts.html" data-i18n="cta" data-analytics="cta_hero_click"></a>
+            <a class="btn btn--secondary" data-bind="whatsapp" href="#" data-analytics="whatsapp_click_hero">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="cutaway">
+          <div class="cutaway__figure">
+            <picture>
+              <source media="(max-width: 720px)" srcset="assets/rooms/section-mobile.webp">
+              <img class="cutaway__img" src="assets/rooms/section.webp" width="1040" height="1040" loading="eager" data-i18n-attr="alt:sectionAlt" alt="">
+            </picture>
+            <div class="cutaway__overlay" data-cutaway-overlay></div>
+          </div>
+          <div class="cutaway__side">
+            <p class="cutaway__hint" data-i18n="sectionHint"></p>
+            <div class="cutaway__content" data-cutaway-content aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Сначала пользователь узнаёт свою проблему, затем получает подбор решения. -->
+    <section class="section section--scenarios" data-mount="scenarios"></section>
+    <section class="section section--outcomes" data-mount="outcomes"></section>
+    <section class="section section--pricing" data-mount="pricing"></section>
+    <section class="section section--picker" data-mount="problem-picker"></section>
+    <section class="section section--proof" data-mount="projects-teaser"></section>
+    <section class="section section--process" data-mount="process"></section>
+    <section class="section section--cta section--cta-mid" data-mount="site-cta"></section>
+    <section class="section section--compare" data-mount="compare"></section>
+    <section class="section section--trust" data-mount="trust"></section>
+    <section class="section section--faq" data-mount="faq"></section>
+    <section class="section section--catalog" data-mount="catalog-teaser"></section>
+
+    <section class="section section--cta">
+      <div class="container cta-band">
+        <div class="cta-band__copy">
+          <h2 data-i18n="formTitle"></h2>
+          <p class="lead" data-i18n="formLead"></p>
+        </div>
+        <a class="btn btn--primary" href="contacts.html" data-i18n="cta" data-analytics="cta_home_bottom_click"></a>
+      </div>
+    </section>
+
+    <section class="section section--tight" data-mount="norms-strip"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="caption" data-i18n="footRights"></p>
+      <div class="site-footer__links">
+        <a data-bind="phone" href="#" data-analytics="phone_click_footer"></a>
+        <a data-bind="whatsapp" href="#" data-analytics="whatsapp_click_footer">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay-card" hidden aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="overlay__panel">
+      <button class="overlay__close" type="button" data-close-overlay data-i18n-attr="aria-label:close"></button>
+      <div class="overlay__body" data-card-body></div>
+    </div>
+  </div>
+
+  <div class="overlay overlay--album" id="overlay-album" hidden aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="overlay__close" type="button" data-close-overlay data-i18n-attr="aria-label:close"></button>
+    <button class="album-nav album-nav--prev" type="button" data-album-prev data-i18n-attr="aria-label:albumPrev"></button>
+    <img class="album-viewer__img" data-album-img alt="">
+    <p class="album-viewer__caption" data-album-caption hidden></p>
+    <button class="album-nav album-nav--next" type="button" data-album-next data-i18n-attr="aria-label:albumNext"></button>
+  </div>
+
+  <script src="js/data.content.js"></script>
+  <script src="js/data.catalog.js"></script>
+  <script src="js/data.norms.js"></script>
+  <script src="js/data.pricing.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/ui.problem-picker.js"></script>
+  <script src="js/ui.scenarios.js"></script>
+  <script src="js/ui.outcomes.js"></script>
+  <script src="js/ui.site-cta.js"></script>
+  <script src="js/ui.section.js"></script>
+  <script src="js/ui.compare.js"></script>
+  <script src="js/ui.process.js"></script>
+  <script src="js/ui.pricing.js"></script>
+  <script src="js/ui.trust.js"></script>
+  <script src="js/ui.faq.js"></script>
+  <script src="js/ui.catalog.js"></script>
+  <script src="js/ui.projects.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* SILENCE — токены дизайн-системы.
+   Один акцентный оттенок (приглушённый тёмно-бирюзовый — цвет акустического
+   войлока), выведенный в двух светлотах под тёмную и светлую тему для
+   контраста. Ни одного цвета вне переменных: компоненты берут только их. */
+
+:root,
+[data-theme='dark'] {
+  /* --- цвет: тёмная тема (основная) --- */
+  --bg: #14171A;
+  --bg-raised: #1D2226;
+  --bg-overlay: #1A1E22;
+  --border: #2A3034;
+  --text: #ECEDEA;
+  --text-muted: #9BA39F;
+  --accent: #3FAE9C;
+  --accent-strong: #58C2AF;
+  --accent-on: #0D211E; /* текст поверх акцентной заливки */
+  --scrim: rgba(10, 12, 14, 0.62); /* затемнение фоновых фото под текстом */
+  --danger: #FF6B5E;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.32);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.36);
+  --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.44);
+}
+
+[data-theme='light'] {
+  /* --- цвет: светлая тема (равноценная альтернатива) --- */
+  --bg: #F1F2EF;
+  --bg-raised: #FFFFFF;
+  --bg-overlay: #E7E9E5;
+  --border: #D8DBD6;
+  --text: #14171A;
+  --text-muted: #565D59;
+  --accent: #1F7A6C;
+  --accent-strong: #185F54;
+  --accent-on: #FFFFFF;
+  --scrim: rgba(20, 23, 26, 0.46);
+  --danger: #B8362A;
+
+  --shadow-sm: 0 1px 2px rgba(20, 23, 26, 0.08);
+  --shadow-md: 0 8px 24px rgba(20, 23, 26, 0.10);
+  --shadow-lg: 0 24px 64px rgba(20, 23, 26, 0.14);
+}
+
+:root {
+  /* --- типографика --- */
+  --font-body: 'Commissioner', system-ui, sans-serif;
+  --fs-caption: 0.9375rem; /* 15px */
+  --fs-body: 1.0625rem;    /* 17px база */
+  --fs-lead: 1.25rem;      /* 20px */
+  --fs-h3: 1.75rem;        /* 28px */
+  --fs-h2: 2.5rem;         /* 40px */
+  --fs-h1: 3.5rem;         /* 56px */
+  --lh-text: 1.5;
+  --lh-heading: 1.15;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* --- сетка и отступы --- */
+  --content-max: 1280px;
+  --gutter: 24px;
+  --gutter-lg: 48px;
+  --rhythm: 64px;
+  --rhythm-lg: 88px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* --- радиусы --- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* --- движение --- */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 150ms;
+  --dur-base: 200ms;
+  --dur-slow: 250ms;
+
+  /* --- просмотр разворотов альбома: фиксированно тёмный слой поверх
+     фото независимо от темы сайта, но всё равно переменными, не хардкодом --- */
+  --album-scrim: rgba(10, 12, 14, 0.9);
+  --album-chrome-bg: rgba(255, 255, 255, 0.08);
+  --album-chrome-border: rgba(255, 255, 255, 0.2);
+  --album-chrome-text: #FFFFFF;
+}
