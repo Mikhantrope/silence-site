@@ -712,6 +712,22 @@
   .cutaway__zone-pulse--active { animation: none; opacity: 0.22; }
 }
 
+/* мягкие анимированные звуковые волны поверх картинки — чисто декоративный слой */
+.cutaway__wave-group { pointer-events: none; }
+.cutaway__wave-ring {
+  fill: none;
+  stroke: color-mix(in srgb, var(--accent) 78%, white);
+  stroke-width: 0.5;
+  opacity: 0;
+}
+.cutaway__wave-core {
+  fill: color-mix(in srgb, var(--accent) 72%, white);
+  opacity: 0.45;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cutaway__wave-group { display: none; }
+}
+
 .cutaway__suited-label { margin-block-start: var(--space-2); }
 .cutaway__systems { display: flex; flex-direction: column; gap: var(--space-2); margin-block-end: var(--space-4); }
 .cutaway__system {

@@ -33,6 +33,14 @@
   /* центр не кликабелен: это результат, а не проблема */
   var CENTER = { id: 'center', x: 29, y: 30, w: 42, h: 38, labelKey: 'sectionZoneCenter' };
 
+  /* декоративные точки-источники звука для мягкой анимации волн */
+  var WAVE_SOURCES = [
+    { id: 'top', cx: 50, cy: 14, r0: 2.1, r1: 10.6, delays: [0, 0.85, 1.7] },
+    { id: 'left', cx: 14.5, cy: 48, r0: 1.8, r1: 8.2, delays: [0.2, 1.05, 1.9] },
+    { id: 'right', cx: 85.5, cy: 48, r0: 1.8, r1: 8.2, delays: [0.45, 1.3, 2.15] },
+    { id: 'bottom', cx: 50, cy: 84, r0: 2.2, r1: 10.4, delays: [0.7, 1.55, 2.4] }
+  ];
+
   /* две карточки рядом с разрезом — существующие сценарии из SITE.scenarios,
      которые на самом разрезе не размещаются (см. переписку с заказчиком):
      heard — направление волн наружу, echo — на картинке этого источника нет.
@@ -63,6 +71,44 @@
     return node;
   }
 
+  function buildWaveGroup(source) {
+    var group = svgEl('g', {
+      class: 'cutaway__wave-group',
+      'data-wave-source': source.id,
+      'aria-hidden': 'true'
+    });
+
+    group.appendChild(svgEl('circle', {
+      class: 'cutaway__wave-core',
+      cx: source.cx, cy: source.cy, r: Math.max(0.9, source.r0 * 0.45)
+    }));
+
+    source.delays.forEach(function (delay) {
+      var ring = svgEl('circle', {
+        class: 'cutaway__wave-ring',
+        cx: source.cx, cy: source.cy, r: source.r0
+      });
+      ring.appendChild(svgEl('animate', {
+        attributeName: 'r',
+        values: source.r0 + ';' + source.r1,
+        dur: '2.8s',
+        begin: delay + 's',
+        repeatCount: 'indefinite'
+      }));
+      ring.appendChild(svgEl('animate', {
+        attributeName: 'opacity',
+        values: '0;0.42;0',
+        keyTimes: '0;0.2;1',
+        dur: '2.8s',
+        begin: delay + 's',
+        repeatCount: 'indefinite'
+      }));
+      group.appendChild(ring);
+    });
+
+    return group;
+  }
+
   /* interactive=false (мобильный режим): без tabindex/role/aria-pressed —
      на разрезе на мобильном нет кликабельных зон вообще, картинка чисто
      иллюстративная, попасть пальцем в 14%-ширины квартиру всё равно нельзя. */
@@ -84,6 +130,10 @@
     gradient.appendChild(svgEl('stop', { class: 'cutaway__pulse-stop-out', offset: '100%' }));
     defs.appendChild(gradient);
     svg.appendChild(defs);
+
+    WAVE_SOURCES.forEach(function (source) {
+      svg.appendChild(buildWaveGroup(source));
+    });
 
     svg.appendChild(svgEl('rect', {
       class: 'cutaway__zone cutaway__zone--center',
@@ -430,9 +480,11 @@
   global.SILENCE_SECTION = {
     ZONES: ZONES,
     CENTER: CENTER,
+    WAVE_SOURCES: WAVE_SOURCES,
     SIDE_CARD_IDS: SIDE_CARD_IDS,
     findSuitedSystems: findSuitedSystems,
     getMobileEntries: getMobileEntries,
+    buildWaveGroup: buildWaveGroup,
     buildOverlay: buildOverlay,
     svgEl: svgEl
   };

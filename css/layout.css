@@ -43,8 +43,17 @@
   gap: var(--space-5);
   padding-block: var(--space-4);
 }
-.site-header__logo { display: flex; align-items: center; gap: var(--space-3); }
-.site-header__logo img { height: 32px; width: auto; }
+.site-header__logo { display: flex; align-items: center; gap: var(--space-3); line-height: 0; flex: 0 0 auto; }
+.site-header__logo img {
+  display: block;
+  height: 26px;
+  width: auto;
+  max-width: clamp(136px, 12vw, 160px);
+  object-fit: contain;
+}
+@media (max-width: 720px) {
+  .site-header__logo img { height: 22px; max-width: 136px; }
+}
 .site-nav { display: flex; align-items: center; gap: var(--space-6); }
 .site-nav__list { display: flex; gap: var(--space-5); }
 .site-nav__list a {
