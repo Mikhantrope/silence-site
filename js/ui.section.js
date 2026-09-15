@@ -178,19 +178,32 @@
     return svg;
   }
 
+  function systemLine(C, SITE, lang, s) {
+    var unitEntry = SITE.specs[s.ix.toLowerCase()];
+    var unit = unitEntry ? (unitEntry[lang] || unitEntry.ru) : null;
+    var unitLabel = unit ? unit[1] : 'дБ';
+    var range = s.from === s.to ? String(s.from) : (s.from + '\u2013' + s.to);
+    return C.el('li', { class: 'cutaway__system' }, [
+      C.el('span', { class: 'cutaway__system-name' }, [s.name]),
+      C.el('span', { class: 'cutaway__system-index u-accent' }, [s.ix + ' ' + range + (unitLabel ? ' ' + unitLabel : '')])
+    ]);
+  }
+
   function systemsList(C, SITE, lang, place) {
-    var systems = findSuitedSystems(place, 3);
-    var list = C.el('ul', { class: 'cutaway__systems' });
-    systems.forEach(function (s) {
-      var unitEntry = SITE.specs[s.ix.toLowerCase()];
-      var unit = unitEntry ? (unitEntry[lang] || unitEntry.ru) : null;
-      var unitLabel = unit ? unit[1] : 'дБ';
-      var range = s.from === s.to ? String(s.from) : (s.from + '\u2013' + s.to);
-      list.appendChild(C.el('li', { class: 'cutaway__system' }, [
-        C.el('span', { class: 'cutaway__system-name' }, [s.name]),
-        C.el('span', { class: 'cutaway__system-index u-accent' }, [s.ix + ' ' + range + (unitLabel ? ' ' + unitLabel : '')])
-      ]));
-    });
+    var list = C.el('div', { class: 'cutaway__systems-wrap' });
+    var mainSystems = findSuitedSystems(place, 3);
+    var mainList = C.el('ul', { class: 'cutaway__systems' });
+    mainSystems.forEach(function (s) { mainList.appendChild(systemLine(C, SITE, lang, s)); });
+    list.appendChild(mainList);
+
+    var floorSystems = place === 'floor' ? [] : findSuitedSystems('floor', 3);
+    if (floorSystems.length) {
+      var floorLabel = lang === 'kz' ? 'Еден жабындары' : (lang === 'en' ? 'Floor coverings' : 'Напольные покрытия');
+      list.appendChild(C.el('p', { class: 'caption u-muted cutaway__subgroup-label' }, [floorLabel]));
+      var floorList = C.el('ul', { class: 'cutaway__systems' });
+      floorSystems.forEach(function (s) { floorList.appendChild(systemLine(C, SITE, lang, s)); });
+      list.appendChild(floorList);
+    }
     return list;
   }
 
@@ -224,7 +237,6 @@
 
     var panel = C.el('div', { class: 'cutaway__panel' });
     contentHost.appendChild(panel);
-    contentHost.appendChild(sideCards(C, SITE, lang, t));
 
     function renderEmpty() {
       panel.innerHTML = '';
@@ -237,26 +249,17 @@
       panel.appendChild(C.el('h3', {}, [t(zone.labelKey)]));
       panel.appendChild(C.el('p', {}, [t(zone.descKey)]));
 
-      /* Incoming bass/speech from below is NOT sold as a floor-system task.
-         ΔLn,w describes impact-noise reduction in the opposite direction. */
       if (zone.id === 'bottom') {
         panel.appendChild(C.el('p', { class: 'cutaway__diagnostic-note' }, [
-          lang === 'kz' ? 'Бұл жерде типтік еден жүйесін бірден ұсынбаймыз: алдымен дыбыстың қай жолмен өтетінін анықтау керек.' :
-          (lang === 'en' ? 'We do not prescribe a floor system here by default: the transmission path should be identified first.' :
-          'Здесь не выдаём напольную систему как готовый ответ: сначала нужно определить путь передачи шума.')
+          lang === 'kz' ? 'Төменнен келетін дыбыс көбіне жабын, қабырға және түйіскен жерлер арқылы тарайды. Дәл шешім шығару үшін алдымен берілу жолын нақтылау қажет.' :
+          (lang === 'en' ? 'Noise from below often travels through the slab, the walls and adjoining junctions. The transmission path should be checked before a final solution is chosen.' :
+          'Шум снизу часто идёт через перекрытие, стены и примыкания. Перед точным подбором нужно понять путь передачи.')
         ]));
-        panel.appendChild(C.el('div', { class: 'cutaway__actions' }, [
-          C.el('a', {
-            class: 'btn btn--primary', href: 'contacts.html?problem=below',
-            'data-analytics': 'section_zone_diagnostic_click', 'data-analytics-value': zone.id
-          }, [lang === 'kz' ? 'Жағдайды талдау' : (lang === 'en' ? 'Assess the situation' : 'Разобрать ситуацию')])
-        ]));
-        return;
       }
 
       panel.appendChild(C.el('p', { class: 'caption u-muted cutaway__suited-label' }, [t('sectionSuited')]));
       panel.appendChild(systemsList(C, SITE, lang, zone.place));
-      var problem = zone.id === 'top' ? 'repair' : (zone.id === 'right' ? 'music' : 'talk');
+      var problem = zone.id === 'top' ? 'repair' : (zone.id === 'right' ? 'music' : (zone.id === 'bottom' ? 'below' : 'talk'));
       var zoneActions = C.el('div', { class: 'cutaway__actions' }, [
         C.el('a', {
           class: 'btn btn--primary',

@@ -145,15 +145,7 @@
   <main id="main">
     <section class="section hero-cutaway" data-mount="section-cutaway">
       <div class="container">
-        <div class="hero__text">
-          <p class="caption u-accent hero__eyebrow" data-i18n="made"></p>
-          <h1 class="hero__offer" data-i18n="offerTitle"></h1>
-          <p class="lead hero__subtitle" data-i18n="offerSubtitle"></p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="contacts.html" data-i18n="cta" data-analytics="cta_hero_click"></a>
-            <a class="btn btn--secondary" data-bind="whatsapp" href="#" data-analytics="whatsapp_click_hero">WhatsApp</a>
-          </div>
-        </div>
+        <div data-mount="hero-slider"></div>
 
         <div class="cutaway">
           <div class="cutaway__figure">
@@ -172,6 +164,7 @@
     </section>
 
     <!-- Интерактивный разрез уже выполняет роль первого сценарного входа; отдельный дублирующий блок удалён в v16. -->
+    <section class="section section--object-zones" data-mount="solution-zones"></section>
     <section class="section section--outcomes" data-mount="outcomes"></section>
     <section class="section section--pricing" data-mount="pricing"></section>
     <section class="section section--picker" data-mount="problem-picker"></section>
@@ -227,6 +220,8 @@
   <script src="js/data.pricing.js"></script>
   <script src="js/core.js"></script>
   <script src="js/ui.problem-picker.js"></script>
+  <script src="js/ui.hero-slider.js"></script>
+  <script src="js/ui.solution-zones.js"></script>
   <script src="js/ui.outcomes.js"></script>
   <script src="js/ui.site-cta.js"></script>
   <script src="js/ui.section.js"></script>
