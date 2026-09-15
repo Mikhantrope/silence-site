@@ -186,12 +186,31 @@
       panel.innerHTML = '';
       panel.appendChild(C.el('h3', {}, [t(zone.labelKey)]));
       panel.appendChild(C.el('p', {}, [t(zone.descKey)]));
+
+      /* Incoming bass/speech from below is NOT sold as a floor-system task.
+         ΔLn,w describes impact-noise reduction in the opposite direction. */
+      if (zone.id === 'bottom') {
+        panel.appendChild(C.el('p', { class: 'cutaway__diagnostic-note' }, [
+          lang === 'kz' ? 'Бұл жерде типтік еден жүйесін бірден ұсынбаймыз: алдымен дыбыстың қай жолмен өтетінін анықтау керек.' :
+          (lang === 'en' ? 'We do not prescribe a floor system here by default: the transmission path should be identified first.' :
+          'Здесь не выдаём напольную систему как готовый ответ: сначала нужно определить путь передачи шума.')
+        ]));
+        panel.appendChild(C.el('div', { class: 'cutaway__actions' }, [
+          C.el('a', {
+            class: 'btn btn--primary', href: 'contacts.html?problem=below',
+            'data-analytics': 'section_zone_diagnostic_click', 'data-analytics-value': zone.id
+          }, [lang === 'kz' ? 'Жағдайды талдау' : (lang === 'en' ? 'Assess the situation' : 'Разобрать ситуацию')])
+        ]));
+        return;
+      }
+
       panel.appendChild(C.el('p', { class: 'caption u-muted cutaway__suited-label' }, [t('sectionSuited')]));
       panel.appendChild(systemsList(C, SITE, lang, zone.place));
+      var problem = zone.id === 'top' ? 'repair' : (zone.id === 'right' ? 'music' : 'talk');
       var zoneActions = C.el('div', { class: 'cutaway__actions' }, [
         C.el('a', {
           class: 'btn btn--primary',
-          href: 'contacts.html?problem=' + encodeURIComponent(zone.id === 'top' ? 'repair' : (zone.id === 'bottom' ? 'music' : 'talk')) + '&surface=' + encodeURIComponent(zone.place),
+          href: 'contacts.html?problem=' + encodeURIComponent(problem) + '&surface=' + encodeURIComponent(zone.place),
           'data-analytics': 'section_zone_quote_click', 'data-analytics-value': zone.id
         }, [lang === 'kz' ? 'Есеп алу' : (lang === 'en' ? 'Get a quote' : 'Рассчитать решение')]),
         C.el('a', {
@@ -251,85 +270,124 @@
 
   /* ================= МОБИЛЬНЫЙ ================= */
 
-  /* Шесть входов — четыре зоны с картинки плюс две карточки рядом (heard,
-     echo). В исходном тексте ТЗ фигурировало «пять карточек» — это было до
-     того, как заказчик поправил соответствие зон месту (см. переписку);
-     после поправки входов стало шесть, и мобильный список показывает все
-     шесть, иначе heard/echo не были бы достижимы на телефоне вообще. */
+  /* На телефоне не повторяем шесть полноразмерных карточек. Пять компактных
+     входов переключают ОДНУ карточку с деталями. Левую/правую стену объединяем
+     в один понятный сценарий «за стеной». */
   function getMobileEntries(lang, t) {
     var SITE = global.SITE;
-    var fromZones = ZONES.map(function (z) {
-      return { id: z.id, zoneId: z.id, place: z.place, title: t(z.labelKey), desc: t(z.descKey), href: 'catalog.html#place-' + z.place };
-    });
-    var fromSide = SIDE_CARD_IDS.map(function (id) {
+    function scenario(id) {
       var sc = SITE.scenarios.filter(function (s) { return s.id === id; })[0];
       if (!sc) return null;
       var copy = sc[lang] || sc.ru;
-      var href = sc.anchor ? ('catalog.html#' + sc.anchor) : ('catalog.html#place-' + sc.filterPlace);
-      return { id: sc.id, zoneId: null, place: sc.filterPlace || null, title: copy.title, desc: copy.desc, href: href };
-    }).filter(Boolean);
-    return fromZones.concat(fromSide);
+      return { scenario: sc, copy: copy };
+    }
+    var n = scenario('neighbors');
+    var h = scenario('heard');
+    var e = scenario('echo');
+    var labels = lang === 'kz'
+      ? { top:'Жоғарыдан', wall:'Қабырға', bottom:'Төменнен', heard:'Мені естиді', echo:'Жаңғырық' }
+      : (lang === 'en'
+        ? { top:'Above', wall:'Wall', bottom:'Below', heard:'I can be heard', echo:'Echo' }
+        : { top:'Сверху', wall:'За стеной', bottom:'Снизу', heard:'Меня слышат', echo:'Эхо' });
+
+    return [
+      { id:'top', zoneId:'top', short:labels.top, title:t('sectionZoneTop'), desc:t('sectionZoneTopDesc'), place:'ceiling', problem:'repair', catalog:'catalog.html#place-ceiling' },
+      n ? { id:'wall', zoneId:'left', short:labels.wall, title:n.copy.title, desc:n.copy.desc, place:'wall', problem:'talk', catalog:'catalog.html#place-wall' } : null,
+      { id:'bottom', zoneId:'bottom', short:labels.bottom, title:t('sectionZoneBottom'), desc:t('sectionZoneBottomDesc'), problem:'below', diagnostic:true },
+      h ? { id:'heard', zoneId:null, short:labels.heard, title:h.copy.title, desc:h.copy.desc, problem:'music', fullContour:true } : null,
+      e ? { id:'echo', zoneId:null, short:labels.echo, title:e.copy.title, desc:e.copy.desc, problem:'echo', surface:'acoustics', catalog:'catalog.html#decor', echo:true } : null
+    ].filter(Boolean);
   }
 
   function buildMobile(svg, contentHost, lang, t) {
     var C = global.SILENCE_CORE;
     var entries = getMobileEntries(lang, t);
-
-    var list = C.el('div', { class: 'cutaway__mobile-list' });
-    var cardEls = [];
-    entries.forEach(function (entry) {
-      var card = C.el('article', { class: 'cutaway__mobile-card', 'data-entry': entry.id });
-      card.appendChild(C.el('h3', {}, [entry.title]));
-      card.appendChild(C.el('p', {}, [entry.desc]));
-      card.appendChild(C.el('a', {
-        class: 'btn btn--secondary',
-        href: entry.href,
-        'data-analytics': 'section_mobile_card_click',
-        'data-analytics-value': entry.id
-      }, [t('sectionCatalogCta')]));
-      list.appendChild(card);
-      cardEls.push({ el: card, entry: entry });
-    });
-    contentHost.appendChild(list);
+    var tabs = C.el('div', { class: 'cutaway__mobile-tabs', role: 'tablist', 'aria-label': t('sectionEmptyTitle') });
+    var detail = C.el('article', { class: 'cutaway__mobile-detail' });
+    contentHost.appendChild(tabs);
+    contentHost.appendChild(detail);
 
     var centerEl = svg.querySelector('.cutaway__zone--center');
     var pulses = C.$$('.cutaway__zone-pulse', svg);
+    var buttons = [];
 
     function setActiveZone(zoneId) {
       pulses.forEach(function (p) {
         p.classList.toggle('cutaway__zone-pulse--active', !!zoneId && p.getAttribute('data-zone-pulse') === zoneId);
       });
       if (centerEl) centerEl.classList.toggle('cutaway__zone--center-active', !!zoneId);
-      cardEls.forEach(function (c) {
-        c.el.classList.toggle('cutaway__mobile-card--active', zoneId ? c.entry.zoneId === zoneId : false);
+    }
+
+    function contactHref(entry) {
+      var q = new URLSearchParams();
+      if (entry.problem) q.set('problem', entry.problem);
+      if (entry.place) q.set('surface', entry.place);
+      if (entry.surface) q.set('surface', entry.surface);
+      return 'contacts.html?' + q.toString();
+    }
+
+    function renderEntry(entry) {
+      detail.innerHTML = '';
+      detail.appendChild(C.el('h3', {}, [entry.title]));
+      detail.appendChild(C.el('p', {}, [entry.desc]));
+
+      if (entry.diagnostic) {
+        detail.appendChild(C.el('p', { class:'cutaway__diagnostic-note' }, [
+          lang === 'kz' ? 'Төменнен келетін бас пен сөйлеуге ΔLn,w еден көрсеткішін тікелей қолдануға болмайды — алдымен берілу жолын анықтаймыз.' :
+          (lang === 'en' ? 'A floor ΔLn,w rating is not a direct answer for incoming bass or speech from below — first identify the transmission path.' :
+          'Для входящего баса и речи снизу нельзя напрямую применять ΔLn,w пола — сначала определяем путь передачи.')
+        ]));
+      }
+      if (entry.fullContour) {
+        detail.appendChild(C.el('p', { class:'caption u-muted' }, [
+          lang === 'kz' ? 'Мұнда бір қабырға емес, толық контур қарастырылады: қабырға + төбе + еден.' :
+          (lang === 'en' ? 'This is a full-envelope task rather than a single-wall solution: walls + ceiling + floor.' :
+          'Здесь рассматривается не одна стена, а полный контур: стены + потолок + пол.')
+        ]));
+      }
+      if (entry.echo) {
+        detail.appendChild(C.el('p', { class:'caption u-muted' }, [
+          lang === 'kz' ? 'Бұл дыбыс оқшаулау емес: бөлме ішіндегі шағылуды азайтатын акустикалық панельдер қажет.' :
+          (lang === 'en' ? 'This is room acoustics, not neighbour sound insulation: use sound-absorbing panels to reduce reflections.' :
+          'Это акустика помещения, а не шумоизоляция от соседей: нужны звукопоглощающие панели против отражений.')
+        ]));
+      }
+
+      var actions = C.el('div', { class:'cutaway__actions' });
+      actions.appendChild(C.el('a', {
+        class:'btn btn--primary', href:contactHref(entry),
+        'data-analytics':'section_mobile_quote_click', 'data-analytics-value':entry.id
+      }, [entry.diagnostic
+        ? (lang === 'kz' ? 'Жағдайды талдау' : (lang === 'en' ? 'Assess the situation' : 'Разобрать ситуацию'))
+        : (lang === 'kz' ? 'Есеп алу' : (lang === 'en' ? 'Get a quote' : 'Рассчитать решение'))]));
+      if (entry.catalog) {
+        actions.appendChild(C.el('a', {
+          class:'btn btn--secondary', href:entry.catalog,
+          'data-analytics':'section_mobile_catalog_click', 'data-analytics-value':entry.id
+        }, [t('sectionCatalogCta')]));
+      }
+      detail.appendChild(actions);
+      setActiveZone(entry.zoneId);
+      buttons.forEach(function (b) {
+        var active = b.entry.id === entry.id;
+        b.el.classList.toggle('cutaway__mobile-tab--active', active);
+        b.el.setAttribute('aria-selected', active ? 'true' : 'false');
       });
+      if (global.SILENCE_TRACK) global.SILENCE_TRACK('section_mobile_tab', { value: entry.id });
     }
 
-    /* rootMargin схлопывает область наблюдения в горизонтальную линию по
-       центру экрана: элемент "пересекает" её и становится "видимым для
-       IO" ровно когда проходит через центр вьюпорта — так и определяем
-       "карточка в центре экрана" без ручного расчёта scrollY на каждый кадр. */
-    var io = null;
-    if ('IntersectionObserver' in global) {
-      io = new IntersectionObserver(function (obsEntries) {
-        obsEntries.forEach(function (e) {
-          if (!e.isIntersecting) return;
-          var id = e.target.getAttribute('data-entry');
-          var match = cardEls.filter(function (c) { return c.entry.id === id; })[0];
-          if (match) {
-            setActiveZone(match.entry.zoneId);
-            if (global.SILENCE_TRACK) {
-              global.SILENCE_TRACK('section_mobile_scroll_highlight', { value: id });
-            }
-          }
-        });
-      }, { rootMargin: '-50% 0px -50% 0px', threshold: 0 });
-      cardEls.forEach(function (c) { io.observe(c.el); });
-    }
+    entries.forEach(function (entry) {
+      var btn = C.el('button', {
+        class:'cutaway__mobile-tab', type:'button', role:'tab', 'aria-selected':'false',
+        'data-analytics':'section_mobile_tab_click', 'data-analytics-value':entry.id
+      }, [entry.short]);
+      btn.addEventListener('click', function () { renderEntry(entry); });
+      tabs.appendChild(btn);
+      buttons.push({ el:btn, entry:entry });
+    });
 
-    return function cleanup() {
-      if (io) io.disconnect();
-    };
+    if (entries.length) renderEntry(entries[0]);
+    return function cleanup() {};
   }
 
   /* ================= ПЕРЕКЛЮЧЕНИЕ РЕЖИМОВ ================= */

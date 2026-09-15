@@ -2,9 +2,21 @@
 (function (global) {
   'use strict';
   var COPY = {
-    ru: { problem:'Что беспокоит', surface:'Что звукоизолируем', system:'Выбранная система', choose:'Не выбрано', p:[['talk','Разговоры / телевизор'],['music','Музыка / басы'],['impact','Шаги / удары'],['repair','Ремонт / перфоратор'],['echo','Эхо']], s:[['wall','Стена'],['ceiling','Потолок'],['floor','Пол'],['partition','Новая перегородка']] },
-    kz: { problem:'Не мазалайды', surface:'Нені дыбыс оқшаулаймыз', system:'Таңдалған жүйе', choose:'Таңдалмаған', p:[['talk','Әңгіме / теледидар'],['music','Музыка / бас'],['impact','Қадам / соққы'],['repair','Жөндеу / перфоратор'],['echo','Жаңғырық']], s:[['wall','Қабырға'],['ceiling','Төбе'],['floor','Еден'],['partition','Жаңа қалқа']] },
-    en: { problem:'What bothers you', surface:'What to soundproof', system:'Selected system', choose:'Not selected', p:[['talk','Speech / TV'],['music','Music / bass'],['impact','Footsteps / impacts'],['repair','Drilling / renovation'],['echo','Echo']], s:[['wall','Wall'],['ceiling','Ceiling'],['floor','Floor'],['partition','New partition']] }
+    ru: {
+      problem:'Что беспокоит', surface:'Что звукоизолируем', system:'Выбранное решение', room:'Тип помещения', choose:'Не выбрано',
+      p:[['talk','Разговоры / телевизор'],['music','Музыка / басы'],['impact_upstairs','Топот / удары сверху'],['repair','Ремонт / перфоратор'],['impact_down','Мой топот слышат снизу'],['below','Разговоры / басы снизу'],['echo','Эхо / гул']],
+      s:[['wall','Стена'],['ceiling','Потолок'],['floor','Пол — ударный шум вниз'],['partition','Новая перегородка'],['acoustics','Акустика помещения']]
+    },
+    kz: {
+      problem:'Не мазалайды', surface:'Нені оқшаулаймыз', system:'Таңдалған шешім', room:'Бөлме түрі', choose:'Таңдалмаған',
+      p:[['talk','Әңгіме / теледидар'],['music','Музыка / бас'],['impact_upstairs','Үстіден қадам / соққы'],['repair','Жөндеу / перфоратор'],['impact_down','Менің қадамымды төменнен естиді'],['below','Әңгіме / бас төменнен'],['echo','Жаңғырық / гуіл']],
+      s:[['wall','Қабырға'],['ceiling','Төбе'],['floor','Еден — соққы шуын төменге азайту'],['partition','Жаңа қалқа'],['acoustics','Бөлме акустикасы']]
+    },
+    en: {
+      problem:'What bothers you', surface:'What are we treating', system:'Selected solution', room:'Room type', choose:'Not selected',
+      p:[['talk','Speech / TV'],['music','Music / bass'],['impact_upstairs','Footsteps / impacts above'],['repair','Drilling / renovation'],['impact_down','My footsteps disturb downstairs'],['below','Speech / bass from below'],['echo','Echo / reverberation']],
+      s:[['wall','Wall'],['ceiling','Ceiling'],['floor','Floor — impact noise downward'],['partition','New partition'],['acoustics','Room acoustics']]
+    }
   };
   function addOptions(C, select, first, rows) {
     select.appendChild(C.el('option', { value:'' }, [first]));
@@ -22,11 +34,14 @@
     var problem=C.el('select',{id:'f-problem',name:'problem'}); addOptions(C,problem,x.choose,x.p);
     var surface=C.el('select',{id:'f-surface',name:'surface'}); addOptions(C,surface,x.choose,x.s);
     var systemId=q.get('system')||''; var systemItem=systemId && C.findItem ? C.findItem(systemId) : null; var systemName=systemItem ? (typeof systemItem.name==='string'?systemItem.name:(systemItem.name[lang]||systemItem.name.ru)) : '';
+    var room=q.get('room')||'';
     var form=C.el('form',{class:'lead-form','data-lead-form':'',novalidate:''},[
       C.el('div',{class:'field'},[C.el('label',{for:'f-problem'},[x.problem]),problem]),
       C.el('div',{class:'field'},[C.el('label',{for:'f-surface'},[x.surface]),surface]),
+      room ? C.el('div',{class:'lead-context'},[C.el('span',{class:'caption u-muted'},[x.room]),C.el('strong',{},[room])]) : null,
       systemName ? C.el('div',{class:'lead-context'},[C.el('span',{class:'caption u-muted'},[x.system]),C.el('strong',{},[systemName])]) : null,
       C.el('input',{id:'f-system',name:'system',type:'hidden',value:systemId}),
+      C.el('input',{id:'f-room',name:'room',type:'hidden',value:room}),
       C.el('div',{class:'field'},[C.el('label',{for:'f-name'},[t('fName')]),C.el('input',{id:'f-name',name:'name',type:'text',autocomplete:'name',placeholder:t('fNamePh')})]),
       C.el('div',{class:'field'},[C.el('label',{for:'f-phone'},[t('fPhone')]),C.el('input',{id:'f-phone',name:'phone',type:'tel',inputmode:'numeric',autocomplete:'tel',placeholder:t('fPhonePh')}),C.el('p',{class:'caption field__error','data-phone-error':'',hidden:''},[t('fPhoneErr')])]),
       C.el('div',{class:'field'},[C.el('label',{for:'f-area'},[t('fArea')]),C.el('input',{id:'f-area',name:'area',type:'number',min:'1',step:'1',inputmode:'numeric',placeholder:t('fAreaPh')})]),

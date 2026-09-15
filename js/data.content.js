@@ -273,7 +273,7 @@ window.SITE = (function () {
       sectionZoneTopDesc: 'Перфоратор и удары по полу идут через перекрытие. Виброподвесы на потолке гасят удар ещё до того, как он дошёл до вас.',
       sectionZoneLeftDesc: 'Пылесос, лай, разговоры — всё это идёт по воздуху через стену. Дополнительная облицовка добавляет слой, который гасит воздушный шум.',
       sectionZoneRightDesc: 'Шаги, танцы, двигаемая мебель — идут и по воздуху, и по конструкции стены. Облицовка с упругой развязкой снижает обе составляющие.',
-      sectionZoneBottomDesc: 'Мощные колонки снизу дают и воздушный, и ударный шум одновременно. Развязка пола от перекрытия снижает то, что идёт через конструкцию.',
+      sectionZoneBottomDesc: 'Басы и разговоры снизу могут идти через перекрытие, стены, шахты и примыкания. Напольные системы с ΔLn,w предназначены прежде всего для снижения ударного шума, который уходит от вас вниз, поэтому здесь сначала нужна диагностика пути передачи.',
       compareTitle: 'Что у меня будет в квартире?',
       compareLead: 'Бескаркасная и каркасная система — разные по толщине и монтажу. Точные размеры называем на замере, здесь — из чего они состоят.',
       compareFrameless: 'Бескаркасная система',
@@ -439,7 +439,7 @@ window.SITE = (function () {
       sectionZoneTopDesc: 'Үстіден келетін дрель мен перфоратор дыбысы аражабын арқылы беріледі. Дірілге қарсы аспалар мен серпімді төбе аспасы соққыны сізге жеткенше басады.',
       sectionZoneLeftDesc: 'Қабырға арқылы шаңсорғыш, үру, әңгіме — ауа шуы. Қабырғаның қосымша қаптамасы дәл осы ауа арқылы келетін дыбысты басады.',
       sectionZoneRightDesc: 'Қадам, би, жиһазды жылжыту дыбысы ауа арқылы да, қабырғаның өзі арқылы да беріледі. Серпімді ажыратумен бірге сол қаптама екі құрамдас бөлікті де азайтады.',
-      sectionZoneBottomDesc: 'Төмендегі кинотеатр мен динамиктер — әдетте соққы және ауа шуы бірге. Еденнен бастаймыз: жабынды аражабыннан ажыратамыз, әрі қарай — өлшеу нәтижесіне қарай.',
+      sectionZoneBottomDesc: 'Төменнен келетін бас пен әңгіме жабын, қабырға, шахта және түйіспелер арқылы таралуы мүмкін. ΔLn,w еден жүйелері негізінен сізден төменге кететін соққы шуды азайтуға арналған, сондықтан мұнда алдымен берілу жолын анықтау қажет.',
       compareTitle: 'Пәтерімде не болады?',
       compareLead: 'Қаңқасыз және қаңқалы жүйе — қалыңдығы мен орнатылуы бойынша әртүрлі. Дәл өлшемдерді өлшеу кезінде айтамыз, мұнда — олардың құрамы.',
       compareFrameless: 'Қаңқасыз жүйе',
@@ -604,7 +604,7 @@ window.SITE = (function () {
       sectionZoneTopDesc: 'A drill or hammer drill above travels through the floor slab. Vibration hangers and a resilient ceiling suspension absorb the impact before it reaches you.',
       sectionZoneLeftDesc: 'A vacuum, barking, conversation through the wall \u2014 that\u2019s airborne noise. An added wall lining layer dampens exactly what travels through the air.',
       sectionZoneRightDesc: 'Footsteps, dancing, moved furniture travel both through the air and through the wall structure itself. The same lining with resilient decoupling reduces both parts.',
-      sectionZoneBottomDesc: 'A home cinema or speakers below is usually impact and airborne noise together. We start with the floor: decoupling the covering from the slab \u2014 the rest depends on the site survey.',
+      sectionZoneBottomDesc: 'Bass and speech from below may travel through the slab, walls, shafts and junctions. Floor systems rated by ΔLn,w are primarily intended to reduce impact noise travelling from you downward, so this case starts with identifying the transmission path.',
       compareTitle: 'What will this look like in my flat?',
       compareLead: 'Frameless and framed systems differ in thickness and installation. We give exact sizes at the site survey — here is what each is made of.',
       compareFrameless: 'Frameless system',
@@ -787,10 +787,10 @@ window.SITE = (function () {
      декора — у декоративных панелей поля place нет, ведём просто якорем. */
   var scenarios = [
     {
-      id: 'neighbors', img: 'assets/rooms/room2.webp', filterPlace: 'partition',
-      ru: { title: 'Слышу соседей за стеной', desc: 'Разговоры, телевизор, ссоры через стену. Ставим перегородку или облицовку прямо на существующую стену — без перепланировки.' },
-      kz: { title: 'Қабырға артындағы көршіні естимін', desc: 'Сөйлесу, теледидар, дауыс қабырға арқылы естіледі. Қалқа немесе қаптама тікелей бар қабырғаға орнатылады — қайта жоспарлаусыз.' },
-      en: { title: 'I hear the neighbours through the wall', desc: 'Conversations, TV, arguments through the wall. A partition or facing goes straight onto the existing wall — no rebuilding.' }
+      id: 'neighbors', img: 'assets/rooms/room2.webp', filterPlace: 'wall',
+      ru: { title: 'Слышу соседей за стеной', desc: 'Разговоры, телевизор, ссоры через существующую стену. Подбираем дополнительную облицовку стены без перепланировки.' },
+      kz: { title: 'Қабырға артындағы көршіні естимін', desc: 'Сөйлесу, теледидар, дауыс бар қабырға арқылы естіледі. Қайта жоспарлаусыз қабырғаға қосымша дыбыс оқшаулағыш қаптама таңдаймыз.' },
+      en: { title: 'I hear the neighbours through the wall', desc: 'Conversations, TV and voices through an existing wall. We select an additional wall lining without rebuilding the room.' }
     },
     {
       id: 'upstairs', img: 'assets/rooms/room3.webp', filterPlace: 'ceiling',
@@ -806,9 +806,9 @@ window.SITE = (function () {
     },
     {
       id: 'downstairs', img: 'assets/rooms/room5.webp', filterPlace: 'floor',
-      ru: { title: 'Шум снизу', desc: 'Кинотеатр, колонки, разговоры у соседей снизу. Работаем по полу: развязываем покрытие от перекрытия, чтобы звук не проходил вверх.' },
-      kz: { title: 'Төменнен шыққан шу', desc: 'Төмендегі көршілердің кинотеатры, динамиктері, әңгімесі. Еденмен жұмыс істейміз: дыбыс жоғары өтпеуі үшін жабынды аражабыннан ажыратамыз.' },
-      en: { title: 'Noise from below', desc: 'A home cinema, loudspeakers or conversation downstairs. We work on the floor: decoupling the finish from the slab so sound doesn\u2019t travel up.' }
+      ru: { title: 'Не хочу мешать соседям снизу', desc: 'Топот, дети, стулья и падение предметов передают ударный шум в перекрытие. Напольная система снижает его передачу вниз; для неё применяется показатель ΔLn,w.' },
+      kz: { title: 'Төмендегі көршілерге кедергі жасағым келмейді', desc: 'Қадам, балалардың жүгірісі, орындық және заттардың құлауы соққы шуын жабынға береді. Еден жүйесі оның төменге берілуін азайтады; бұл үшін ΔLn,w көрсеткіші қолданылады.' },
+      en: { title: 'I do not want to disturb neighbours below', desc: 'Footsteps, children, chairs and dropped objects transmit impact noise into the slab. A floor system reduces transmission downward and is rated by ΔLn,w.' }
     },
     {
       id: 'echo', img: 'assets/gal/hall-panels.webp', anchor: 'decor',

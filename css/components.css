@@ -783,3 +783,57 @@ body.no-scroll { overflow: hidden; }
 .pro-jump{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-5)}
 .pro-section{scroll-margin-top:96px}
 .pro-section>h2{margin-bottom:var(--space-5)}
+
+/* v16 — compact mobile scenario selector + corrected diagnostic states */
+.cutaway__diagnostic-note,
+.problem-picker__diagnostic {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: var(--bg-raised);
+}
+.cutaway__diagnostic-note { padding: var(--space-4); margin-top: var(--space-4); color: var(--text-muted); }
+.problem-picker__note { margin-bottom: var(--space-5); max-width: 900px; }
+.problem-picker__diagnostic { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-4); grid-column: 1 / -1; }
+.problem-picker__diagnostic .btn { align-self: flex-start; }
+.problem-picker__card--decor { overflow: hidden; }
+.problem-picker__decor-img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: var(--space-4); }
+
+@media (max-width: 720px) {
+  .cutaway__mobile-list { display: none; }
+  .cutaway__mobile-tabs {
+    display: flex;
+    gap: var(--space-2);
+    overflow-x: auto;
+    padding: 2px 2px var(--space-3);
+    margin-bottom: var(--space-4);
+    scrollbar-width: thin;
+    scroll-snap-type: x proximity;
+  }
+  .cutaway__mobile-tab {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    border: 1px solid var(--border);
+    background: var(--bg-raised);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 10px 14px;
+    font: inherit;
+    font-size: var(--fs-caption);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .cutaway__mobile-tab--active {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .cutaway__mobile-detail {
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+  }
+  .cutaway__mobile-detail h3 { margin-bottom: var(--space-2); }
+  .cutaway__mobile-detail > p { color: var(--text-muted); }
+  .cutaway__mobile-detail .cutaway__actions { margin-top: var(--space-4); }
+}
