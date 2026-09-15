@@ -145,7 +145,15 @@
   <main id="main">
     <section class="section hero-cutaway" data-mount="section-cutaway">
       <div class="container">
-        <div data-mount="hero-slider"></div>
+        <div class="hero__text">
+          <p class="caption u-accent hero__eyebrow" data-i18n="made"></p>
+          <h1 class="hero__offer" data-i18n="offerTitle"></h1>
+          <p class="lead hero__subtitle" data-i18n="offerSubtitle"></p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="contacts.html" data-analytics="cta_hero_click" data-i18n="cta"></a>
+            <a class="btn btn--secondary" href="catalog.html" data-analytics="hero_catalog_click" data-i18n="sectionCatalogCta">Смотреть в каталоге</a>
+          </div>
+        </div>
 
         <div class="cutaway">
           <div class="cutaway__figure">
@@ -163,12 +171,39 @@
       </div>
     </section>
 
-    <!-- Интерактивный разрез уже выполняет роль первого сценарного входа; отдельный дублирующий блок удалён в v16. -->
-    <section class="section section--object-zones" data-mount="solution-zones"></section>
-    <section class="section section--outcomes" data-mount="outcomes"></section>
-    <section class="section section--pricing" data-mount="pricing"></section>
-    <section class="section section--picker" data-mount="problem-picker"></section>
+    <section class="section section--presentation">
+      <div class="container">
+        <section class="presentation-carousel" aria-label="Презентация SILENCE" data-presentation-carousel>
+          <div class="presentation-carousel__head">
+            <p class="caption u-accent hero__eyebrow">СДЕЛАНО В КАЗАХСТАНЕ</p>
+            <h2 class="presentation-carousel__title">Материалы и решения SILENCE</h2>
+            <p class="lead presentation-carousel__lead">Подборка ключевых материалов, панелей и декоративно-акустических решений из журнала SILENCE — в едином формате и без разнобоя по стилю.</p>
+          </div>
+          <div class="presentation-carousel__viewport">
+            <div class="presentation-carousel__track" data-carousel-track>
+              <article class="presentation-slide"><img src="assets/journal_slides/journal-04.webp" alt="SoundFiber"><div class="presentation-slide__caption"><h2>SoundFiber</h2><p>Акустическое нетканое иглопробивное полотно с высокими звукопоглощающими и демпфирующими свойствами.</p></div></article>
+              <article class="presentation-slide"><img src="assets/journal_slides/journal-05.webp" alt="VibroGuard"><div class="presentation-slide__caption"><h2>VibroGuard</h2><p>Композитный лист с демпфирующим слоем для снижения вибраций и воздушного шума.</p></div></article>
+              <article class="presentation-slide"><img src="assets/journal_slides/journal-06.webp" alt="Панель Silence стена"><div class="presentation-slide__caption"><h2>Панель «Silence стена»</h2><p>Панель дополнительной звукоизоляции стен с индексом Rw до 16 дБ в зависимости от монтажа.</p></div></article>
+              <article class="presentation-slide"><img src="assets/journal_slides/journal-07.webp" alt="Панель Silence потолок/стена"><div class="presentation-slide__caption"><h2>Панель «Silence потолок/стена»</h2><p>Решение для потолков и стен: многослойная структура, быстрый монтаж и готовность к чистовой отделке.</p></div></article>
+              <article class="presentation-slide"><img src="assets/journal_slides/journal-08.webp" alt="Плита Silence пол"><div class="presentation-slide__caption"><h2>Плита «Silence пол»</h2><p>Плита для межэтажных перекрытий, помогающая снизить передачу ударного шума на нижние этажи.</p></div></article>
+              <article class="presentation-slide"><img src="assets/journal_slides/journal-09.webp" alt="EchoGuard"><div class="presentation-slide__caption"><h2>EchoGuard</h2><p>Трёхслойная акустическая панель для шумо- и виброизоляции жилых и офисных помещений.</p></div></article>
+              <article class="presentation-slide"><img src="assets/journal_slides/journal-12.webp" alt="AcousticWood Rhomb and Hexa"><div class="presentation-slide__caption"><h2>AcousticWood Rhomb / Hexa</h2><p>Декоративно-акустические панели из натуральных материалов для выразительных интерьерных стен.</p></div></article>
+              <article class="presentation-slide"><img src="assets/journal_slides/journal-13.webp" alt="AcousticWood Line and Art"><div class="presentation-slide__caption"><h2>AcousticWood Line / Art</h2><p>Линейный рельеф и художественная композиция свободной формы для современных интерьеров.</p></div></article>
+              <article class="presentation-slide"><img src="assets/journal_slides/journal-14.webp" alt="ReverBoard Spiral and Quad"><div class="presentation-slide__caption"><h2>ReverBoard Spiral / Quad</h2><p>Интерьерные акустические панели с трёхмерной структурой для стен и потолков.</p></div></article>
+              <article class="presentation-slide"><img src="assets/journal_slides/journal-15.webp" alt="ReverBoard Rhomb and Hexa"><div class="presentation-slide__caption"><h2>ReverBoard Rhomb / Hexa</h2><p>Геометрические решения для модульных композиций и акцентных интерьерных зон.</p></div></article>
+            </div>
+            <button class="presentation-carousel__nav presentation-carousel__nav--prev" type="button" data-carousel-prev aria-label="Предыдущий слайд">‹</button>
+            <button class="presentation-carousel__nav presentation-carousel__nav--next" type="button" data-carousel-next aria-label="Следующий слайд">›</button>
+          </div>
+          <div class="presentation-carousel__dots" data-carousel-dots aria-label="Навигация по слайдам"></div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Сразу после карусели показываем реальные объекты. -->
     <section class="section section--proof" data-mount="projects-teaser"></section>
+    <section class="section section--outcomes" data-mount="outcomes"></section>
+    <section class="section section--object-zones" data-mount="solution-zones"></section>
     <section class="section section--process" data-mount="process"></section>
     <section class="section section--cta section--cta-mid" data-mount="site-cta"></section>
     <section class="section section--compare" data-mount="compare"></section>
@@ -217,21 +252,18 @@
   <script src="js/data.content.js"></script>
   <script src="js/data.catalog.js"></script>
   <script src="js/data.norms.js"></script>
-  <script src="js/data.pricing.js"></script>
   <script src="js/core.js"></script>
-  <script src="js/ui.problem-picker.js"></script>
-  <script src="js/ui.hero-slider.js"></script>
   <script src="js/ui.solution-zones.js"></script>
   <script src="js/ui.outcomes.js"></script>
   <script src="js/ui.site-cta.js"></script>
   <script src="js/ui.section.js"></script>
   <script src="js/ui.compare.js"></script>
   <script src="js/ui.process.js"></script>
-  <script src="js/ui.pricing.js"></script>
   <script src="js/ui.trust.js"></script>
   <script src="js/ui.faq.js"></script>
   <script src="js/ui.catalog.js"></script>
   <script src="js/ui.projects.js"></script>
+  <script src="js/ui.presentation-carousel.js"></script>
   <script src="js/config.js"></script>
   <script src="js/analytics.js"></script>
   <script src="js/app.js"></script>
