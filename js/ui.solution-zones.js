@@ -4,7 +4,7 @@
   var COPY = {
     ru: {
       title: 'Решения по типу объекта',
-      lead: 'Разделили направления отдельно, чтобы не смешивать квартиру, коммерцию и большие залы в одном блоке.',
+      lead: 'От жилой комнаты до общественного пространства — разные задачи требуют разных решений.',
       cta: 'Получить расчёт',
       items: [
         {
@@ -53,7 +53,7 @@
     },
     kz: {
       title: 'Нысан түрі бойынша шешімдер',
-      lead: 'Пәтер, коммерция және үлкен залдарды бір блокқа араластырмау үшін бағыттарды бөлек шығардық.',
+      lead: 'Тұрғын бөлмеден қоғамдық кеңістікке дейін — әр міндетке өз шешімі.',
       cta: 'Есеп алу',
       items: [
         { id:'apartments', tab:'Пәтерлер', img:'assets/solutions/apartments.webp', title:'Пәтерлердің дыбыс оқшаулауы', text:'Қабырға, төбе және еден үшін типтік пәтер сценарийлері: әңгіме, теледидар, жоғарыдан қадам, бас және үй кинотеатры.' },
@@ -66,7 +66,7 @@
     },
     en: {
       title: 'Solutions by facility type',
-      lead: 'The directions are separated so flats, commercial spaces and large halls are not mixed in one noisy block.',
+      lead: 'From living rooms to public spaces — different tasks need different solutions.',
       cta: 'Get a quote',
       items: [
         { id:'apartments', tab:'Apartments', img:'assets/solutions/apartments.webp', title:'Apartment soundproofing', text:'Walls, ceilings and floors for common apartment scenarios: speech, TV, footsteps from above, bass and home cinema.' },
@@ -87,8 +87,7 @@
 
     node.innerHTML = '';
     var wrap = C.el('div', { class: 'container object-zones' });
-    wrap.appendChild(C.el('h2', {}, [copy.title]));
-    wrap.appendChild(C.el('p', { class: 'lead object-zones__lead' }, [copy.lead]));
+    wrap.appendChild(global.SILENCE_V27_UI.heading('04',copy.title,copy.lead));
 
     var tabs = C.el('div', { class: 'object-zones__tabs', role: 'tablist', 'aria-label': copy.title });
     var panel = C.el('div', { class: 'object-zones__panel', id:'object-zone-panel', role:'tabpanel' });
@@ -101,10 +100,11 @@
         C.el('img', { src: item.img, alt: item.title, width: '1448', height: '1086', loading: 'lazy', decoding: 'async' })
       ]));
       panel.appendChild(C.el('div', { class: 'object-zones__copy' }, [
+        C.el('p',{class:'eyebrow'},[global.SILENCE_V27_UI.t('visualization')]),
         C.el('h3', {}, [item.title]),
         C.el('p', {}, [item.text]),
         C.el('div', { class: 'object-zones__actions' }, [
-          C.el('a', { class: 'btn btn--primary', href: 'contacts.html?room=' + encodeURIComponent(item.tab), 'data-analytics': 'object_zone_quote_click', 'data-analytics-value': item.id }, [copy.cta]),
+          C.el('a', { class: 'btn btn--primary', href: 'contacts.html?room=' + encodeURIComponent(item.tab), 'data-analytics': 'object_zone_quote_click', 'data-analytics-value': item.id }, [global.SILENCE_V27_UI.t('cta')]),
           C.el('a', { class: 'btn btn--secondary', href: 'catalog.html', 'data-analytics': 'object_zone_catalog_click', 'data-analytics-value': item.id }, [lang === 'kz' ? 'Каталогты ашу' : (lang === 'en' ? 'Open catalogue' : 'Смотреть каталог')])
         ])
       ]));

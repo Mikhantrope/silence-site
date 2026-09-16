@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>__SITE_URL__/</loc><priority>1.0</priority></url>
-  <url><loc>__SITE_URL__/catalog.html</loc><priority>0.8</priority></url>
-  <url><loc>__SITE_URL__/systems.html</loc><priority>0.8</priority></url>
-  <url><loc>__SITE_URL__/projects.html</loc><priority>0.8</priority></url>
-  <url><loc>__SITE_URL__/pro.html</loc><priority>0.7</priority></url>
-  <url><loc>__SITE_URL__/contacts.html</loc><priority>0.7</priority></url>
+  <url><loc>https://mikhantrope.github.io/silence-site/</loc><priority>1.0</priority></url>
+  <url><loc>https://mikhantrope.github.io/silence-site/catalog.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mikhantrope.github.io/silence-site/systems.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mikhantrope.github.io/silence-site/projects.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mikhantrope.github.io/silence-site/pro.html</loc><priority>0.7</priority></url>
+  <url><loc>https://mikhantrope.github.io/silence-site/contacts.html</loc><priority>0.7</priority></url>
 </urlset>

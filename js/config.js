@@ -5,6 +5,7 @@
    См. п.6.1 ТЗ: поля tg остаются пустыми, в репозитории токенов нет. */
 window.SILENCE_CONFIG = {
   endpoint: '/api/lead',
+  leadMode: 'whatsapp', // v27 form intentionally opens a prepared message; user sends it.
   tg: {
     token: '',
     chatId: ''

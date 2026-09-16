@@ -58,7 +58,7 @@
       en: 'SILENCE \u2014 wall, ceiling and floor soundproofing in Astana'
     },
     catalog: {
-      ru: 'Каталог систем звукоизоляции \u2014 SILENCE Астана',
+      ru: 'Каталог материалов \u2014 SILENCE Астана',
       kz: 'Дыбыс оқшаулау жүйелерінің каталогы \u2014 SILENCE Астана',
       en: 'Soundproofing systems catalogue \u2014 SILENCE Astana'
     },
@@ -73,12 +73,12 @@
       en: 'For professionals \u2014 SILENCE acoustic solutions and standards'
     },
     projects: {
-      ru: 'Объекты SILENCE \u2014 примеры монтажа звукоизоляции',
+      ru: 'Объекты из презентации SILENCE',
       kz: 'SILENCE объектілері \u2014 дыбыс оқшаулау монтажының мысалдары',
       en: 'SILENCE projects \u2014 soundproofing installation examples'
     },
     contacts: {
-      ru: 'Заявка на расчёт звукоизоляции \u2014 SILENCE Астана',
+      ru: 'Консультация специалиста \u2014 SILENCE Астана',
       kz: 'Дыбыс оқшаулау есебіне өтінім \u2014 SILENCE Астана',
       en: 'Request a soundproofing quote \u2014 SILENCE Astana'
     }
@@ -244,37 +244,18 @@
 
 
   function initMobileMenu() {
-    var header=document.querySelector('.site-header'), C=global.SILENCE_CORE;
-    var nav=header && header.querySelector('.site-nav'), list=nav && nav.querySelector('.site-nav__list');
-    var actions=header && header.querySelector('.site-header__actions');
-    if(!header||!nav||!list||!actions||header.querySelector('[data-mobile-menu-btn]')) return;
-    var btn=C.el('button',{type:'button',class:'mobile-menu-btn','data-mobile-menu-btn':'','aria-expanded':'false','aria-controls':'mobile-site-menu'},[C.el('span'),C.el('span'),C.el('span')]);
-    actions.insertBefore(btn,actions.firstChild);
-    var panel=C.el('div',{id:'mobile-site-menu',class:'mobile-menu',hidden:''});
-    var cloned=list.cloneNode(true);cloned.className='mobile-menu__list';panel.appendChild(cloned);
-    var extras=C.el('div',{class:'mobile-menu__extras'});
-    nav.querySelectorAll('[data-role="lang-switch"], [data-role="theme-switch"]').forEach(function(n){extras.appendChild(n.cloneNode(true));});
-    panel.appendChild(extras);
-    var contacts=(global.SITE||{}).contacts||{};
-    panel.appendChild(C.el('div',{class:'mobile-menu__contacts'},[
-      C.el('a',{class:'btn btn--secondary',href:contacts.phoneHref||'#','data-analytics':'phone_click_menu'},[contacts.phone||'']),
-      C.el('a',{class:'btn btn--primary',href:contacts.whatsapp||'#','data-analytics':'whatsapp_click_menu'},['WhatsApp'])
-    ]));
-    header.appendChild(panel);
-    function labels(){
-      var lang=C.getLang();
-      btn.setAttribute('aria-label',panel.hidden?(lang==='kz'?'Мәзірді ашу':lang==='en'?'Open menu':'Открыть меню'):(lang==='kz'?'Мәзірді жабу':lang==='en'?'Close menu':'Закрыть меню'));
-    }
-    function close(focus){panel.hidden=true;btn.setAttribute('aria-expanded','false');document.body.classList.remove('mobile-menu-open');labels();if(focus)btn.focus({preventScroll:true});}
-    btn.addEventListener('click',function(){var open=panel.hidden;panel.hidden=!open;btn.setAttribute('aria-expanded',String(open));document.body.classList.toggle('mobile-menu-open',open);labels();});
+    var C=global.SILENCE_CORE,header=document.querySelector('.header27'),btn=document.querySelector('[data-mobile-menu-btn]'),panel=document.getElementById('mobile-site-menu');if(!header||!btn||!panel)return;
+    var list=header.querySelector('.site-nav__list').cloneNode(true);list.className='mobile-menu__list';panel.appendChild(list);
+    panel.appendChild(C.el('a',{class:'btn btn--primary',href:'contacts.html','data-i18n':'cta'},[C.t('cta',C.getLang())]));
+    function label(){btn.setAttribute('aria-label',C.getLang()==='kz'?(panel.hidden?'Мәзірді ашу':'Мәзірді жабу'):C.getLang()==='en'?(panel.hidden?'Open menu':'Close menu'):(panel.hidden?'Открыть меню':'Закрыть меню'));}
+    function close(focus){panel.hidden=true;btn.setAttribute('aria-expanded','false');label();if(focus)btn.focus({preventScroll:true});}
+    btn.addEventListener('click',function(){panel.hidden=!panel.hidden;btn.setAttribute('aria-expanded',String(!panel.hidden));label();});
     panel.addEventListener('click',function(e){if(e.target.closest('a'))close(false);});
-    extras.querySelectorAll('[data-lang]').forEach(function(n){n.addEventListener('click',function(){C.applyLang(n.getAttribute('data-lang'));});});
-    extras.querySelectorAll('[data-theme-choice]').forEach(function(n){n.addEventListener('click',function(){C.applyTheme(n.getAttribute('data-theme-choice'));});});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden){e.preventDefault();close(true);}});
     document.addEventListener('click',function(e){if(!panel.hidden&&!header.contains(e.target))close(false);});
-    document.addEventListener('silence:lang',labels);
-    document.addEventListener('silence:overlay-open',function(){close(false);});
-    global.addEventListener('resize',function(){if(global.innerWidth>1279)close(false);});
-    labels();
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden){e.preventDefault();close(true);}});
+    global.addEventListener('resize',function(){if(innerWidth>=1180)close(false);});document.addEventListener('silence:overlay-open',function(){close(false);});document.addEventListener('silence:lang',label);label();
+    var language=header.querySelector('[data-language]'),theme=header.querySelector('[data-theme-toggle]');language.value=C.getLang();language.addEventListener('change',function(){C.applyLang(language.value);});
+    function themeLabel(){theme.setAttribute('aria-label',C.getLang()==='kz'?'Тақырыпты ауыстыру':C.getLang()==='en'?'Switch colour theme':'Переключить тему');theme.setAttribute('aria-pressed',String(C.getTheme()==='dark'));}
+    theme.addEventListener('click',function(){C.applyTheme(C.getTheme()==='dark'?'light':'dark');});document.addEventListener('silence:theme',themeLabel);document.addEventListener('silence:lang',themeLabel);themeLabel();
   }
 }(window));

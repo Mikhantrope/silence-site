@@ -1,99 +1,23 @@
-(function (global) {
-  'use strict';
-
-  var COPY = {
-    ru: {
-      title: 'Бесплатная консультация инженера-акустика',
-      lead: 'Оставьте имя и телефон — специалист свяжется с вами и уточнит задачу.',
-      policy: 'Я даю согласие на обработку своих персональных данных и принимаю политику конфиденциальности.',
-      ads: 'Я согласен получать информационные и рекламные сообщения.',
-      send: 'Отправить'
-    },
-    kz: {
-      title: 'Инженер-акустиктің тегін кеңесі',
-      lead: 'Атыңыз бен телефон нөміріңізді қалдырыңыз — маман хабарласып, міндетіңізді нақтылайды.',
-      policy: 'Жеке деректерімді өңдеуге келісім беремін және құпиялылық саясатымен келісемін.',
-      ads: 'Ақпараттық және жарнамалық хабарламаларды алуға келісемін.',
-      send: 'Жіберу'
-    },
-    en: {
-      title: 'Free consultation with an acoustic engineer',
-      lead: 'Leave your name and phone number — a specialist will contact you and clarify the task.',
-      policy: 'I consent to the processing of my personal data and accept the privacy policy.',
-      ads: 'I agree to receive informational and promotional messages.',
-      send: 'Send'
-    }
-  };
-
-  function render(node) {
-    var existing=node.querySelector('[data-lead-form]');
-    if(existing && existing._submitting)return; /* Do not destroy an in-flight request on language switch. */
-    var C = global.SILENCE_CORE;
-    var SITE = global.SITE;
-    var lang = C.getLang();
-    var x = COPY[lang] || COPY.ru;
-    var t = function (k) { return C.t(k, lang); };
-    var q = new URLSearchParams(global.location.search);
-
-    var saved = {};
-    node.querySelectorAll('input').forEach(function (input) {
-      saved[input.name] = {value:input.value,checked:input.checked};
-    });
-    node.innerHTML = '';
-    var wrap = C.el('div', { class: 'container contacts-page' });
-    var shell = C.el('div', { class: 'contacts-page__shell' });
-
-    shell.appendChild(C.el('div', { class: 'contacts-page__intro' }, [
-      C.el('img', { class: 'contacts-page__icon', src: 'assets/ico-engineer.svg', alt: '', loading: 'eager' }),
-      C.el('h1', {}, [x.title]),
-      C.el('p', { class: 'lead' }, [x.lead])
-    ]));
-
-    var form = C.el('form', { class: 'lead-form contacts-page__form', 'data-lead-form': '', novalidate: '' }, [
-      C.el('div', { class: 'field' }, [
-        C.el('label', { for: 'f-name' }, [t('fName')]),
-        C.el('input', { id: 'f-name', name: 'name', type: 'text', autocomplete: 'name', required:'', maxlength:'100', placeholder: t('fNamePh') })
-      ]),
-      C.el('div', { class: 'field' }, [
-        C.el('label', { for: 'f-phone' }, [t('fPhone')]),
-        C.el('input', { id: 'f-phone', name: 'phone', type: 'tel', inputmode: 'tel', autocomplete: 'tel', required:'', maxlength:'30', placeholder: t('fPhonePh') }),
-        C.el('p', { class: 'caption field__error', 'data-phone-error': '', hidden: '' }, [t('fPhoneErr')])
-      ]),
-
-      /* Funnel context remains hidden and is sent to the manager, but the visitor sees only name + phone. */
-      C.el('input', { id: 'f-problem', name: 'problem', type: 'hidden', value: q.get('problem') || '' }),
-      C.el('input', { id: 'f-surface', name: 'surface', type: 'hidden', value: q.get('surface') || '' }),
-      C.el('input', { id: 'f-system', name: 'system', type: 'hidden', value: q.get('system') || '' }),
-      C.el('input', { id: 'f-room', name: 'room', type: 'hidden', value: q.get('room') || '' }),
-      C.el('input', { id: 'f-area', name: 'area', type: 'hidden', value: q.get('area') || '' }),
-
-      C.el('div', { class: 'hp', 'aria-hidden': 'true' }, [
-        C.el('label', { for: 'f-company' }, ['Company']),
-        C.el('input', { id: 'f-company', name: 'company', type: 'text', tabindex: '-1', autocomplete: 'off' })
-      ]),
-      C.el('div', { class: 'contacts-page__checks' }, [
-        C.el('label', { class: 'contacts-page__check', for: 'f-policy' }, [
-          C.el('input', { id: 'f-policy', name: 'policy', type: 'checkbox', required: 'required' }),
-          C.el('span', {}, [x.policy])
-        ]),
-        C.el('label', { class: 'contacts-page__check', for: 'f-ads' }, [
-          C.el('input', { id: 'f-ads', name: 'ads', type: 'checkbox' }),
-          C.el('span', {}, [x.ads])
-        ])
-      ]),
-      C.el('button', { type: 'submit', class: 'btn contacts-page__submit', 'data-analytics': 'form_submit_click' }, [x.send]),
-      C.el('p', { class: 'caption lead-form__status contacts-page__status', 'data-form-status': '', role: 'status' })
-    ]);
-
-    shell.appendChild(form);
-    wrap.appendChild(shell);
-    node.appendChild(wrap);
-    form.querySelectorAll('input').forEach(function (input) {
-      if(saved[input.name]) {input.value=saved[input.name].value;input.checked=saved[input.name].checked;}
-    });
-    if(global.SILENCE_FORM_INIT)global.SILENCE_FORM_INIT();
-  }
-
-  global.SILENCE_PAGES = global.SILENCE_PAGES || {};
-  global.SILENCE_PAGES.contacts = render;
+/* v27: honest static-site consultation handoff; no silent submission. */
+(function(g){'use strict';
+ function render(node){var C=g.SILENCE_CORE,U=g.SILENCE_V27_UI,D=g.SILENCE_V27,lang=C.getLang(),standalone=node.dataset.mount==='contacts',saved={};
+ function tr(r,k,e){return lang==='kz'?k:lang==='en'?e:r;}
+ node.querySelectorAll('input').forEach(function(f){saved[f.name]={value:f.value,checked:f.checked};});node.innerHTML='';
+ var p=new URLSearchParams(location.search),context=p.get('project')||p.get('room')||'';var id=p.get('system'),item=D.products.find(function(i){return i.id===id;})||C.findItem(id||'');if(item)context=item.title||item.name;
+ if(p.get('topic')==='protocol')context=tr('Протокол испытаний','Сынақ хаттамасы','Test report');
+ var labels={top:tr('Шум сверху','Жоғарыдан шу','Noise above'),left:tr('Шум за стеной','Қабырға артындағы шу','Noise behind the wall'),right:tr('Музыка через стену','Қабырға арқылы музыка','Music through the wall'),bottom:tr('Шум снизу','Төменнен шу','Noise below'),below:tr('Шум снизу','Төменнен шу','Noise below'),'impact-down':tr('Ударный шум от моего пола','Менің еденімнен соққы шу','Impact noise from my floor'),echo:tr('Эхо в помещении','Бөлмедегі жаңғырық','Room reverberation'),talk:tr('Разговоры','Әңгіме','Speech'),music:tr('Музыка','Музыка','Music'),repair:tr('Ремонт','Жөндеу','Renovation')};
+ if(!context&&p.get('problem'))context=labels[p.get('problem')]||p.get('problem');if(!standalone&&g.SILENCE_CONSULTATION_CONTEXT)context=g.SILENCE_CONSULTATION_CONTEXT.label;
+ var wrap=C.el('div',{class:'container consultation27'}),copy=C.el('div',{class:'consultation27-copy'},[C.el('p',{class:'eyebrow'},[tr('Обсудим вашу задачу','Міндетіңізді талқылайық','Let’s discuss your task')]),C.el(standalone?'h1':'h2',{},[U.t('cta')]),C.el('p',{class:'lead'},[U.t('formLead')]),C.el('a',{class:'contact27-phone',href:g.SITE.contacts.phoneHref,'data-analytics':'phone_click_consultation'},[g.SITE.contacts.phone]),C.el('p',{class:'caption'},[C.t('headerAddress',lang)])]);
+ var form=C.el('form',{class:'consultation27-form','data-lead-form':'',novalidate:'','data-wa-form':''}),nameid='consult-name',phoneid='consult-phone';
+ function field(label,id,name,type,placeholder){return C.el('div',{class:'field'},[C.el('label',{for:id},[label]),C.el('input',{id:id,name:name,type:type,required:'',autocomplete:name==='name'?'name':'tel',inputmode:name==='phone'?'tel':'text',maxlength:name==='name'?'100':'30',placeholder:placeholder})]);}
+ form.appendChild(field(tr('Имя','Аты','Name'),nameid,'name','text',tr('Как к вам обращаться','Атыңыз','Your name')));form.appendChild(field(tr('Телефон','Телефон','Phone'),phoneid,'phone','tel','+7 700 000 00 00'));
+ var ctx=C.el('p',{class:'consultation27-context','data-form-context':''},context?[U.t('formContext')+': '+context]:[]);ctx.hidden=!context;form._context=context;form.appendChild(ctx);
+ form.appendChild(C.el('label',{class:'consent27'},[C.el('input',{type:'checkbox',name:'consent',required:''}),C.el('span',{},[U.t('formConsent')])]));
+ form.appendChild(C.el('button',{type:'submit',class:'btn btn--primary'},[U.t('waSubmit')]));form.appendChild(C.el('p',{class:'source27-note'},[U.t('waNote')]));form.appendChild(C.el('p',{class:'form27-status',role:'status','aria-live':'polite','data-form-status':'',id:'consult-status'}));
+ form.appendChild(C.el('details',{class:'privacy27'},[C.el('summary',{},[U.t('dataNote')]),C.el('p',{},[U.t('dataText')])]));
+ Object.keys(saved).forEach(function(k){var f=form.elements.namedItem(k);if(f){f.value=saved[k].value;f.checked=saved[k].checked;}});
+ wrap.appendChild(copy);wrap.appendChild(form);node.appendChild(wrap);g.SILENCE_WIRE_CONSULTATION(form);
+ if(node._contextHandler)document.removeEventListener('silence:problem',node._contextHandler);node._contextHandler=function(e){if(standalone)return;form._context=e.detail.label;ctx.textContent=U.t('formContext')+': '+e.detail.label;ctx.hidden=false;};document.addEventListener('silence:problem',node._contextHandler);
+ }
+ g.SILENCE_PAGES=g.SILENCE_PAGES||{};g.SILENCE_PAGES.contacts=render;g.SILENCE_PAGES.consultation27=render;
 }(window));

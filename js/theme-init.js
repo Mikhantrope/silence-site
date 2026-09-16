@@ -10,6 +10,6 @@
   try { stored = window.localStorage.getItem(KEY); } catch (e) { /* приватный режим */ }
   var theme = stored === 'light' || stored === 'dark'
     ? stored
-    : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    : 'light';
   document.documentElement.setAttribute('data-theme', theme);
 })();

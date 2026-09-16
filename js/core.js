@@ -446,7 +446,7 @@
     }
 
     if (item.place && item.id) {
-      var quoteText = lang === 'kz' ? 'Осы жүйені есептеу' : (lang === 'en' ? 'Calculate this system' : 'Рассчитать эту систему');
+      var quoteText = lang === 'kz' ? 'Осы жүйені есептеу' : (lang === 'en' ? 'Calculate this system' : 'Консультация специалиста');
       var quote = el('a', {
         class: 'btn btn--primary overlay-card__quote',
         href: 'contacts.html?system=' + encodeURIComponent(item.id) + '&surface=' + encodeURIComponent(item.place),

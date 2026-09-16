@@ -3,4 +3,4 @@ Allow: /
 Disallow: /api/
 Disallow: /data/
 
-Sitemap: __SITE_URL__/sitemap.xml
+Sitemap: https://mikhantrope.github.io/silence-site/sitemap.xml
