@@ -1,0 +1,1119 @@
+{
+  "version": 28,
+  "date": "2026-09-16",
+  "scope": "Targeted marker/subject changes only; not a full site recertification.",
+  "browser": "Chromium via Playwright; viewport and touch emulation",
+  "harness": "Top-level local navigation blocked by environment. HTML loaded with set_content and intercepted local resources. CSP removed only from test DOM; fonts fall back to system. Final WhatsApp assign captured in test-only script. Production files are not instrumented.",
+  "not_tested": [
+    "Physical phones",
+    "Safari/WebKit",
+    "Real WhatsApp message delivery",
+    "Live GitHub deployment",
+    "HTTP CSP enforcement"
+  ],
+  "page_combinations": [
+    {
+      "page": "index.html",
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "catalog.html",
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "systems.html",
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "projects.html",
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "pro.html",
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "contacts.html",
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "catalog.html",
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "systems.html",
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "projects.html",
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "pro.html",
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "contacts.html",
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "catalog.html",
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "systems.html",
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "projects.html",
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "pro.html",
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "contacts.html",
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "catalog.html",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "systems.html",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "projects.html",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "pro.html",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "contacts.html",
+      "width": 1440,
+      "horizontalOverflow": false
+    }
+  ],
+  "checks": [
+    {
+      "name": "index.html/320: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "index.html/320: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320: square house",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320/top: whole-room target >=44px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320/top: room selected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320/top: no added autoscroll",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "320/top: geometry unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320/top: no form subject node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320/left: whole-room target >=44px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320/left: room selected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320/left: no added autoscroll",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "320/left: geometry unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320/left: no form subject node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320/right: whole-room target >=44px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320/right: room selected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320/right: no added autoscroll",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "320/right: geometry unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320/right: no form subject node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320/bottom: whole-room target >=44px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320/bottom: room selected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320/bottom: no added autoscroll",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "320/bottom: geometry unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320/bottom: no form subject node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320: compact marker, no animated ring",
+      "passed": true,
+      "detail": {
+        "w": 24,
+        "h": 24,
+        "after": "none",
+        "animation": "none"
+      }
+    },
+    {
+      "name": "catalog.html/320: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "catalog.html/320: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "systems.html/320: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "systems.html/320: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "projects.html/320: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "projects.html/320: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "pro.html/320: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "pro.html/320: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts.html/320: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts.html/320: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "index.html/390: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "index.html/390: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390: square house",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390/top: whole-room target >=44px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390/top: room selected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390/top: no added autoscroll",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "390/top: geometry unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390/top: no form subject node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390/left: whole-room target >=44px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390/left: room selected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390/left: no added autoscroll",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "390/left: geometry unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390/left: no form subject node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390/right: whole-room target >=44px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390/right: room selected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390/right: no added autoscroll",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "390/right: geometry unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390/right: no form subject node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390/bottom: whole-room target >=44px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390/bottom: room selected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390/bottom: no added autoscroll",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "390/bottom: geometry unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390/bottom: no form subject node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390: compact marker, no animated ring",
+      "passed": true,
+      "detail": {
+        "w": 24,
+        "h": 24,
+        "after": "none",
+        "animation": "none"
+      }
+    },
+    {
+      "name": "catalog.html/390: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "catalog.html/390: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "systems.html/390: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "systems.html/390: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "projects.html/390: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "projects.html/390: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "pro.html/390: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "pro.html/390: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts.html/390: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts.html/390: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts: only name/phone/consent fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts/kz: values retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts/kz: no subject",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts/kz: WhatsApp message contains no subject",
+      "passed": true,
+      "detail": "Здравствуйте. Нужна консультация специалиста SILENCE.\nИмя: Тест\nТелефон: +77001234567"
+    },
+    {
+      "name": "contacts/en: values retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts/en: no subject",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts/en: WhatsApp message contains no subject",
+      "passed": true,
+      "detail": "Здравствуйте. Нужна консультация специалиста SILENCE.\nИмя: Тест\nТелефон: +77001234567"
+    },
+    {
+      "name": "contacts/ru: values retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts/ru: no subject",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts/ru: WhatsApp message contains no subject",
+      "passed": true,
+      "detail": "Здравствуйте. Нужна консультация специалиста SILENCE.\nИмя: Тест\nТелефон: +77001234567"
+    },
+    {
+      "name": "index.html/768: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "index.html/768: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768: square house",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768/top: whole-room target >=44px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768/top: room selected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768/top: no added autoscroll",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "768/top: geometry unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768/top: no form subject node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768/left: whole-room target >=44px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768/left: room selected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768/left: no added autoscroll",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "768/left: geometry unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768/left: no form subject node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768/right: whole-room target >=44px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768/right: room selected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768/right: no added autoscroll",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "768/right: geometry unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768/right: no form subject node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768/bottom: whole-room target >=44px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768/bottom: room selected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768/bottom: no added autoscroll",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "768/bottom: geometry unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768/bottom: no form subject node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768: compact marker, no animated ring",
+      "passed": true,
+      "detail": {
+        "w": 26,
+        "h": 26,
+        "after": "none",
+        "animation": "none"
+      }
+    },
+    {
+      "name": "catalog.html/768: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "catalog.html/768: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "systems.html/768: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "systems.html/768: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "projects.html/768: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "projects.html/768: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "pro.html/768: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "pro.html/768: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts.html/768: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts.html/768: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "index.html/1440: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "index.html/1440: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440: square house",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440/top: whole-room target >=44px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440/top: room selected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440/top: no added autoscroll",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1440/top: geometry unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440/top: no form subject node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440/left: whole-room target >=44px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440/left: room selected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440/left: no added autoscroll",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1440/left: geometry unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440/left: no form subject node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440/right: whole-room target >=44px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440/right: room selected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440/right: no added autoscroll",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1440/right: geometry unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440/right: no form subject node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440/bottom: whole-room target >=44px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440/bottom: room selected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440/bottom: no added autoscroll",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1440/bottom: geometry unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440/bottom: no form subject node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440: compact marker, no animated ring",
+      "passed": true,
+      "detail": {
+        "w": 26,
+        "h": 26,
+        "after": "none",
+        "animation": "none"
+      }
+    },
+    {
+      "name": "catalog.html/1440: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "catalog.html/1440: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "systems.html/1440: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "systems.html/1440: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "projects.html/1440: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "projects.html/1440: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "pro.html/1440: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "pro.html/1440: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts.html/1440: no horizontal document overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts.html/1440: no failed loaded images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "js/ui.section.js: unchanged from v27",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "js/ui.redesign.js: unchanged from v27",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "js/core.js: unchanged from v27",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all assets unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no JS page errors",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no missing local resources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: analytics.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: app.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: config.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: core.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: data.catalog.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: data.content.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: data.norms.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: data.pricing.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: data.redesign.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: theme-init.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.catalog.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.compare.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.contacts.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.faq.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.form.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.outcomes.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.picker.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.presentation-carousel.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.pricing.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.pro.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.problem-picker.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.process.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.projects.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.redesign.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.scenarios.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.section.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.site-cta.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.solution-zones.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.systems.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "syntax: ui.trust.js",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 182,
+  "failed": 0,
+  "seconds": 7.0
+}

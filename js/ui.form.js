@@ -7,7 +7,7 @@
  var d=phone.value.replace(/\D/g,'');if(d.length===11&&(d[0]==='7'||d[0]==='8'))d='7'+d.slice(1);else if(d.length===10)d='7'+d;else{error(phone,msg('Введите номер: +7 и 10 цифр.','Нөмірді енгізіңіз: +7 және 10 сан.','Enter +7 followed by 10 digits.'));return;}
  if(!consent.checked){error(consent,msg('Подтвердите передачу данных через WhatsApp.','Деректерді WhatsApp арқылы беруді растаңыз.','Confirm sharing your details through WhatsApp.'));return;}
  var text=msg('Здравствуйте. Нужна консультация специалиста SILENCE.','Сәлеметсіз бе. SILENCE маманының кеңесі қажет.','Hello. I would like to consult a SILENCE specialist.')+'\n'+msg('Имя: ','Аты: ','Name: ')+name.value.trim()+'\n'+msg('Телефон: ','Телефон: ','Phone: ')+'+'+d;
- if(form._context)text+='\n'+msg('Тема: ','Тақырып: ','Subject: ')+form._context;
+ // v28: WhatsApp receives the greeting, name and phone only.
  var url=new URL(g.SITE.contacts.whatsapp);url.searchParams.set('text',text);
  // Only a handoff event. No personal data in analytics and no claim that the message was sent.
  if(g.SILENCE_TRACK)g.SILENCE_TRACK('consultation_whatsapp_handoff',{source:document.body.dataset.page||'index'});

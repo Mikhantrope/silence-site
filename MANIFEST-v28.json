@@ -1,0 +1,23 @@
+{
+  "version": 28,
+  "base": "silence-v27-redesign-full-site.zip",
+  "changed": [
+    "README-START-RU.txt",
+    "catalog.html",
+    "contacts.html",
+    "css/redesign.css",
+    "index.html",
+    "js/data.redesign.js",
+    "js/ui.contacts.js",
+    "js/ui.form.js",
+    "pro.html",
+    "projects.html",
+    "systems.html"
+  ],
+  "added": [
+    "CHANGELOG-v28.md",
+    "QA-v28.json"
+  ],
+  "deferred": "New in-hero feedback / automatic result scrolling. No changes to room-selection behaviour.",
+  "preserved": "All images, hit-map geometry, room selection logic, catalogue, carousel and system data."
+}
