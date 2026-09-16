@@ -9,13 +9,16 @@ html{scroll-padding-top:100px;}body{font-family:var(--font-body);letter-spacing:
 /* Compact common header: actual navigation is separate from preferences. */
 .header27{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border);background:var(--bg);backdrop-filter:none;}.header27-inner{display:flex;align-items:center;gap:28px;min-height:84px;}.header27-logo{display:block;flex:none;line-height:0;}.header27-logo img{width:155px;height:auto;max-width:none;}.header27-nav.site-nav{display:flex;flex:1;min-width:0;}.header27-nav .site-nav__list{display:flex;align-items:center;justify-content:center;gap:22px;margin:0;padding:0;}.header27-nav .site-nav__list a{font-size:.85rem;min-height:44px;display:flex;align-items:center;white-space:nowrap;color:var(--text-muted);}.header27-nav a[aria-current='page'],.header27-nav a:hover{color:var(--accent);}.header27-tools{display:flex;align-items:center;gap:10px;flex:none;margin-left:auto;}.header27-language{appearance:auto;min-height:44px;max-width:70px;border:0;background:transparent;color:var(--text);font-size:.85rem;padding:6px;cursor:pointer;}.header27-language option{color:#182922;background:#fff;}.header27-theme{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--border);border-radius:50%;font-size:21px;}.header27-phone{font-size:.82rem;font-weight:600;white-space:nowrap;min-height:44px;display:flex;align-items:center;}.header27-menu{display:none;align-items:center;justify-content:center;flex-direction:column;gap:6px;width:44px;height:44px;border:1px solid var(--border);border-radius:10px;}.header27-menu span{display:block;width:19px;height:2px;background:var(--text);}.mobile27-menu{position:absolute;inset-inline:0;top:100%;padding:20px;background:var(--bg-raised);border-bottom:1px solid var(--border);box-shadow:var(--shadow-lg);max-height:calc(100dvh - 80px);overflow-y:auto;}.mobile27-menu ul{display:flex;flex-direction:column;margin:0 0 16px;gap:0;}.mobile27-menu li a{display:flex;align-items:center;min-height:48px;padding:10px 12px;border-bottom:1px solid var(--border);}.mobile27-menu .btn{display:flex;}
 /* One hero, with a full square house and the result below it. */
-.hero27{padding:46px 0 48px;}.hero27-grid{display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1fr);gap:52px;align-items:center;}.hero27-copy{min-width:0;padding-block:24px;}.hero27-copy h1{margin:18px 0 22px;font-size:clamp(2.5rem,4.25vw,3.75rem);line-height:1.06;max-width:16ch;letter-spacing:-.036em;}.hero27-lead{font-size:clamp(1.05rem,1.4vw,1.18rem);line-height:1.65;max-width:43ch;color:var(--text-muted);}.hero27-actions{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin:28px 0 22px;}.hero27-note{max-width:40ch;color:var(--text-muted);font-size:.8rem;line-height:1.7;}.hero27-interactive{min-width:0;}.room27-figure{position:relative;aspect-ratio:1;width:100%;overflow:hidden;border-radius:20px;border:1px solid var(--border);box-shadow:var(--shadow-md);background:#343b36;}.room27-figure picture,.room27-figure img{width:100%;height:100%;display:block;object-fit:contain;}.room27-overlay{position:absolute;inset:0;pointer-events:none;}.room27-hotspot{position:absolute;min-width:0;min-height:0;padding:0;border:0;border-radius:0;pointer-events:auto;background:transparent;touch-action:manipulation;}/* v28: subtle region feedback; hit-map geometry remains unchanged. */
+.hero27{padding:46px 0 48px;}.hero27-grid{display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1fr);gap:52px;align-items:center;}.hero27-copy{min-width:0;padding-block:24px;}.hero27-copy h1{margin:18px 0 22px;font-size:clamp(2.5rem,4.25vw,3.75rem);line-height:1.06;max-width:16ch;letter-spacing:-.036em;}.hero27-lead{font-size:clamp(1.05rem,1.4vw,1.18rem);line-height:1.65;max-width:43ch;color:var(--text-muted);}.hero27-actions{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin:28px 0 22px;}.hero27-note{max-width:40ch;color:var(--text-muted);font-size:.8rem;line-height:1.7;}.hero27-interactive{min-width:0;}.room27-figure{position:relative;aspect-ratio:1;width:100%;overflow:hidden;border-radius:20px;border:1px solid var(--border);box-shadow:var(--shadow-md);background:#343b36;}.room27-figure picture,.room27-figure img{width:100%;height:100%;display:block;object-fit:contain;}.room27-overlay{position:absolute;inset:0;pointer-events:none;}.room27-hotspot{position:absolute;min-width:0;min-height:0;padding:0;border:0;border-radius:0;pointer-events:auto;background:transparent;touch-action:manipulation;}/* v29: shade only the four source rectangles; no whole-image dim/filter.
+   The middle apartment (29–71% x, 30–68% y) remains untouched. */
+.room27-hotspot { transition:background-color 160ms ease; }
+.room27-hotspot.room29-hotspot--dimmed { background:rgba(6,12,10,.25); box-shadow:none; }
+.room27-hotspot[aria-pressed='true'] { background:rgba(174,230,198,.095); box-shadow:none; }
 @media (hover:hover) and (pointer:fine) {
-  .room27-hotspot:hover { background:rgba(125,175,152,.04); }
-}.room27-hotspot[aria-pressed='true'] {
-  background:rgba(120,177,153,.055);
-  box-shadow:inset 0 0 0 1px rgba(168,204,185,.42);
-}.room27-hotspot:focus-visible { outline:2px solid #e8f7ef; outline-offset:-4px; }/* The pin is only a visual label. The entire room remains the pointer target. */
+ .room27-hotspot:not(.room29-hotspot--dimmed):not([aria-pressed='true']):hover { background:rgba(205,240,220,.035); }
+}
+.room27-hotspot:focus-visible { outline:2px solid #e8f7ef; outline-offset:-4px; }
+/* The pin is only a visual label. The entire room remains the pointer target. */
 .room27-pin {
   display:grid; place-items:center; position:absolute;
   width:26px; height:26px; border-radius:50%;
@@ -50,3 +53,37 @@ html{scroll-padding-top:100px;}body{font-family:var(--font-body);letter-spacing:
 .header27-theme,.header27-menu{min-width:44px;min-height:44px;}
 /* v28: no pulsing ring around room numbers. */
 .room27-pin::after { content:none; }
+
+/* v29: compact, persistent selected-room disclosure. */
+.room29-caption {
+ position:absolute; z-index:8; box-sizing:border-box;
+ width:min(248px,calc(100% - 16px)); max-width:calc(100% - 16px);
+ padding:12px 13px 9px; margin:0; border:1px solid var(--border);
+ border-radius:12px; background:var(--bg-raised); color:var(--text);
+ box-shadow:0 8px 28px rgba(0,0,0,.22); pointer-events:auto;
+ text-align:left; touch-action:manipulation;
+}
+.room29-caption__heading { display:flex; align-items:flex-start; gap:6px; }
+.room29-caption .room29-caption__title { flex:1; min-width:0; margin:0; font-size:14px; font-weight:600; line-height:1.3; letter-spacing:-.01em; }
+.room29-caption__close { flex:none; display:grid; place-items:center; width:28px; height:28px; min-width:28px; min-height:28px; margin:-4px -5px 0 0; padding:0; border:0; border-radius:5px; background:transparent; color:var(--text-muted); font-size:20px; line-height:1; }
+.room29-caption__close:hover { background:var(--bg-overlay); color:var(--text); }
+.room29-caption__note { margin:6px 0 0; font-size:12px; line-height:1.45; color:var(--text-muted); }
+.room29-caption__more { display:flex; align-items:center; justify-content:space-between; gap:10px; width:100%; min-height:44px; padding:7px 0 0; margin:3px 0 0; border:0; border-radius:4px; background:transparent; color:var(--accent); font-size:13px; line-height:1.3; font-weight:600; }
+.room29-caption__more:hover { text-decoration:underline; text-underline-offset:3px; }
+.room29-caption__more span[aria-hidden] { font-size:17px; }
+.room29-caption :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.room29-sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
+#room29-result-title { scroll-margin-top:100px; }
+#room29-result-title:focus:not(:focus-visible) { outline:none; }
+.room29-caption--compact { width:min(304px,calc(100% - 16px)); padding:6px 11px 4px; border-radius:10px; }
+.room29-caption--compact .room29-caption__title { font-size:13px; line-height:1.3; }
+.room29-caption--compact .room29-caption__note { display:none; }
+.room29-caption--compact .room29-caption__more { font-size:12px; margin-top:1px; }
+.room29-caption--compact .room29-caption__close { width:24px; height:24px; min-width:24px; min-height:24px; margin:0 -3px 0 0; }
+.room29-caption--narrow .room29-caption__more { min-height:40px; }
+@media(prefers-reduced-motion:reduce) { .room27-hotspot { transition:none !important; } }
+
+.room29-leader { position:absolute; inset:0; width:100%; height:100%; z-index:7; pointer-events:none; display:none; overflow:visible; }
+.room29-leader path { stroke:rgba(220,242,229,.75); stroke-width:1.25; fill:none; vector-effect:non-scaling-stroke; }
+
+

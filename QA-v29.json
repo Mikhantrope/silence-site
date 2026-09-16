@@ -1,0 +1,4215 @@
+{
+  "version": 29,
+  "base": "silence-v28-soft-markers-full-site.zip",
+  "scope": "Selected-room callout, local highlight/dimming. Other site functionality intentionally unchanged.",
+  "browser": "Chromium with Playwright (touch and viewport emulation)",
+  "test_harness": "Chromium / Playwright. Main-frame navigation is blocked by this environment. Test DOM loaded with set_content; local scripts and styles inlined, CSP meta removed only in test DOM, image requests fulfilled from the unmodified package, system fallback font. Production files are not instrumented.",
+  "matrix": [
+    {
+      "width": 320,
+      "languages": [
+        "ru",
+        "kz",
+        "en"
+      ],
+      "page_errors": []
+    },
+    {
+      "width": 390,
+      "languages": [
+        "ru",
+        "kz",
+        "en"
+      ],
+      "page_errors": []
+    },
+    {
+      "width": 360,
+      "languages": [
+        "ru",
+        "kz",
+        "en"
+      ],
+      "page_errors": []
+    },
+    {
+      "width": 768,
+      "languages": [
+        "ru",
+        "kz",
+        "en"
+      ],
+      "page_errors": []
+    },
+    {
+      "width": 1024,
+      "languages": [
+        "ru",
+        "kz",
+        "en"
+      ],
+      "page_errors": []
+    },
+    {
+      "width": 1440,
+      "languages": [
+        "ru",
+        "kz",
+        "en"
+      ],
+      "page_errors": []
+    }
+  ],
+  "not_tested": [
+    "Physical iPhone / Android devices",
+    "Safari / WebKit",
+    "Live GitHub deployment",
+    "HTTP CSP enforcement",
+    "Real WhatsApp delivery"
+  ],
+  "summary": {
+    "assertions": 771,
+    "passed": 771,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "check": "320 initial callout hidden",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "320 ru top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru top no automatic scroll",
+      "pass": true,
+      "detail": [
+        450,
+        450
+      ]
+    },
+    {
+      "check": "320 ru top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru top marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "320 ru top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "320 ru left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru left no automatic scroll",
+      "pass": true,
+      "detail": [
+        450,
+        450
+      ]
+    },
+    {
+      "check": "320 ru left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru left marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "320 ru left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "320 ru right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru right no automatic scroll",
+      "pass": true,
+      "detail": [
+        450,
+        450
+      ]
+    },
+    {
+      "check": "320 ru right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru right marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "320 ru right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "320 ru bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        436,
+        436
+      ]
+    },
+    {
+      "check": "320 ru bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru bottom marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "320 ru bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 ru one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "320 kz top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz top no automatic scroll",
+      "pass": true,
+      "detail": [
+        484,
+        484
+      ]
+    },
+    {
+      "check": "320 kz top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz top marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "320 kz top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "320 kz left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz left no automatic scroll",
+      "pass": true,
+      "detail": [
+        484,
+        484
+      ]
+    },
+    {
+      "check": "320 kz left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz left marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "320 kz left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "320 kz right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz right no automatic scroll",
+      "pass": true,
+      "detail": [
+        484,
+        484
+      ]
+    },
+    {
+      "check": "320 kz right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz right marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "320 kz right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "320 kz bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        484,
+        484
+      ]
+    },
+    {
+      "check": "320 kz bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz bottom marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "320 kz bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 kz one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "320 en top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en top no automatic scroll",
+      "pass": true,
+      "detail": [
+        424,
+        424
+      ]
+    },
+    {
+      "check": "320 en top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en top marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "320 en top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "320 en left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en left no automatic scroll",
+      "pass": true,
+      "detail": [
+        424,
+        424
+      ]
+    },
+    {
+      "check": "320 en left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en left marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "320 en left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "320 en right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en right no automatic scroll",
+      "pass": true,
+      "detail": [
+        424,
+        424
+      ]
+    },
+    {
+      "check": "320 en right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en right marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "320 en right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "320 en bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        424,
+        424
+      ]
+    },
+    {
+      "check": "320 en bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en bottom marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "320 en bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320 en one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 initial callout hidden",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "390 ru top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru top no automatic scroll",
+      "pass": true,
+      "detail": [
+        427,
+        427
+      ]
+    },
+    {
+      "check": "390 ru top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru top marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "390 ru top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "390 ru left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru left no automatic scroll",
+      "pass": true,
+      "detail": [
+        427,
+        427
+      ]
+    },
+    {
+      "check": "390 ru left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru left marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "390 ru left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "390 ru right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru right no automatic scroll",
+      "pass": true,
+      "detail": [
+        427,
+        427
+      ]
+    },
+    {
+      "check": "390 ru right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru right marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "390 ru right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "390 ru bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        413,
+        413
+      ]
+    },
+    {
+      "check": "390 ru bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru bottom marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "390 ru bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 ru one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "390 kz top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz top no automatic scroll",
+      "pass": true,
+      "detail": [
+        427,
+        427
+      ]
+    },
+    {
+      "check": "390 kz top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz top marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "390 kz top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "390 kz left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz left no automatic scroll",
+      "pass": true,
+      "detail": [
+        427,
+        427
+      ]
+    },
+    {
+      "check": "390 kz left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz left marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "390 kz left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "390 kz right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz right no automatic scroll",
+      "pass": true,
+      "detail": [
+        427,
+        427
+      ]
+    },
+    {
+      "check": "390 kz right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz right marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "390 kz right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "390 kz bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        427,
+        427
+      ]
+    },
+    {
+      "check": "390 kz bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz bottom marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "390 kz bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 kz one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "390 en top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en top no automatic scroll",
+      "pass": true,
+      "detail": [
+        401,
+        401
+      ]
+    },
+    {
+      "check": "390 en top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en top marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "390 en top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "390 en left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en left no automatic scroll",
+      "pass": true,
+      "detail": [
+        401,
+        401
+      ]
+    },
+    {
+      "check": "390 en left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en left marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "390 en left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "390 en right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en right no automatic scroll",
+      "pass": true,
+      "detail": [
+        401,
+        401
+      ]
+    },
+    {
+      "check": "390 en right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en right marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "390 en right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "390 en bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        401,
+        401
+      ]
+    },
+    {
+      "check": "390 en bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en bottom marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "390 en bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 en one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 initial callout hidden",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "360 ru top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru top no automatic scroll",
+      "pass": true,
+      "detail": [
+        424,
+        424
+      ]
+    },
+    {
+      "check": "360 ru top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru top marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "360 ru top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "360 ru left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru left no automatic scroll",
+      "pass": true,
+      "detail": [
+        424,
+        424
+      ]
+    },
+    {
+      "check": "360 ru left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru left marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "360 ru left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "360 ru right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru right no automatic scroll",
+      "pass": true,
+      "detail": [
+        424,
+        424
+      ]
+    },
+    {
+      "check": "360 ru right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru right marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "360 ru right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "360 ru bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        424,
+        424
+      ]
+    },
+    {
+      "check": "360 ru bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru bottom marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "360 ru bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 ru one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "360 kz top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz top no automatic scroll",
+      "pass": true,
+      "detail": [
+        458,
+        458
+      ]
+    },
+    {
+      "check": "360 kz top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz top marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "360 kz top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "360 kz left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz left no automatic scroll",
+      "pass": true,
+      "detail": [
+        458,
+        458
+      ]
+    },
+    {
+      "check": "360 kz left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz left marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "360 kz left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "360 kz right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz right no automatic scroll",
+      "pass": true,
+      "detail": [
+        458,
+        458
+      ]
+    },
+    {
+      "check": "360 kz right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz right marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "360 kz right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "360 kz bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        458,
+        458
+      ]
+    },
+    {
+      "check": "360 kz bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz bottom marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "360 kz bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 kz one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "360 en top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en top no automatic scroll",
+      "pass": true,
+      "detail": [
+        424,
+        424
+      ]
+    },
+    {
+      "check": "360 en top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en top marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "360 en top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "360 en left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en left no automatic scroll",
+      "pass": true,
+      "detail": [
+        424,
+        424
+      ]
+    },
+    {
+      "check": "360 en left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en left marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "360 en left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "360 en right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en right no automatic scroll",
+      "pass": true,
+      "detail": [
+        424,
+        424
+      ]
+    },
+    {
+      "check": "360 en right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en right marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "360 en right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "360 en bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        424,
+        424
+      ]
+    },
+    {
+      "check": "360 en bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en bottom marker size unchanged",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "check": "360 en bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "360 en one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 initial callout hidden",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "768 ru top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru top no automatic scroll",
+      "pass": true,
+      "detail": [
+        67,
+        67
+      ]
+    },
+    {
+      "check": "768 ru top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru top marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "768 ru top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "768 ru left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru left no automatic scroll",
+      "pass": true,
+      "detail": [
+        67,
+        67
+      ]
+    },
+    {
+      "check": "768 ru left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru left marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "768 ru left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "768 ru right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru right no automatic scroll",
+      "pass": true,
+      "detail": [
+        67,
+        67
+      ]
+    },
+    {
+      "check": "768 ru right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru right marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "768 ru right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "768 ru bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        67,
+        67
+      ]
+    },
+    {
+      "check": "768 ru bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru bottom marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "768 ru bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 ru one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "768 kz top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz top no automatic scroll",
+      "pass": true,
+      "detail": [
+        86,
+        86
+      ]
+    },
+    {
+      "check": "768 kz top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz top marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "768 kz top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "768 kz left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz left no automatic scroll",
+      "pass": true,
+      "detail": [
+        86,
+        86
+      ]
+    },
+    {
+      "check": "768 kz left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz left marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "768 kz left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "768 kz right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz right no automatic scroll",
+      "pass": true,
+      "detail": [
+        86,
+        86
+      ]
+    },
+    {
+      "check": "768 kz right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz right marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "768 kz right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "768 kz bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        86,
+        86
+      ]
+    },
+    {
+      "check": "768 kz bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz bottom marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "768 kz bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 kz one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "768 en top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en top no automatic scroll",
+      "pass": true,
+      "detail": [
+        67,
+        67
+      ]
+    },
+    {
+      "check": "768 en top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en top marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "768 en top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "768 en left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en left no automatic scroll",
+      "pass": true,
+      "detail": [
+        67,
+        67
+      ]
+    },
+    {
+      "check": "768 en left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en left marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "768 en left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "768 en right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en right no automatic scroll",
+      "pass": true,
+      "detail": [
+        67,
+        67
+      ]
+    },
+    {
+      "check": "768 en right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en right marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "768 en right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "768 en bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        67,
+        67
+      ]
+    },
+    {
+      "check": "768 en bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en bottom marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "768 en bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768 en one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 initial callout hidden",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "1024 ru top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru top no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1024 ru top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru top marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1024 ru top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "1024 ru left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru left no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1024 ru left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru left marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1024 ru left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "1024 ru right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru right no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1024 ru right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru right marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1024 ru right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "1024 ru bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1024 ru bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru bottom marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1024 ru bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 ru one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "1024 kz top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz top no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1024 kz top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz top marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1024 kz top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "1024 kz left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz left no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1024 kz left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz left marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1024 kz left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "1024 kz right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz right no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1024 kz right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz right marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1024 kz right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "1024 kz bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1024 kz bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz bottom marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1024 kz bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 kz one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "1024 en top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en top no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1024 en top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en top marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1024 en top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "1024 en left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en left no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1024 en left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en left marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1024 en left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "1024 en right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en right no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1024 en right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en right marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1024 en right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "1024 en bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1024 en bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en bottom marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1024 en bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1024 en one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 initial callout hidden",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "1440 ru top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru top no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1440 ru top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru top marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1440 ru top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "1440 ru left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru left no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1440 ru left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru left marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1440 ru left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "1440 ru right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru right no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1440 ru right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru right marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1440 ru right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "1440 ru bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1440 ru bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru bottom marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1440 ru bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 ru one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "1440 kz top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz top no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1440 kz top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz top marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1440 kz top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "1440 kz left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz left no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1440 kz left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz left marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1440 kz left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "1440 kz right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz right no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1440 kz right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz right marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1440 kz right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "1440 kz bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1440 kz bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz bottom marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1440 kz bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 kz one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en top selected",
+      "pass": true,
+      "detail": "top"
+    },
+    {
+      "check": "1440 en top caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en top correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en top no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1440 en top no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en top callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en top pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en top image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en top marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1440 en top close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en left selected",
+      "pass": true,
+      "detail": "left"
+    },
+    {
+      "check": "1440 en left caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en left correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en left no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1440 en left no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en left callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en left pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en left image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en left marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1440 en left close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en right selected",
+      "pass": true,
+      "detail": "right"
+    },
+    {
+      "check": "1440 en right caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en right correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en right no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1440 en right no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en right callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en right pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en right image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en right marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1440 en right close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en bottom selected",
+      "pass": true,
+      "detail": "bottom"
+    },
+    {
+      "check": "1440 en bottom caption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en bottom correct other rooms dimmed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en bottom no automatic scroll",
+      "pass": true,
+      "detail": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "1440 en bottom no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en bottom callout inside image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en bottom pins not covered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en bottom image aspect unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en bottom marker size unchanged",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "check": "1440 en bottom close preserves selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 en one mounted controller",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 dark theme selected",
+      "pass": true,
+      "detail": "dark"
+    },
+    {
+      "check": "390 Escape dismisses",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 central apartment identical pixels",
+      "pass": true,
+      "detail": {
+        "mean_channel_diff": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "check": "390 keyboard action reachable",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 explicit action scrolls",
+      "pass": true,
+      "detail": [
+        413,
+        1008
+      ]
+    },
+    {
+      "check": "390 result below sticky header",
+      "pass": true,
+      "detail": [
+        86.90625,
+        71
+      ]
+    },
+    {
+      "check": "390 keyboard focus moved to result",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 no new tab",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 action dismisses callout",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 echo resets room masks",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390 no form subject returned",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 dark theme selected",
+      "pass": true,
+      "detail": "dark"
+    },
+    {
+      "check": "1440 Escape dismisses",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 central apartment identical pixels",
+      "pass": true,
+      "detail": {
+        "mean_channel_diff": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "check": "1440 keyboard action reachable",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 explicit action scrolls",
+      "pass": true,
+      "detail": [
+        32,
+        762
+      ]
+    },
+    {
+      "check": "1440 result below sticky header",
+      "pass": true,
+      "detail": [
+        100.90625,
+        85
+      ]
+    },
+    {
+      "check": "1440 keyboard focus moved to result",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 no new tab",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 action dismisses callout",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 echo resets room masks",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440 no form subject returned",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "reduced motion no jump on tap",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "reduced motion shade transition disabled",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "reduced motion scroll action visible immediately",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "vertical touch gesture not selected as room",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "vertical touch gesture no callout",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "static_checks": {
+    "runtime_files_changed": [
+      "css/redesign.css",
+      "index.html",
+      "js/ui.section.js"
+    ],
+    "pin_style_identical_to_v28": true,
+    "js_syntax_checked": [
+      "js/analytics.js",
+      "js/app.js",
+      "js/config.js",
+      "js/core.js",
+      "js/data.catalog.js",
+      "js/data.content.js",
+      "js/data.norms.js",
+      "js/data.pricing.js",
+      "js/data.redesign.js",
+      "js/theme-init.js",
+      "js/ui.catalog.js",
+      "js/ui.compare.js",
+      "js/ui.contacts.js",
+      "js/ui.faq.js",
+      "js/ui.form.js",
+      "js/ui.outcomes.js",
+      "js/ui.picker.js",
+      "js/ui.presentation-carousel.js",
+      "js/ui.pricing.js",
+      "js/ui.pro.js",
+      "js/ui.problem-picker.js",
+      "js/ui.process.js",
+      "js/ui.projects.js",
+      "js/ui.redesign.js",
+      "js/ui.scenarios.js",
+      "js/ui.section.js",
+      "js/ui.site-cta.js",
+      "js/ui.solution-zones.js",
+      "js/ui.systems.js",
+      "js/ui.trust.js"
+    ],
+    "missing_html_local_resources": [],
+    "assets_unchanged": true
+  },
+  "verification_note": "Reports combine targeted runs; failed tablet marker-overlap checks were rerun successfully after compact layout was applied based on picture width. Reduced-motion transition was corrected and retested. Test-only CSS/script inlining is not used in the distributed site."
+}
