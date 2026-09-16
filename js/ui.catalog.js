@@ -191,6 +191,7 @@
       C.el('p', { class: 'lead' }, [t('catLead')])
     ]));
     var tiles = C.el('div', { class: 'cards-grid catalog-teaser__grid' });
+    var groupKeys = ['grpSolutions', 'grpPanels', 'grpMaterials', 'grpDecor', 'grpParts'];
     groupKeys.forEach(function (key, i) {
       var anchors = ['solutions', 'panels', 'materials', 'decor', 'parts'];
       tiles.appendChild(C.el('a', { class: 'card', href: 'catalog.html#' + anchors[i] }, [

@@ -103,54 +103,87 @@
 
   // ---------- оверлеи с ловушкой фокуса ----------
   var FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
-  var openStack = [];
+  var openStack = [], pageLock = null, inertState = [];
 
+  function safeFocus(node) {
+    if (!node || !node.isConnected || typeof node.focus !== 'function') return;
+    try { node.focus({ preventScroll: true }); } catch (e) { node.focus(); }
+  }
+  function updateInert() {
+    inertState.forEach(function (x) { x.node.inert = x.value; });
+    inertState = [];
+    var top = openStack.length && openStack[openStack.length - 1].node;
+    if (!top) return;
+    Array.prototype.forEach.call(document.body.children, function (node) {
+      if (node === top || node.contains(top) || /^(SCRIPT|STYLE|LINK)$/.test(node.tagName)) return;
+      inertState.push({ node: node, value: node.inert });
+      node.inert = true;
+    });
+  }
+  function lockPage() {
+    if (pageLock) return;
+    var body = document.body;
+    pageLock = { x: global.scrollX, y: global.scrollY, props: {} };
+    ['position', 'top', 'left', 'right', 'width', 'overflow', 'paddingRight'].forEach(function (k) { pageLock.props[k] = body.style[k]; });
+    var scrollbar = Math.max(0, global.innerWidth - document.documentElement.clientWidth);
+    body.style.position = 'fixed'; body.style.top = -pageLock.y + 'px';
+    body.style.left = '0'; body.style.right = '0'; body.style.width = '100%';
+    body.style.overflow = 'hidden';
+    if (scrollbar) body.style.paddingRight = scrollbar + 'px';
+    body.classList.add('no-scroll');
+  }
+  function unlockPage() {
+    if (!pageLock) return;
+    var saved = pageLock; pageLock = null;
+    Object.keys(saved.props).forEach(function (key) { document.body.style[key] = saved.props[key]; });
+    document.body.classList.remove('no-scroll');
+    var behavior = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = 'auto';
+    global.scrollTo(saved.x, saved.y);
+    document.documentElement.style.scrollBehavior = behavior;
+  }
   function trapKeydown(e) {
     var current = openStack[openStack.length - 1];
     if (!current) return;
-    if (e.key === 'Escape') {
-      e.preventDefault();
-      closeOverlay(current.node);
-      return;
-    }
+    if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); closeOverlay(current.node); return; }
     if (e.key !== 'Tab') return;
-    var focusable = $$(FOCUSABLE, current.node).filter(function (n) { return n.offsetParent !== null; });
-    if (focusable.length === 0) return;
-    var first = focusable[0];
-    var last = focusable[focusable.length - 1];
-    if (e.shiftKey && document.activeElement === first) {
-      e.preventDefault(); last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
-      e.preventDefault(); first.focus();
-    }
+    var items = $$(FOCUSABLE, current.node).filter(function (n) {
+      return n.tabIndex >= 0 && !n.closest('[hidden], [inert]') && n.getClientRects().length;
+    });
+    if (!items.length) { e.preventDefault(); return; }
+    var first = items[0], last = items[items.length - 1];
+    if (!current.node.contains(document.activeElement)) { e.preventDefault(); safeFocus(e.shiftKey ? last : first); }
+    else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); safeFocus(last); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); safeFocus(first); }
   }
-
   function openOverlay(node, opts) {
+    if (!node) return;
     opts = opts || {};
+    if (openStack.some(function (x) { return x.node === node; })) return;
     var opener = document.activeElement;
-    node.hidden = false;
-    node.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('no-scroll');
-    openStack.push({ node: node, opener: opener });
+    node.hidden = false; node.inert = false; node.setAttribute('aria-hidden', 'false');
+    var heading = $('h1, h2, h3', node);
+    if (!node.hasAttribute('aria-label') && !node.hasAttribute('aria-labelledby')) {
+      node.setAttribute('aria-label', heading ? heading.textContent : t('close'));
+    }
+    lockPage(); openStack.push({ node: node, opener: opener });
     document.addEventListener('keydown', trapKeydown, true);
     var focusTarget = (opts.initialFocus && $(opts.initialFocus, node)) || $(FOCUSABLE, node);
-    if (focusTarget) focusTarget.focus();
+    safeFocus(focusTarget);
+    updateInert();
     document.dispatchEvent(new CustomEvent('silence:overlay-open', { detail: { node: node } }));
   }
-
   function closeOverlay(node) {
-    node.hidden = true;
-    node.setAttribute('aria-hidden', 'true');
     var idx = -1;
-    for (var i = openStack.length - 1; i >= 0; i--) {
-      if (openStack[i].node === node) { idx = i; break; }
-    }
-    var entry = idx !== -1 ? openStack.splice(idx, 1)[0] : null;
-    if (openStack.length === 0) {
-      document.body.classList.remove('no-scroll');
-      document.removeEventListener('keydown', trapKeydown, true);
-    }
-    if (entry && entry.opener && typeof entry.opener.focus === 'function') entry.opener.focus();
+    for (var i = openStack.length - 1; i >= 0; i--) { if (openStack[i].node === node) { idx = i; break; } }
+    if (idx < 0) return;
+    var entry = openStack.splice(idx, 1)[0];
+    updateInert();
+    if (node.contains(document.activeElement)) document.activeElement.blur();
+    node.hidden = true; node.setAttribute('aria-hidden', 'true');
+    if (!openStack.length) { unlockPage(); document.removeEventListener('keydown', trapKeydown, true); }
+    var fallback = openStack.length ? $(FOCUSABLE, openStack[openStack.length - 1].node) : $('.skip-link');
+    safeFocus(entry.opener && entry.opener.isConnected ? entry.opener : fallback);
     document.dispatchEvent(new CustomEvent('silence:overlay-close', { detail: { node: node } }));
   }
 
@@ -193,27 +226,142 @@
      captions — необязательный параллельный массив строк (уже на нужном
      языке); если для индекса подписи нет, строка подписи скрывается, а не
      показывает пустоту или заглушку. */
-  function openViewer(srcList, startIndex, captions) {
+  /* One in-page image viewer for carousel posters, catalogue diagrams and galleries.
+     Images keep their full proportions. Zoom changes dimensions, not a cropped CSS cover. */
+  var viewer = null;
+  var VIEW_COPY = {
+    ru: { title:'Просмотр изображения', close:'Закрыть', plus:'Увеличить', minus:'Уменьшить', fit:'Вписать', prev:'Назад', next:'Далее', hint:'Нажмите +, чтобы прочитать детали. Увеличенное изображение можно прокручивать.', error:'Не удалось загрузить изображение.' },
+    kz: { title:'Суретті қарау', close:'Жабу', plus:'Үлкейту', minus:'Кішірейту', fit:'Сыйғызу', prev:'Артқа', next:'Келесі', hint:'Мәліметтерді оқу үшін + басыңыз. Үлкейтілген суретті жылжытуға болады.', error:'Сурет жүктелмеді.' },
+    en: { title:'Image viewer', close:'Close', plus:'Zoom in', minus:'Zoom out', fit:'Fit', prev:'Previous', next:'Next', hint:'Use + to read details. Scroll or drag the enlarged image.', error:'The image could not be loaded.' }
+  };
+  function buildViewer() {
     var overlay = $('#overlay-album');
-    if (!overlay || !srcList.length) return;
-    var idx = ((startIndex % srcList.length) + srcList.length) % srcList.length;
-    var img = $('[data-album-img]', overlay);
-    var captionEl = $('[data-album-caption]', overlay);
-
-    function show(i) {
-      idx = (i + srcList.length) % srcList.length;
-      img.src = srcList[idx];
-      var cap = captions && captions[idx];
-      img.alt = cap || (global.SITE ? global.SITE.t[getLang()].galTitle : '');
-      if (captionEl) {
-        if (cap) { captionEl.textContent = cap; captionEl.hidden = false; }
-        else { captionEl.textContent = ''; captionEl.hidden = true; }
-      }
+    if (!overlay) return null;
+    overlay.innerHTML = '';
+    overlay.classList.add('image-lightbox');
+    overlay.setAttribute('aria-labelledby', 'image-viewer-title');
+    overlay.setAttribute('data-viewer-version', '26');
+    var title = el('h2', { id:'image-viewer-title', class:'image-lightbox__title' });
+    var close = el('button', {type:'button', class:'image-lightbox__button image-lightbox__close', 'data-viewer-close':''}, ['×']);
+    var minus = el('button', {type:'button', class:'image-lightbox__button', 'data-viewer-minus':''}, ['−']);
+    var plus = el('button', {type:'button', class:'image-lightbox__button', 'data-viewer-plus':''}, ['+']);
+    var fit = el('button', {type:'button', class:'image-lightbox__button image-lightbox__fit', 'data-viewer-fit':''});
+    var zoomLabel = el('output', {class:'image-lightbox__scale', 'data-viewer-scale':''});
+    var toolbar = el('div', {class:'image-lightbox__toolbar'}, [minus, zoomLabel, plus, fit]);
+    var head = el('div', {class:'image-lightbox__header'}, [title, close, toolbar]);
+    var img = el('img', {class:'image-lightbox__image', 'data-album-img':'', alt:'', draggable:'false'});
+    var canvas = el('div', {class:'image-lightbox__canvas'}, [img]);
+    var stage = el('div', {class:'image-lightbox__stage', tabindex:'0', 'data-viewer-stage':''}, [canvas]);
+    var error = el('p', {class:'image-lightbox__error', role:'status', hidden:''});
+    stage.appendChild(error);
+    var prev = el('button', {type:'button', class:'image-lightbox__button image-lightbox__step', 'data-album-prev':''});
+    var next = el('button', {type:'button', class:'image-lightbox__button image-lightbox__step', 'data-album-next':''});
+    var count = el('span', {class:'image-lightbox__count', 'data-viewer-count':'', 'aria-live':'polite'});
+    var hint = el('p', {class:'image-lightbox__hint'});
+    var foot = el('div', {class:'image-lightbox__footer'}, [el('div',{class:'image-lightbox__navigation'},[prev,count,next]),hint]);
+    overlay.appendChild(head); overlay.appendChild(stage); overlay.appendChild(foot);
+    var v = {overlay:overlay, img:img, stage:stage, canvas:canvas, list:[], captions:[], index:0, scale:1, fitScale:1, fitted:true, drag:null, touch:null, moved:false};
+    function copy() { return VIEW_COPY[getLang()] || VIEW_COPY.ru; }
+    function setSize(scale, centre) {
+      if (!img.naturalWidth || overlay.hidden) return;
+      var oldW = img.width || 1, oldH = img.height || 1;
+      var relX = (stage.scrollLeft + stage.clientWidth / 2 - img.offsetLeft) / oldW;
+      var relY = (stage.scrollTop + stage.clientHeight / 2 - img.offsetTop) / oldH;
+      v.scale = Math.max(v.fitScale, Math.min(scale, 3));
+      img.style.width = Math.round(img.naturalWidth * v.scale) + 'px';
+      img.style.height = Math.round(img.naturalHeight * v.scale) + 'px';
+      v.fitted = Math.abs(v.scale - v.fitScale) < 0.002;
+      overlay.classList.toggle('image-lightbox--zoomed', !v.fitted);
+      zoomLabel.value = Math.round(v.scale * 100) + '%'; zoomLabel.textContent = zoomLabel.value;
+      minus.disabled = v.fitted; plus.disabled = v.scale >= 3;
+      if (centre && !v.fitted) {
+        stage.scrollLeft = img.offsetLeft + relX * img.width - stage.clientWidth / 2;
+        stage.scrollTop = img.offsetTop + relY * img.height - stage.clientHeight / 2;
+      } else { stage.scrollLeft = 0; stage.scrollTop = 0; }
     }
-    overlay._prev = function () { show(idx - 1); };
-    overlay._next = function () { show(idx + 1); };
-    show(idx);
-    openOverlay(overlay);
+    function fitImage() {
+      if (overlay.hidden || !img.naturalWidth) return;
+      v.fitScale = Math.min(1, Math.max(0.04, Math.min((stage.clientWidth - 32) / img.naturalWidth, (stage.clientHeight - 32) / img.naturalHeight)));
+      setSize(v.fitScale, false);
+    }
+    function show(i) {
+      v.index = (i + v.list.length) % v.list.length;
+      var c = copy(), cap = v.captions[v.index] || c.title;
+      title.textContent = cap; img.alt = cap;
+      close.setAttribute('aria-label', c.close); close.title = c.close;
+      minus.setAttribute('aria-label', c.minus); plus.setAttribute('aria-label', c.plus);
+      fit.textContent = c.fit; prev.textContent = c.prev; next.textContent = c.next;
+      stage.setAttribute('aria-label', c.title); hint.textContent = c.hint;
+      count.textContent = (v.index + 1) + ' / ' + v.list.length;
+      overlay.setAttribute('data-viewer-index', String(v.index));
+      prev.disabled = next.disabled = v.list.length < 2;
+      error.hidden = true; img.hidden = false; v.fitted = true;
+      img.onload = fitImage;
+      img.onerror = function () { img.hidden = true; error.textContent = copy().error; error.hidden = false; };
+      img.src = v.list[v.index];
+      if (img.complete && img.naturalWidth) fitImage();
+    }
+    close.addEventListener('click', function () { closeOverlay(overlay); });
+    plus.addEventListener('click', function () { setSize(v.scale * 1.5, true); });
+    minus.addEventListener('click', function () { setSize(v.scale / 1.5, true); });
+    fit.addEventListener('click', fitImage);
+    prev.addEventListener('click', function () { show(v.index - 1); });
+    next.addEventListener('click', function () { show(v.index + 1); });
+    stage.addEventListener('click', function (e) {
+      if ((e.target === stage || e.target === canvas) && !v.moved) closeOverlay(overlay);
+    });
+    img.addEventListener('dblclick', function (e) { e.preventDefault(); if (v.fitted) setSize(Math.max(1, v.scale * 2), true); else fitImage(); });
+    stage.addEventListener('pointerdown', function (e) {
+      v.moved = false;
+      if (e.pointerType !== 'mouse' || v.fitted || e.button !== 0) return;
+      e.preventDefault();
+      v.drag = {x:e.clientX, y:e.clientY, left:stage.scrollLeft, top:stage.scrollTop};
+      stage.setPointerCapture(e.pointerId);
+    });
+    stage.addEventListener('pointermove', function (e) {
+      if (!v.drag) return;
+      var dx=e.clientX-v.drag.x, dy=e.clientY-v.drag.y;
+      if (Math.abs(dx)+Math.abs(dy)>8) v.moved=true;
+      stage.scrollLeft=v.drag.left-dx; stage.scrollTop=v.drag.top-dy;
+    });
+    function endDrag() { v.drag=null; }
+    stage.addEventListener('pointerup',endDrag); stage.addEventListener('pointercancel',endDrag);
+    stage.addEventListener('touchstart', function (e) {
+      v.moved=false;
+      v.touch = e.touches.length===1 ? {x:e.touches[0].clientX,y:e.touches[0].clientY} : null;
+    },{passive:true});
+    stage.addEventListener('touchmove', function (e) {
+      if(e.touches.length!==1) v.touch=null;
+      v.moved=true;
+    },{passive:true});
+    stage.addEventListener('touchend', function (e) {
+      if(v.touch && v.fitted && e.changedTouches.length===1){
+        var dx=e.changedTouches[0].clientX-v.touch.x, dy=e.changedTouches[0].clientY-v.touch.y;
+        if(Math.abs(dx)>65 && Math.abs(dx)>Math.abs(dy)*1.5) show(v.index+(dx<0?1:-1));
+      }
+      v.touch=null;
+    },{passive:true});
+    overlay.addEventListener('keydown', function (e) {
+      if(e.key==='+' || e.key==='='){e.preventDefault();setSize(v.scale*1.5,true);}
+      else if(e.key==='-'){e.preventDefault();setSize(v.scale/1.5,true);}
+      else if(e.key==='0'){e.preventDefault();fitImage();}
+      else if(v.fitted && (e.key==='ArrowLeft'||e.key==='ArrowRight')){e.preventDefault();show(v.index+(e.key==='ArrowRight'?1:-1));}
+    });
+    function resized(){ if(!overlay.hidden)fitImage(); }
+    if(global.ResizeObserver) new ResizeObserver(resized).observe(stage);
+    else global.addEventListener('resize',resized);
+    v.show=show; v.fit=fitImage;
+    overlay._prev=function(){show(v.index-1);}; overlay._next=function(){show(v.index+1);};
+    return v;
+  }
+  function openViewer(srcList, startIndex, captions) {
+    if(!srcList || !srcList.length) return;
+    if(!viewer) viewer=buildViewer();
+    if(!viewer) return;
+    viewer.list=srcList.slice(); viewer.captions=captions || [];
+    openOverlay(viewer.overlay, {initialFocus:'[data-viewer-close]'});
+    viewer.show(Number(startIndex)||0);
+    global.requestAnimationFrame(viewer.fit);
   }
 
   function openAlbumViewer(page) {
@@ -248,21 +396,6 @@
         if (overlay) closeOverlay(overlay);
       });
     });
-    var album = $('#overlay-album');
-    if (album) {
-      var prevBtn = $('[data-album-prev]', album);
-      var nextBtn = $('[data-album-next]', album);
-      if (prevBtn) prevBtn.addEventListener('click', function () { album._prev && album._prev(); });
-      if (nextBtn) nextBtn.addEventListener('click', function () { album._next && album._next(); });
-      var touchX = null;
-      album.addEventListener('touchstart', function (e) { touchX = e.changedTouches[0].clientX; }, { passive: true });
-      album.addEventListener('touchend', function (e) {
-        if (touchX == null) return;
-        var dx = e.changedTouches[0].clientX - touchX;
-        if (Math.abs(dx) > 40) { dx > 0 ? album._prev() : album._next(); }
-        touchX = null;
-      }, { passive: true });
-    }
     $$('.overlay').forEach(function (ov) {
       ov.addEventListener('click', function (e) { if (e.target === ov) closeOverlay(ov); });
     });

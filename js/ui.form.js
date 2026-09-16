@@ -1,32 +1,49 @@
-(function (global) {
+/* v26: small form, no silent truncation, re-wires after language changes.
+   Backend success is never simulated. WhatsApp is a user-clicked fallback only. */
+(function(global){
   'use strict';
-  function normalizePhone(raw){var d=String(raw||'').replace(/\D/g,'');if(d.length===11&&(d[0]==='7'||d[0]==='8'))d=d.slice(1);return d.slice(0,10);}
-  function formatPhone(d){return [d.slice(0,3),d.slice(3,6),d.slice(6,8),d.slice(8,10)].filter(Boolean).join(' ');}
-  function attachPhoneMask(input){input.addEventListener('input',function(){input.value=formatPhone(normalizePhone(input.value));});input.addEventListener('paste',function(e){var p=(e.clipboardData||global.clipboardData).getData('text');if(!p)return;e.preventDefault();input.value=formatPhone(normalizePhone(p));});}
-  function valueOf(form,id){var el=form.querySelector(id);return el?el.value:'';}
-  function utmFields(){if(global.SILENCE_ANALYTICS&&typeof global.SILENCE_ANALYTICS.leadFields==='function')return global.SILENCE_ANALYTICS.leadFields();var out=[];try{var stored=JSON.parse(localStorage.getItem('silence_attribution')||'{}');['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){if(stored[k])out.push([k,stored[k]]);});}catch(e){}return out;}
-  function wireForm(form){var C=global.SILENCE_CORE,lang=C.getLang(),t=function(k){return C.t(k,lang);};var phone=form.querySelector('#f-phone'),err=form.querySelector('[data-phone-error]'),status=form.querySelector('[data-form-status]'),hp=form.querySelector('#f-company');if(phone)attachPhoneMask(phone);
-    form.addEventListener('submit',function(e){e.preventDefault();status.removeAttribute('data-ok');status.removeAttribute('data-err');status.textContent='';
-      if(hp&&hp.value){if(global.SILENCE_TRACK)global.SILENCE_TRACK('lead_submit_blocked',{reason:'honeypot'});return;}
-      var policy=form.querySelector('#f-policy'); if(policy && !policy.checked){status.textContent=lang==='kz'?'Жеке деректерді өңдеуге келісім беріңіз.':(lang==='en'?'Please confirm consent to personal data processing.':'Подтвердите согласие на обработку персональных данных.');status.setAttribute('data-err','');return;}
-      var digits=normalizePhone(phone?phone.value:'');if(digits.length!==10){if(err)err.hidden=false;if(phone&&phone.closest('.field'))phone.closest('.field').classList.add('field--invalid');return;}if(err)err.hidden=true;if(phone&&phone.closest('.field'))phone.closest('.field').classList.remove('field--invalid');
-      var name=form.querySelector('#f-name'),ads=form.querySelector('#f-ads');
-      var fields=[
-        [t('fName'),name?name.value:''],
-        [t('fPhone'),'+7 '+formatPhone(digits)],
-        ['Проблема',valueOf(form,'#f-problem')],
-        ['Поверхность',valueOf(form,'#f-surface')],
-        ['Система',valueOf(form,'#f-system')],
-        ['Тип помещения',valueOf(form,'#f-room')],
-        ['Площадь',valueOf(form,'#f-area')],
-        ['Согласие на обработку',policy&&policy.checked?'Да':'Нет'],
-        ['Согласие на рассылку',ads&&ads.checked?'Да':'Нет'],
-        ['Страница',global.location.href]
-      ].concat(utmFields());
-      var btn=form.querySelector('button[type="submit"]');if(btn)btn.disabled=true;
-      global.SILENCE_SEND(t('formTitle'),fields).then(function(){status.textContent=t('fOk');status.setAttribute('data-ok','');form.reset();if(global.SILENCE_TRACK)global.SILENCE_TRACK('lead_submit_success');}).catch(function(){status.textContent=t('fErr');status.setAttribute('data-err','');if(global.SILENCE_TRACK)global.SILENCE_TRACK('lead_submit_error');}).then(function(){if(btn)btn.disabled=false;});
+  var COPY={
+    ru:{name:'Введите имя.',phone:'Введите 10 цифр номера или полный номер с +7 / 8.',consent:'Подтвердите согласие на обработку персональных данных.',busy:'Отправляем…',failed:'Заявка не отправлена. Попробуйте ещё раз или напишите в WhatsApp.',wa:'Отправить через WhatsApp'},
+    kz:{name:'Атыңызды енгізіңіз.',phone:'Нөмірдің 10 цифрын немесе +7 / 8 арқылы толық нөмірді енгізіңіз.',consent:'Жеке деректерді өңдеуге келісім беріңіз.',busy:'Жіберілуде…',failed:'Өтінім жіберілмеді. Қайта көріңіз немесе WhatsApp арқылы жазыңыз.',wa:'WhatsApp арқылы жіберу'},
+    en:{name:'Enter your name.',phone:'Enter a 10-digit number or the full number starting with +7 / 8.',consent:'Please consent to personal data processing.',busy:'Sending…',failed:'The request was not sent. Retry or contact us on WhatsApp.',wa:'Send via WhatsApp'}
+  };
+  function normalize(raw){var d=String(raw||'').replace(/\D/g,'');if(d.length===11&&(d.charAt(0)==='7'||d.charAt(0)==='8'))return d.slice(1);return d;}
+  function format(d){return '+7 '+[d.slice(0,3),d.slice(3,6),d.slice(6,8),d.slice(8,10)].join(' ');}
+  function val(form,id){var n=form.querySelector(id);return n?n.value:'';}
+  function init(){
+    document.querySelectorAll('[data-lead-form]').forEach(function(form){
+      if(form._wired)return;form._wired=true;
+      var C=global.SILENCE_CORE,phone=form.querySelector('#f-phone'),name=form.querySelector('#f-name'),policy=form.querySelector('#f-policy');
+      var status=form.querySelector('[data-form-status]'),error=form.querySelector('[data-phone-error]'),btn=form.querySelector('button[type="submit"]');
+      var fallback=C.el('a',{class:'btn contacts-page__fallback',hidden:'',target:'_blank',rel:'noopener','data-whatsapp-fallback':''});
+      form.appendChild(fallback);
+      phone.addEventListener('blur',function(){var d=normalize(phone.value);if(d.length===10)phone.value=format(d);});
+      [phone,name,policy].forEach(function(input){if(!input)return;input.addEventListener('input',function(){input.removeAttribute('aria-invalid');input.closest('.field')&&input.closest('.field').classList.remove('field--invalid');if(input===phone&&error)error.hidden=true;});});
+      form.addEventListener('submit',function(e){
+        e.preventDefault();if(form._submitting)return;
+        var lang=C.getLang(),x=COPY[lang]||COPY.ru;
+        status.textContent='';status.removeAttribute('data-ok');status.removeAttribute('data-err');fallback.hidden=true;
+        if(val(form,'#f-company'))return;
+        function invalid(input,message){status.textContent=message;status.setAttribute('data-err','');input.setAttribute('aria-invalid','true');input.focus();}
+        if(!name.value.trim()){invalid(name,x.name);return;}
+        var d=normalize(phone.value);
+        if(d.length!==10){if(error){error.hidden=false;error.textContent=x.phone;}phone.closest('.field').classList.add('field--invalid');invalid(phone,x.phone);return;}
+        if(policy&&!policy.checked){invalid(policy,x.consent);return;}
+        var fields=[[C.t('fName',lang),name.value.trim()],[C.t('fPhone',lang),format(d)],['Проблема',val(form,'#f-problem')],['Поверхность',val(form,'#f-surface')],['Система',val(form,'#f-system')],['Тип помещения',val(form,'#f-room')],['Площадь',val(form,'#f-area')],['Согласие на обработку','Да'],['Согласие на рассылку',form.querySelector('#f-ads').checked?'Да':'Нет'],['Страница',global.location.href]];
+        if(global.SILENCE_ANALYTICS&&global.SILENCE_ANALYTICS.leadFields)fields=fields.concat(global.SILENCE_ANALYTICS.leadFields());
+        var wa=((global.SITE||{}).contacts||{}).whatsapp;
+        if(wa){var u=new URL(wa,document.baseURI);u.searchParams.set('text',fields.filter(function(f){return f[1];}).map(function(f){return f[0]+': '+f[1];}).join('\n'));fallback.href=u.href;fallback.textContent=x.wa;}
+        form._submitting=true;btn.disabled=true;status.textContent=x.busy;form.setAttribute('aria-busy','true');
+        var timeoutId;
+        var request=new Promise(function(resolve,reject){
+          timeoutId=global.setTimeout(function(){reject(new Error('Request timeout'));},15000);
+          try{if(typeof global.SILENCE_SEND!=='function')throw new Error('Sender not configured');Promise.resolve(global.SILENCE_SEND(C.t('formTitle',lang),fields)).then(resolve,reject);}catch(err){reject(err);}
+        });
+        request.then(function(){status.textContent=C.t('fOk',lang);status.setAttribute('data-ok','');form.reset();if(global.SILENCE_TRACK)global.SILENCE_TRACK('lead_submit_success');},function(){status.textContent=x.failed;status.setAttribute('data-err','');if(wa)fallback.hidden=false;if(global.SILENCE_TRACK)global.SILENCE_TRACK('lead_submit_error');}).then(function(){global.clearTimeout(timeoutId);btn.disabled=false;form._submitting=false;form.removeAttribute('aria-busy');});
+      });
     });
   }
-  function init(){var f=document.querySelector('[data-lead-form]');if(f&&!f._wired){f._wired=true;wireForm(f);}}
-  document.addEventListener('DOMContentLoaded',function(){setTimeout(init,0);});
+  global.SILENCE_FORM_INIT=init;
+  document.addEventListener('DOMContentLoaded',function(){global.setTimeout(init,0);});
+  document.addEventListener('silence:lang',function(){global.setTimeout(init,0);});
 }(window));

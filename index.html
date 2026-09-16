@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://mc.yandex.ru https://www.google-analytics.com; font-src 'self'; style-src 'self' 'sha256-qdAuu1c7y0w9Ii+0IHAg4mUo2l/5RqjUE0SqWdE0sbE='; script-src 'self' https://www.googletagmanager.com https://mc.yandex.ru; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://mc.yandex.ru">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://mc.yandex.ru https://www.google-analytics.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com 'sha256-qdAuu1c7y0w9Ii+0IHAg4mUo2l/5RqjUE0SqWdE0sbE='; script-src 'self' https://www.googletagmanager.com https://mc.yandex.ru; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://mc.yandex.ru">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#14171A">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
@@ -29,11 +29,12 @@
   <meta name="twitter:title" content="SILENCE — звукоизоляция стен, потолка и пола в Астане">
   <meta name="twitter:description" content="Заглушаем шум соседей в Астане: подбираем систему под ваш тип шума, монтируем на существующую стену без демонтажа.">
   <meta name="twitter:image" content="__SITE_URL__/assets/rooms/section.webp">
-  <script src="js/theme-init.js"></script>
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css?v=25">
+  <script src="js/theme-init.js?v=26-full"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="css/tokens.css?v=26-full">
+  <link rel="stylesheet" href="css/base.css?v=26-full">
+  <link rel="stylesheet" href="css/layout.css?v=26-full">
+  <link rel="stylesheet" href="css/components.css?v=26-full">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -102,8 +103,9 @@
   ]
 }
   </script>
+  <link rel="stylesheet" href="css/responsive.css?v=26-full">
 </head>
-<body data-page="index" data-site-version="23">
+<body data-page="index" data-site-version="26-full">
   <a class="skip-link" href="#main" data-i18n="skip"></a>
 
   <header class="site-header">
@@ -182,7 +184,7 @@
             <div class="presentation-carousel__track" data-carousel-track>
               <article class="presentation-slide" data-product="silence-wall-comfort">
                 <div class="presentation-slide__media">
-                  <a class="presentation-slide__zoom" href="assets/carousel/silence-wall-comfort.webp" target="_blank" rel="noopener" aria-label="Открыть крупно: Панель «Silence стена»">
+                  <a class="presentation-slide__zoom" href="assets/carousel/silence-wall-comfort.webp" aria-haspopup="dialog" aria-controls="overlay-album" aria-label="Открыть крупно: Панель «Silence стена»">
                     <img src="assets/carousel/silence-wall-comfort.webp" alt="Панель «Silence стена»" width="1055" height="1491" loading="lazy" decoding="async">
                   </a>
                 </div>
@@ -190,12 +192,12 @@
                   <span class="presentation-slide__number">01 / 09</span>
                   <h3 class="presentation-slide__title">Панель «Silence стена»</h3>
                   <p class="presentation-slide__meta">Для звукоизоляции стен</p>
-                  <a class="presentation-slide__open" href="assets/carousel/silence-wall-comfort.webp" target="_blank" rel="noopener">Открыть крупно</a>
+                  <a class="presentation-slide__open" href="assets/carousel/silence-wall-comfort.webp" aria-haspopup="dialog" aria-controls="overlay-album">Открыть крупно</a>
                 </div>
               </article>
               <article class="presentation-slide" data-product="silence-ceiling-wall">
                 <div class="presentation-slide__media">
-                  <a class="presentation-slide__zoom" href="assets/carousel/silence-ceiling-wall.webp" target="_blank" rel="noopener" aria-label="Открыть крупно: Панель «Silence потолок/стена»">
+                  <a class="presentation-slide__zoom" href="assets/carousel/silence-ceiling-wall.webp" aria-haspopup="dialog" aria-controls="overlay-album" aria-label="Открыть крупно: Панель «Silence потолок/стена»">
                     <img src="assets/carousel/silence-ceiling-wall.webp" alt="Панель «Silence потолок/стена»" width="1055" height="1491" loading="lazy" decoding="async">
                   </a>
                 </div>
@@ -203,12 +205,12 @@
                   <span class="presentation-slide__number">02 / 09</span>
                   <h3 class="presentation-slide__title">Панель «Silence потолок/стена»</h3>
                   <p class="presentation-slide__meta">Для потолков и стен</p>
-                  <a class="presentation-slide__open" href="assets/carousel/silence-ceiling-wall.webp" target="_blank" rel="noopener">Открыть крупно</a>
+                  <a class="presentation-slide__open" href="assets/carousel/silence-ceiling-wall.webp" aria-haspopup="dialog" aria-controls="overlay-album">Открыть крупно</a>
                 </div>
               </article>
               <article class="presentation-slide" data-product="silence-floor">
                 <div class="presentation-slide__media">
-                  <a class="presentation-slide__zoom" href="assets/carousel/silence-floor.webp" target="_blank" rel="noopener" aria-label="Открыть крупно: Плита «Silence пол»">
+                  <a class="presentation-slide__zoom" href="assets/carousel/silence-floor.webp" aria-haspopup="dialog" aria-controls="overlay-album" aria-label="Открыть крупно: Плита «Silence пол»">
                     <img src="assets/carousel/silence-floor.webp" alt="Плита «Silence пол»" width="1055" height="1491" loading="lazy" decoding="async">
                   </a>
                 </div>
@@ -216,12 +218,12 @@
                   <span class="presentation-slide__number">03 / 09</span>
                   <h3 class="presentation-slide__title">Плита «Silence пол»</h3>
                   <p class="presentation-slide__meta">Для межэтажных перекрытий</p>
-                  <a class="presentation-slide__open" href="assets/carousel/silence-floor.webp" target="_blank" rel="noopener">Открыть крупно</a>
+                  <a class="presentation-slide__open" href="assets/carousel/silence-floor.webp" aria-haspopup="dialog" aria-controls="overlay-album">Открыть крупно</a>
                 </div>
               </article>
               <article class="presentation-slide" data-product="echoguard">
                 <div class="presentation-slide__media">
-                  <a class="presentation-slide__zoom" href="assets/carousel/echoguard.webp" target="_blank" rel="noopener" aria-label="Открыть крупно: EchoGuard">
+                  <a class="presentation-slide__zoom" href="assets/carousel/echoguard.webp" aria-haspopup="dialog" aria-controls="overlay-album" aria-label="Открыть крупно: EchoGuard">
                     <img src="assets/carousel/echoguard.webp" alt="EchoGuard" width="1055" height="1491" loading="lazy" decoding="async">
                   </a>
                 </div>
@@ -229,12 +231,12 @@
                   <span class="presentation-slide__number">04 / 09</span>
                   <h3 class="presentation-slide__title">EchoGuard</h3>
                   <p class="presentation-slide__meta">Материал для звукоизоляционных конструкций</p>
-                  <a class="presentation-slide__open" href="assets/carousel/echoguard.webp" target="_blank" rel="noopener">Открыть крупно</a>
+                  <a class="presentation-slide__open" href="assets/carousel/echoguard.webp" aria-haspopup="dialog" aria-controls="overlay-album">Открыть крупно</a>
                 </div>
               </article>
               <article class="presentation-slide" data-product="acousticwood-line-art">
                 <div class="presentation-slide__media">
-                  <a class="presentation-slide__zoom" href="assets/carousel/acousticwood-line-art.webp" target="_blank" rel="noopener" aria-label="Открыть крупно: AcousticWood — Line / Art">
+                  <a class="presentation-slide__zoom" href="assets/carousel/acousticwood-line-art.webp" aria-haspopup="dialog" aria-controls="overlay-album" aria-label="Открыть крупно: AcousticWood — Line / Art">
                     <img src="assets/carousel/acousticwood-line-art.webp" alt="AcousticWood — Line / Art" width="1055" height="1491" loading="lazy" decoding="async">
                   </a>
                 </div>
@@ -242,12 +244,12 @@
                   <span class="presentation-slide__number">05 / 09</span>
                   <h3 class="presentation-slide__title">AcousticWood — Line / Art</h3>
                   <p class="presentation-slide__meta">Линейный рельеф и художественная композиция</p>
-                  <a class="presentation-slide__open" href="assets/carousel/acousticwood-line-art.webp" target="_blank" rel="noopener">Открыть крупно</a>
+                  <a class="presentation-slide__open" href="assets/carousel/acousticwood-line-art.webp" aria-haspopup="dialog" aria-controls="overlay-album">Открыть крупно</a>
                 </div>
               </article>
               <article class="presentation-slide" data-product="acousticwood">
                 <div class="presentation-slide__media">
-                  <a class="presentation-slide__zoom" href="assets/carousel/acousticwood.webp" target="_blank" rel="noopener" aria-label="Открыть крупно: AcousticWood — Rhomb / Hexa">
+                  <a class="presentation-slide__zoom" href="assets/carousel/acousticwood.webp" aria-haspopup="dialog" aria-controls="overlay-album" aria-label="Открыть крупно: AcousticWood — Rhomb / Hexa">
                     <img src="assets/carousel/acousticwood.webp" alt="AcousticWood — Rhomb / Hexa" width="1055" height="1491" loading="lazy" decoding="async">
                   </a>
                 </div>
@@ -255,12 +257,12 @@
                   <span class="presentation-slide__number">06 / 09</span>
                   <h3 class="presentation-slide__title">AcousticWood — Rhomb / Hexa</h3>
                   <p class="presentation-slide__meta">Декоративные акустические панели</p>
-                  <a class="presentation-slide__open" href="assets/carousel/acousticwood.webp" target="_blank" rel="noopener">Открыть крупно</a>
+                  <a class="presentation-slide__open" href="assets/carousel/acousticwood.webp" aria-haspopup="dialog" aria-controls="overlay-album">Открыть крупно</a>
                 </div>
               </article>
               <article class="presentation-slide" data-product="reverboard-harmony">
                 <div class="presentation-slide__media">
-                  <a class="presentation-slide__zoom" href="assets/carousel/reverboard-harmony.webp" target="_blank" rel="noopener" aria-label="Открыть крупно: ReverBoard — Spiral / Quad">
+                  <a class="presentation-slide__zoom" href="assets/carousel/reverboard-harmony.webp" aria-haspopup="dialog" aria-controls="overlay-album" aria-label="Открыть крупно: ReverBoard — Spiral / Quad">
                     <img src="assets/carousel/reverboard-harmony.webp" alt="ReverBoard — Spiral / Quad" width="1055" height="1491" loading="lazy" decoding="async">
                   </a>
                 </div>
@@ -268,12 +270,12 @@
                   <span class="presentation-slide__number">07 / 09</span>
                   <h3 class="presentation-slide__title">ReverBoard — Spiral / Quad</h3>
                   <p class="presentation-slide__meta">Спиральный рельеф и прямоугольные панели</p>
-                  <a class="presentation-slide__open" href="assets/carousel/reverboard-harmony.webp" target="_blank" rel="noopener">Открыть крупно</a>
+                  <a class="presentation-slide__open" href="assets/carousel/reverboard-harmony.webp" aria-haspopup="dialog" aria-controls="overlay-album">Открыть крупно</a>
                 </div>
               </article>
               <article class="presentation-slide" data-product="reverboard-geometry">
                 <div class="presentation-slide__media">
-                  <a class="presentation-slide__zoom" href="assets/carousel/reverboard-geometry.webp" target="_blank" rel="noopener" aria-label="Открыть крупно: ReverBoard — Rhomb / Hexa">
+                  <a class="presentation-slide__zoom" href="assets/carousel/reverboard-geometry.webp" aria-haspopup="dialog" aria-controls="overlay-album" aria-label="Открыть крупно: ReverBoard — Rhomb / Hexa">
                     <img src="assets/carousel/reverboard-geometry.webp" alt="ReverBoard — Rhomb / Hexa" width="1055" height="1491" loading="lazy" decoding="async">
                   </a>
                 </div>
@@ -281,12 +283,12 @@
                   <span class="presentation-slide__number">08 / 09</span>
                   <h3 class="presentation-slide__title">ReverBoard — Rhomb / Hexa</h3>
                   <p class="presentation-slide__meta">Ромбы и шестигранники</p>
-                  <a class="presentation-slide__open" href="assets/carousel/reverboard-geometry.webp" target="_blank" rel="noopener">Открыть крупно</a>
+                  <a class="presentation-slide__open" href="assets/carousel/reverboard-geometry.webp" aria-haspopup="dialog" aria-controls="overlay-album">Открыть крупно</a>
                 </div>
               </article>
               <article class="presentation-slide" data-product="acoustiloft">
                 <div class="presentation-slide__media">
-                  <a class="presentation-slide__zoom" href="assets/carousel/acoustiloft.webp" target="_blank" rel="noopener" aria-label="Открыть крупно: AcousticLoft — Hexa Detail">
+                  <a class="presentation-slide__zoom" href="assets/carousel/acoustiloft.webp" aria-haspopup="dialog" aria-controls="overlay-album" aria-label="Открыть крупно: AcousticLoft — Hexa Detail">
                     <img src="assets/carousel/acoustiloft.webp" alt="AcousticLoft — Hexa Detail" width="1055" height="1491" loading="lazy" decoding="async">
                   </a>
                 </div>
@@ -294,7 +296,7 @@
                   <span class="presentation-slide__number">09 / 09</span>
                   <h3 class="presentation-slide__title">AcousticLoft — Hexa Detail</h3>
                   <p class="presentation-slide__meta">Декоративно-акустические панели с фактурой бетона</p>
-                  <a class="presentation-slide__open" href="assets/carousel/acoustiloft.webp" target="_blank" rel="noopener">Открыть крупно</a>
+                  <a class="presentation-slide__open" href="assets/carousel/acoustiloft.webp" aria-haspopup="dialog" aria-controls="overlay-album">Открыть крупно</a>
                 </div>
               </article>
             </div>
@@ -354,23 +356,23 @@
     <button class="album-nav album-nav--next" type="button" data-album-next data-i18n-attr="aria-label:albumNext"></button>
   </div>
 
-  <script src="js/data.content.js"></script>
-  <script src="js/data.catalog.js"></script>
-  <script src="js/data.norms.js"></script>
-  <script src="js/core.js"></script>
-  <script src="js/ui.solution-zones.js?v=23"></script>
-  <script src="js/ui.outcomes.js"></script>
-  <script src="js/ui.site-cta.js"></script>
-  <script src="js/ui.section.js"></script>
-  <script src="js/ui.compare.js"></script>
-  <script src="js/ui.process.js"></script>
-  <script src="js/ui.trust.js"></script>
-  <script src="js/ui.faq.js"></script>
-  <script src="js/ui.catalog.js"></script>
-  <script src="js/ui.projects.js"></script>
-  <script src="js/ui.presentation-carousel.js?v=25"></script>
-  <script src="js/config.js"></script>
-  <script src="js/analytics.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/data.content.js?v=26-full"></script>
+  <script src="js/data.catalog.js?v=26-full"></script>
+  <script src="js/data.norms.js?v=26-full"></script>
+  <script src="js/core.js?v=26-full"></script>
+  <script src="js/ui.solution-zones.js?v=26-full"></script>
+  <script src="js/ui.outcomes.js?v=26-full"></script>
+  <script src="js/ui.site-cta.js?v=26-full"></script>
+  <script src="js/ui.section.js?v=26-full"></script>
+  <script src="js/ui.compare.js?v=26-full"></script>
+  <script src="js/ui.process.js?v=26-full"></script>
+  <script src="js/ui.trust.js?v=26-full"></script>
+  <script src="js/ui.faq.js?v=26-full"></script>
+  <script src="js/ui.catalog.js?v=26-full"></script>
+  <script src="js/ui.projects.js?v=26-full"></script>
+  <script src="js/ui.presentation-carousel.js?v=26-full"></script>
+  <script src="js/config.js?v=26-full"></script>
+  <script src="js/analytics.js?v=26-full"></script>
+  <script src="js/app.js?v=26-full"></script>
 </body>
 </html>

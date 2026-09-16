@@ -26,6 +26,8 @@
   };
 
   function render(node) {
+    var existing=node.querySelector('[data-lead-form]');
+    if(existing && existing._submitting)return; /* Do not destroy an in-flight request on language switch. */
     var C = global.SILENCE_CORE;
     var SITE = global.SITE;
     var lang = C.getLang();
@@ -33,6 +35,10 @@
     var t = function (k) { return C.t(k, lang); };
     var q = new URLSearchParams(global.location.search);
 
+    var saved = {};
+    node.querySelectorAll('input').forEach(function (input) {
+      saved[input.name] = {value:input.value,checked:input.checked};
+    });
     node.innerHTML = '';
     var wrap = C.el('div', { class: 'container contacts-page' });
     var shell = C.el('div', { class: 'contacts-page__shell' });
@@ -46,11 +52,11 @@
     var form = C.el('form', { class: 'lead-form contacts-page__form', 'data-lead-form': '', novalidate: '' }, [
       C.el('div', { class: 'field' }, [
         C.el('label', { for: 'f-name' }, [t('fName')]),
-        C.el('input', { id: 'f-name', name: 'name', type: 'text', autocomplete: 'name', placeholder: t('fNamePh') })
+        C.el('input', { id: 'f-name', name: 'name', type: 'text', autocomplete: 'name', required:'', maxlength:'100', placeholder: t('fNamePh') })
       ]),
       C.el('div', { class: 'field' }, [
         C.el('label', { for: 'f-phone' }, [t('fPhone')]),
-        C.el('input', { id: 'f-phone', name: 'phone', type: 'tel', inputmode: 'numeric', autocomplete: 'tel', placeholder: t('fPhonePh') }),
+        C.el('input', { id: 'f-phone', name: 'phone', type: 'tel', inputmode: 'tel', autocomplete: 'tel', required:'', maxlength:'30', placeholder: t('fPhonePh') }),
         C.el('p', { class: 'caption field__error', 'data-phone-error': '', hidden: '' }, [t('fPhoneErr')])
       ]),
 
@@ -82,6 +88,10 @@
     shell.appendChild(form);
     wrap.appendChild(shell);
     node.appendChild(wrap);
+    form.querySelectorAll('input').forEach(function (input) {
+      if(saved[input.name]) {input.value=saved[input.name].value;input.checked=saved[input.name].checked;}
+    });
+    if(global.SILENCE_FORM_INIT)global.SILENCE_FORM_INIT();
   }
 
   global.SILENCE_PAGES = global.SILENCE_PAGES || {};

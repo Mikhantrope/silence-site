@@ -1,4 +1,4 @@
-/* SILENCE v25 — image-edge navigation. No visible arrows.
+/* SILENCE v26 — image-edge navigation. No visible arrows.
    Edge buttons live INSIDE slides so native touch scrolling keeps working. */
 (function (global) {
   'use strict';
@@ -15,7 +15,7 @@
     var slides = track ? Array.prototype.slice.call(track.querySelectorAll('.presentation-slide')) : [];
     if (!track || !slides.length) return;
     root._silenceCarouselReady = true;
-    root.setAttribute('data-carousel-version', '25');
+    root.setAttribute('data-carousel-version', '26');
 
     /* Also handles an older index.html that still contains arrow buttons. */
     Array.prototype.forEach.call(root.querySelectorAll('[data-carousel-prev], [data-carousel-next], .presentation-carousel__nav'), function (el) {
@@ -62,7 +62,7 @@
         var active = i === index;
         slide.setAttribute('role', 'group');
         slide.setAttribute('aria-label', c.slide + ' ' + (i + 1) + ' ' + c.of + ' ' + slides.length);
-        slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+        slide.removeAttribute('aria-hidden'); /* Neighbour cards are also visible in the multi-card viewport. */
         Array.prototype.forEach.call(slide.querySelectorAll('a'), function (a) { a.tabIndex = active ? 0 : -1; });
         controls[i].prev.tabIndex = active ? 0 : -1;
         controls[i].next.tabIndex = active ? 0 : -1;
@@ -79,7 +79,7 @@
     }
     function start() {
       stop();
-      if (slides.length < 2 || motionQuery.matches || hovered || focused || !visible || dragging || document.hidden) return;
+      if (root.getAttribute('data-autoplay') !== 'true' || document.body.classList.contains('no-scroll') || slides.length < 2 || motionQuery.matches || hovered || focused || !visible || dragging || document.hidden) return;
       timer = global.setInterval(function () { show(index + 1, false, true); }, 5000);
     }
     function show(i, userAction, animate) {
@@ -127,6 +127,20 @@
       Array.prototype.forEach.call(slide.querySelectorAll('.presentation-slide__edge'), function (el) { el.remove(); });
       Array.prototype.forEach.call(slide.querySelectorAll('img'), function (img) { img.draggable = false; });
       controls.push({ prev: createEdge(slide, i, 'prev'), next: createEdge(slide, i, 'next') });
+      Array.prototype.forEach.call(slide.querySelectorAll('.presentation-slide__zoom, .presentation-slide__open'), function (link) {
+        link.removeAttribute('target'); link.removeAttribute('rel');
+        link.setAttribute('aria-haspopup', 'dialog'); link.setAttribute('aria-controls', 'overlay-album');
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+          if (Date.now() < suppressClickUntil) return;
+          var C = global.SILENCE_CORE;
+          if (!C || !C.openGalleryViewer) return;
+          stop(); show(i, false, false);
+          try { link.focus({preventScroll:true}); } catch (e) { link.focus(); }
+          C.openGalleryViewer(slides.map(function (item) { return item.querySelector('img').getAttribute('src'); }), i,
+            slides.map(function (item) { var t = item.querySelector('.presentation-slide__title'); return t ? t.textContent : item.querySelector('img').alt; }));
+        });
+      });
       var dot = document.createElement('button');
       dot.type = 'button';
       dot.className = 'presentation-carousel__dot';
@@ -172,6 +186,8 @@
       start();
     });
     document.addEventListener('visibilitychange', start);
+    document.addEventListener('silence:overlay-open', stop);
+    document.addEventListener('silence:overlay-close', start);
     document.addEventListener('silence:lang', function () { syncUI(false); });
     if (motionQuery.addEventListener) motionQuery.addEventListener('change', start);
     else motionQuery.addListener(start);
