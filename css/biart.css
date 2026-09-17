@@ -1,0 +1,32 @@
+/* v31: display the client-supplied BIART image at its original 16:9 ratio. */
+.school30-highlight[data-school-case="biart"] .school30-highlight__media {
+  align-self: center;
+  background: var(--bg-raised);
+}
+.school30-highlight[data-school-case="biart"] .school30-highlight__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+.school30-highlight[data-school-case="biart"] .school30-highlight__media > span {
+  position: static;
+  display: block;
+  margin: 0;
+  padding: 10px 16px;
+  border-radius: 0;
+  background: var(--bg-raised);
+  color: var(--text-muted);
+  font-size: .73rem;
+  line-height: 1.5;
+}
+.school30-hero.school31-biart figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: var(--bg-overlay);
+}

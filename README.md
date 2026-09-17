@@ -1,7 +1,5 @@
-# SILENCE v30
+# SILENCE v31
 
-Полный статический сайт со статьями и отдельным школьным объектом BIART.
-
-Инструкции: `README-v30-RU.txt`. Проверки и ограничения: `QA-v30.json`. SEO-карта: `SEO-MAP-v30.json`.
-
-Главная: `index.html`. Статьи: `articles.html`. BIART: `projects/biart-astana.html`.
+Полный сайт. Обновлено изображение BIART на главной, в объектах и на странице BIART.
+Инструкции: README-START-RU.txt. Проверки замены: QA-v31.json.
+Ранее созданные отчёты QA-v30.json и README-v30-RU.txt — исторические файлы исходной сборки.

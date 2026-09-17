@@ -1,4 +1,4 @@
-/* v30 integration for the original six pages. BIART is the only school case. */
+/* v31: BIART client-supplied exterior image. All other v30 integration unchanged. */
 (function (g) {
  'use strict';
  var C=g.SILENCE_CORE, pages=g.SILENCE_PAGES;
@@ -7,8 +7,8 @@
  function highlight(){
   return C.el('article',{class:'school30-highlight','data-school-case':'biart'},[
    C.el('div',{class:'school30-highlight__media'},[
-    C.el('img',{src:'assets/solutions/concert.webp',width:'1408',height:'1056',loading:'lazy',alt:tr('Иллюстрация музыкального пространства — не фото BIART','Музыкалық кеңістіктің иллюстрациясы — BIART фотосы емес','Illustration of a music space, not a BIART photo')}),
-    C.el('span',{},[tr('Иллюстрация, не фото BIART','Иллюстрация, BIART фотосы емес','Illustration, not a BIART photo')])
+    C.el('img',{src:'assets/projects/biart-exterior.webp',srcset:'assets/projects/biart-exterior-960.webp 960w, assets/projects/biart-exterior.webp 2048w',sizes:'(max-width:600px) 100vw, 50vw',width:'2048',height:'1152',loading:'lazy',decoding:'async',alt:tr('Здание BIART в Астане — вид фасада','Астанадағы BIART ғимаратының қасбеті','BIART building in Astana — exterior view')}),
+    C.el('span',{},[tr('BIART, Астана · Изображение предоставлено заказчиком','BIART, Астана · Кескінді тапсырыс беруші ұсынған','BIART, Astana · Image supplied by the client')])
    ]),
    C.el('div',{class:'school30-highlight__body'},[
     C.el('p',{class:'eyebrow'},[tr('Образовательный объект · Астана','Білім беру нысаны · Астана','Educational facility · Astana')]),

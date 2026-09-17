@@ -1,11 +1,11 @@
-BIART — public sources, checked 2026-09-17
+BIART — sources and image attribution; updated 2026-09-17
 
 https://biart.kz/ru/
-Official school website: name BIART, creative-school profile, music teaching, address Astana Syganak 17/41.
+Official BIART school website: name, creative-school profile and music teaching.
+The official website is NOT used as evidence for the scope of SILENCE installation work.
 
-https://bi.education/ru/projects/bi-art/
-Official BI Education project page: BIART creative school.
-
-SILENCE work information: provided by the user/company in this conversation, not independently confirmed by these public sources.
-
-Image: assets/solutions/concert.webp, user-provided AI visualization previously used in the site; NOT a photograph of BIART or installation work.
+Work statement: supplied by the user / SILENCE. No invented scope, measured results, dates or coverage claims.
+Image: the client-supplied building image from the current conversation, 034d118c-83d4-4311-ae70-b57d2fb4e4bb.png.
+Published derivatives: assets/projects/biart-exterior.webp and assets/projects/biart-exterior-960.webp.
+Original framing and aspect ratio preserved. Source image not regenerated.
+The exterior image is not treated as documentation of interior acoustic installation work.
