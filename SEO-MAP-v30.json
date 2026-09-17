@@ -1,0 +1,178 @@
+{
+  "version": 30,
+  "base_url": "https://mikhantrope.github.io/silence-site/",
+  "prepared": "2026-09-17",
+  "language": "ru",
+  "notes": "Темы и запросы выбраны по намерению пользователя; частотность и позиции не измерялись.",
+  "pages": [
+    {
+      "url": "https://mikhantrope.github.io/silence-site/articles/nochnye-stuki-v-kvartire.html",
+      "primary_query": "ночные стуки в квартире катание шаров сверху причины",
+      "title": "Ночные стуки в квартире: причины и проверка | SILENCE",
+      "h1": "Ночные стуки в квартире: откуда берётся шум и как искать причину",
+      "description": "Стук, щелчки и «катание шаров» по ночам: как наблюдать шум, отличить возможные источники и понять, когда нужна проверка труб или конструкций.",
+      "words": 751,
+      "reading_minutes": 5,
+      "related": [
+        "strukturnyy-shum-v-dome",
+        "gidroudar-i-stuk-v-trubah",
+        "tresk-i-usadka-novostroyki"
+      ],
+      "sources": [
+        "https://nrc.canada.ca/en/research-development/products-services/software-applications/soundpaths-web-application-predict-sound-transmission-between-rooms",
+        "https://www.caleffi.com/en-int/news-events/09-02-2015/water-hammer-arrester",
+        "https://www.nhbc.co.uk/kontentdocuments/7c99071d-8b23-4a78-8768-fddb9632db4d/Cracking-in-your-home.pdf",
+        "https://www.cdc.gov/niosh/bulletin/2017/sound-app.html"
+      ]
+    },
+    {
+      "url": "https://mikhantrope.github.io/silence-site/articles/strukturnyy-shum-v-dome.html",
+      "primary_query": "структурный шум в монолитном доме как избавиться",
+      "title": "Структурный шум: пути передачи и звукоизоляция | SILENCE",
+      "h1": "Структурный шум в доме: почему слышны удары через стены и перекрытия",
+      "description": "Чем отличаются воздушный, ударный и структурный шум. Как звук обходит облицовку и что проверить до звукоизоляции стены, потолка или пола.",
+      "words": 805,
+      "reading_minutes": 6,
+      "related": [
+        "nochnye-stuki-v-kvartire",
+        "rw-delta-rw-delta-lw",
+        "zvukoizolyatsiya-ili-zvukopogloshchenie"
+      ],
+      "sources": [
+        "https://www.gov.scot/publications/building-standards-technical-handbook-2020-non-domestic/5-noise/5-0-introduction/",
+        "https://nrc.canada.ca/en/research-development/products-services/software-applications/soundpaths-web-application-predict-sound-transmission-between-rooms",
+        "https://www.yourhome.gov.au/live-adapt/noise-control",
+        "https://jcaa.caa-aca.ca/index.php/jcaa/article/view/1135",
+        "../assets/album/p27.webp",
+        "../assets/album/p32.webp"
+      ]
+    },
+    {
+      "url": "https://mikhantrope.github.io/silence-site/articles/gidroudar-i-stuk-v-trubah.html",
+      "primary_query": "гидроудар стук в трубах после закрытия крана",
+      "title": "Гидроудар и стук в трубах: причины, проверка | SILENCE",
+      "h1": "Стук в трубах и гидроудар: как отличить версии и что делать",
+      "description": "Почему трубы могут стучать после закрытия крана. Какие наблюдения помогут сантехнику и почему звукоизоляция стены не устраняет скачки давления.",
+      "words": 742,
+      "reading_minutes": 5,
+      "related": [
+        "nochnye-stuki-v-kvartire",
+        "strukturnyy-shum-v-dome",
+        "skolko-stoit-zvukoizolyatsiya-astana"
+      ],
+      "sources": [
+        "https://aspe.org/pipeline/plumbing-101-breaking-down-the-water-hammer-phenomena/",
+        "https://www.caleffi.com/en-int/news-events/09-02-2015/water-hammer-arrester",
+        "https://nrc.canada.ca/en/research-development/products-services/software-applications/soundpaths-web-application-predict-sound-transmission-between-rooms"
+      ]
+    },
+    {
+      "url": "https://mikhantrope.github.io/silence-site/articles/tresk-i-usadka-novostroyki.html",
+      "primary_query": "треск в новостройке усадка здания трещины",
+      "title": "Треск и усадка новостройки: что проверять | SILENCE",
+      "h1": "Треск и трещины в новостройке: усадка, осадка или другая причина?",
+      "description": "Разница между усадкой материалов, осадкой здания и температурными перемещениями. Как фиксировать треск и трещины, не подменяя обследование догадкой.",
+      "words": 733,
+      "reading_minutes": 5,
+      "related": [
+        "nochnye-stuki-v-kvartire",
+        "strukturnyy-shum-v-dome",
+        "zvukoizolyatsiya-ili-zvukopogloshchenie"
+      ],
+      "sources": [
+        "https://www.nhbc.co.uk/kontentdocuments/7c99071d-8b23-4a78-8768-fddb9632db4d/Cracking-in-your-home.pdf",
+        "https://nrc.canada.ca/en/research-development/products-services/software-applications/soundpaths-web-application-predict-sound-transmission-between-rooms"
+      ]
+    },
+    {
+      "url": "https://mikhantrope.github.io/silence-site/articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html",
+      "primary_query": "звукоизоляция и звукопоглощение разница акустические панели",
+      "title": "Звукоизоляция или звукопоглощение: различия | SILENCE",
+      "h1": "Звукоизоляция и звукопоглощение: что выбрать для своей задачи",
+      "description": "Шум соседей и эхо внутри комнаты требуют разных решений. Как выбрать между звукоизоляционной конструкцией и декоративными акустическими панелями.",
+      "words": 774,
+      "reading_minutes": 5,
+      "related": [
+        "rw-delta-rw-delta-lw",
+        "akustika-muzykalnogo-kabineta",
+        "skolko-stoit-zvukoizolyatsiya-astana"
+      ],
+      "sources": [
+        "https://www.rockwool.com/group/products-and-applications/acoustic-insulation/",
+        "https://www.asha.org/public/hearing/classroom-acoustics/",
+        "../assets/album/p04.webp",
+        "../assets/album/p09.webp",
+        "../assets/album/p13.webp",
+        "../assets/album/p14.webp"
+      ]
+    },
+    {
+      "url": "https://mikhantrope.github.io/silence-site/articles/skolko-stoit-zvukoizolyatsiya-astana.html",
+      "primary_query": "стоимость звукоизоляции Астана цена за м2",
+      "title": "Стоимость звукоизоляции в Астане: состав сметы | SILENCE",
+      "h1": "Сколько стоит звукоизоляция в Астане: как сравнить сметы и не упустить работы",
+      "description": "Из чего складывается цена звукоизоляции стены, потолка и пола. Как считать площадь, сравнивать одинаковый состав работ и подготовить запрос расчёта.",
+      "words": 813,
+      "reading_minutes": 6,
+      "related": [
+        "zvukoizolyatsiya-ili-zvukopogloshchenie",
+        "rw-delta-rw-delta-lw",
+        "strukturnyy-shum-v-dome"
+      ],
+      "sources": [
+        "../assets/album/p25.webp",
+        "../assets/album/p27.webp",
+        "../assets/album/p32.webp"
+      ]
+    },
+    {
+      "url": "https://mikhantrope.github.io/silence-site/articles/akustika-muzykalnogo-kabineta.html",
+      "primary_query": "звукоизоляция музыкального кабинета акустика школы",
+      "title": "Звукоизоляция музыкального кабинета в школе | SILENCE",
+      "h1": "Звукоизоляция музыкального кабинета в школе: что включить в проект",
+      "description": "Музыкальный кабинет: как разделить звукоизоляцию соседних классов и акустику внутри. Двери, вентиляция, материалы, техническое задание и приёмка.",
+      "words": 750,
+      "reading_minutes": 5,
+      "related": [
+        "zvukoizolyatsiya-ili-zvukopogloshchenie",
+        "strukturnyy-shum-v-dome",
+        "rw-delta-rw-delta-lw"
+      ],
+      "sources": [
+        "https://www.gov.uk/government/publications/bb93-acoustic-design-of-schools-performance-standards",
+        "https://www.asha.org/public/hearing/classroom-acoustics/",
+        "../assets/album/p14.webp",
+        "../assets/album/p27.webp"
+      ]
+    },
+    {
+      "url": "https://mikhantrope.github.io/silence-site/articles/rw-delta-rw-delta-lw.html",
+      "primary_query": "что значит Rw ΔRw ΔLw звукоизоляция дБ",
+      "title": "Rw, ΔRw и ΔLw: что означают децибелы | SILENCE",
+      "h1": "Rw, ΔRw и ΔLw: как читать характеристики звукоизоляции",
+      "description": "Итоговая изоляция, её прирост и снижение ударного шума — разные показатели. Какие вопросы задать о протоколе и почему числа дБ нельзя смешивать.",
+      "words": 784,
+      "reading_minutes": 5,
+      "related": [
+        "strukturnyy-shum-v-dome",
+        "zvukoizolyatsiya-ili-zvukopogloshchenie",
+        "skolko-stoit-zvukoizolyatsiya-astana"
+      ],
+      "sources": [
+        "https://www.gov.scot/publications/building-standards-technical-handbook-2020-non-domestic/5-noise/5-0-introduction/",
+        "https://www.yourhome.gov.au/live-adapt/noise-control",
+        "https://jcaa.caa-aca.ca/index.php/jcaa/article/view/1135",
+        "../assets/album/p06.webp",
+        "../assets/album/p32.webp"
+      ]
+    }
+  ],
+  "school_project": {
+    "url": "https://mikhantrope.github.io/silence-site/projects/biart-astana.html",
+    "title": "BIART, Астана — звукоизоляция музыкальных кабинетов | SILENCE",
+    "school": "BIART",
+    "location_source": "https://biart.kz/ru/",
+    "work_information_source": "User / SILENCE company",
+    "image_status": "Illustration, not a photo of BIART or completed work"
+  }
+}

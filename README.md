@@ -1,7 +1,7 @@
-# SILENCE v27
+# SILENCE v30
 
-Полная preview-сборка. Инструкция и ограничения: README-START-RU.txt.
+Полный статический сайт со статьями и отдельным школьным объектом BIART.
 
-Результаты проверок: QA-v27.json.
+Инструкции: `README-v30-RU.txt`. Проверки и ограничения: `QA-v30.json`. SEO-карта: `SEO-MAP-v30.json`.
 
-Ничего автоматически не опубликовано.
+Главная: `index.html`. Статьи: `articles.html`. BIART: `projects/biart-astana.html`.

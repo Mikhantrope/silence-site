@@ -1,0 +1,1364 @@
+{
+  "version": "30-final-biart",
+  "date": "2026-09-17",
+  "content_pages": 16,
+  "static": {
+    "pages": [
+      {
+        "page": "projects.html",
+        "h1": 0,
+        "title": "Объекты SILENCE — примеры монтажа звукоизоляции"
+      },
+      {
+        "page": "catalog.html",
+        "h1": 0,
+        "title": "Каталог систем звукоизоляции — SILENCE Астана"
+      },
+      {
+        "page": "contacts.html",
+        "h1": 0,
+        "title": "Консультация специалиста — SILENCE Астана"
+      },
+      {
+        "page": "systems.html",
+        "h1": 0,
+        "title": "Таблица конструкций — звукоизоляция SILENCE"
+      },
+      {
+        "page": "index.html",
+        "h1": 1,
+        "title": "SILENCE — звукоизоляция стен, потолка и пола в Астане"
+      },
+      {
+        "page": "articles.html",
+        "h1": 1,
+        "title": "Статьи о звукоизоляции и акустике — SILENCE"
+      },
+      {
+        "page": "pro.html",
+        "h1": 0,
+        "title": "Профессионалам — акустические решения и нормативы SILENCE"
+      },
+      {
+        "page": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html",
+        "h1": 1,
+        "title": "Звукоизоляция или звукопоглощение: различия | SILENCE"
+      },
+      {
+        "page": "articles/skolko-stoit-zvukoizolyatsiya-astana.html",
+        "h1": 1,
+        "title": "Стоимость звукоизоляции в Астане: состав сметы | SILENCE"
+      },
+      {
+        "page": "articles/strukturnyy-shum-v-dome.html",
+        "h1": 1,
+        "title": "Структурный шум: пути передачи и звукоизоляция | SILENCE"
+      },
+      {
+        "page": "articles/nochnye-stuki-v-kvartire.html",
+        "h1": 1,
+        "title": "Ночные стуки в квартире: причины и проверка | SILENCE"
+      },
+      {
+        "page": "articles/tresk-i-usadka-novostroyki.html",
+        "h1": 1,
+        "title": "Треск и усадка новостройки: что проверять | SILENCE"
+      },
+      {
+        "page": "articles/akustika-muzykalnogo-kabineta.html",
+        "h1": 1,
+        "title": "Звукоизоляция музыкального кабинета в школе | SILENCE"
+      },
+      {
+        "page": "articles/rw-delta-rw-delta-lw.html",
+        "h1": 1,
+        "title": "Rw, ΔRw и ΔLw: что означают децибелы | SILENCE"
+      },
+      {
+        "page": "articles/gidroudar-i-stuk-v-trubah.html",
+        "h1": 1,
+        "title": "Гидроудар и стук в трубах: причины, проверка | SILENCE"
+      },
+      {
+        "page": "projects/biart-astana.html",
+        "h1": 1,
+        "title": "BIART, Астана — звукоизоляция музыкальных кабинетов | SILENCE"
+      }
+    ],
+    "missing_referenced_files": [],
+    "invalid_jsonld": [],
+    "duplicate_html_ids": [],
+    "javascript_syntax_errors": [],
+    "font_files": []
+  },
+  "article_anchor_errors": [],
+  "layout_test_widths": [
+    320,
+    390,
+    768,
+    1024,
+    1180,
+    1440
+  ],
+  "layout_combinations": 96,
+  "layout_results": [
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "index.html",
+      "viewport": 320,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "index.html",
+      "viewport": 768,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "index.html",
+      "viewport": 1024,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "index.html",
+      "viewport": 390,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1180,
+      "scrollWidth": 1180,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "index.html",
+      "viewport": 1180,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "catalog.html",
+      "viewport": 320,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "index.html",
+      "viewport": 1440,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "catalog.html",
+      "viewport": 390,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "catalog.html",
+      "viewport": 768,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "catalog.html",
+      "viewport": 1024,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1180,
+      "scrollWidth": 1180,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "catalog.html",
+      "viewport": 1180,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "catalog.html",
+      "viewport": 1440,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "systems.html",
+      "viewport": 320,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "systems.html",
+      "viewport": 390,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "systems.html",
+      "viewport": 768,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "systems.html",
+      "viewport": 1024,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1180,
+      "scrollWidth": 1180,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "systems.html",
+      "viewport": 1180,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "systems.html",
+      "viewport": 1440,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "projects.html",
+      "viewport": 320,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "projects.html",
+      "viewport": 390,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "projects.html",
+      "viewport": 768,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "projects.html",
+      "viewport": 1024,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1180,
+      "scrollWidth": 1180,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "projects.html",
+      "viewport": 1180,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "projects.html",
+      "viewport": 1440,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "pro.html",
+      "viewport": 320,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "pro.html",
+      "viewport": 390,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "pro.html",
+      "viewport": 768,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "pro.html",
+      "viewport": 1024,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1180,
+      "scrollWidth": 1180,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "pro.html",
+      "viewport": 1180,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "contacts.html",
+      "viewport": 320,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "pro.html",
+      "viewport": 1440,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "contacts.html",
+      "viewport": 390,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "contacts.html",
+      "viewport": 768,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "contacts.html",
+      "viewport": 1024,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1180,
+      "scrollWidth": 1180,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "contacts.html",
+      "viewport": 1180,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "contacts.html",
+      "viewport": 1440,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles.html",
+      "viewport": 320,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles.html",
+      "viewport": 768,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles.html",
+      "viewport": 1024,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles.html",
+      "viewport": 390,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1180,
+      "scrollWidth": 1180,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles.html",
+      "viewport": 1180,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/akustika-muzykalnogo-kabineta.html",
+      "viewport": 320,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/akustika-muzykalnogo-kabineta.html",
+      "viewport": 390,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/akustika-muzykalnogo-kabineta.html",
+      "viewport": 768,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles.html",
+      "viewport": 1440,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/akustika-muzykalnogo-kabineta.html",
+      "viewport": 1024,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1180,
+      "scrollWidth": 1180,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/akustika-muzykalnogo-kabineta.html",
+      "viewport": 1180,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/akustika-muzykalnogo-kabineta.html",
+      "viewport": 1440,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/gidroudar-i-stuk-v-trubah.html",
+      "viewport": 320,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/gidroudar-i-stuk-v-trubah.html",
+      "viewport": 390,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/gidroudar-i-stuk-v-trubah.html",
+      "viewport": 1024,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/gidroudar-i-stuk-v-trubah.html",
+      "viewport": 768,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1180,
+      "scrollWidth": 1180,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/gidroudar-i-stuk-v-trubah.html",
+      "viewport": 1180,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/nochnye-stuki-v-kvartire.html",
+      "viewport": 320,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/gidroudar-i-stuk-v-trubah.html",
+      "viewport": 1440,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/nochnye-stuki-v-kvartire.html",
+      "viewport": 768,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/nochnye-stuki-v-kvartire.html",
+      "viewport": 390,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/nochnye-stuki-v-kvartire.html",
+      "viewport": 1024,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1180,
+      "scrollWidth": 1180,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/nochnye-stuki-v-kvartire.html",
+      "viewport": 1180,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/nochnye-stuki-v-kvartire.html",
+      "viewport": 1440,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/rw-delta-rw-delta-lw.html",
+      "viewport": 320,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/rw-delta-rw-delta-lw.html",
+      "viewport": 1024,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/rw-delta-rw-delta-lw.html",
+      "viewport": 390,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/rw-delta-rw-delta-lw.html",
+      "viewport": 768,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1180,
+      "scrollWidth": 1180,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/rw-delta-rw-delta-lw.html",
+      "viewport": 1180,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/rw-delta-rw-delta-lw.html",
+      "viewport": 1440,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/skolko-stoit-zvukoizolyatsiya-astana.html",
+      "viewport": 320,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/skolko-stoit-zvukoizolyatsiya-astana.html",
+      "viewport": 390,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/skolko-stoit-zvukoizolyatsiya-astana.html",
+      "viewport": 768,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/skolko-stoit-zvukoizolyatsiya-astana.html",
+      "viewport": 1024,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1180,
+      "scrollWidth": 1180,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/skolko-stoit-zvukoizolyatsiya-astana.html",
+      "viewport": 1180,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/skolko-stoit-zvukoizolyatsiya-astana.html",
+      "viewport": 1440,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/strukturnyy-shum-v-dome.html",
+      "viewport": 390,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/strukturnyy-shum-v-dome.html",
+      "viewport": 320,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/strukturnyy-shum-v-dome.html",
+      "viewport": 768,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/strukturnyy-shum-v-dome.html",
+      "viewport": 1024,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1180,
+      "scrollWidth": 1180,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/strukturnyy-shum-v-dome.html",
+      "viewport": 1180,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/strukturnyy-shum-v-dome.html",
+      "viewport": 1440,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/tresk-i-usadka-novostroyki.html",
+      "viewport": 320,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/tresk-i-usadka-novostroyki.html",
+      "viewport": 390,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/tresk-i-usadka-novostroyki.html",
+      "viewport": 768,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/tresk-i-usadka-novostroyki.html",
+      "viewport": 1024,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1180,
+      "scrollWidth": 1180,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/tresk-i-usadka-novostroyki.html",
+      "viewport": 1180,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/tresk-i-usadka-novostroyki.html",
+      "viewport": 1440,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html",
+      "viewport": 320,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html",
+      "viewport": 390,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html",
+      "viewport": 768,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html",
+      "viewport": 1024,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1180,
+      "scrollWidth": 1180,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html",
+      "viewport": 1180,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html",
+      "viewport": 1440,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "projects/biart-astana.html",
+      "viewport": 320,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "projects/biart-astana.html",
+      "viewport": 768,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "projects/biart-astana.html",
+      "viewport": 1024,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "projects/biart-astana.html",
+      "viewport": 390,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1180,
+      "scrollWidth": 1180,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "projects/biart-astana.html",
+      "viewport": 1180,
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "brokenImages": [],
+      "mounts": [],
+      "page": "projects/biart-astana.html",
+      "viewport": 1440,
+      "errors": [],
+      "failed": []
+    }
+  ],
+  "functional": {
+    "harness": "Chromium offline DOM/resource harness; about:blank document, locally fulfilled site subresources; CSP removed ONLY in harness, fonts external disabled, storage/history simulated. No external submissions. Production files untouched by harness.",
+    "tests": [
+      {
+        "check": "Hub: eight articles visible",
+        "pass": true
+      },
+      {
+        "check": "Search: specific article found",
+        "pass": true
+      },
+      {
+        "check": "Category: school guide only",
+        "pass": true
+      },
+      {
+        "check": "Search: no-results state",
+        "pass": true
+      },
+      {
+        "check": "Search: reset restores all articles",
+        "pass": true
+      },
+      {
+        "check": "Editorial dark theme",
+        "pass": true
+      },
+      {
+        "check": "Editorial mobile menu opens",
+        "pass": true
+      },
+      {
+        "check": "Editorial menu links include articles and projects",
+        "pass": true
+      },
+      {
+        "check": "Editorial menu closes with Escape",
+        "pass": true
+      },
+      {
+        "check": "Editorial UI: no execution errors",
+        "pass": true
+      },
+      {
+        "check": "Home: BIART-only school highlight",
+        "pass": true
+      },
+      {
+        "check": "Home: school image marked illustration",
+        "pass": true
+      },
+      {
+        "check": "Home: article preview links present",
+        "pass": true
+      },
+      {
+        "check": "Home: four room hotspots",
+        "pass": true
+      },
+      {
+        "check": "Room top: selected",
+        "pass": true
+      },
+      {
+        "check": "Room top: description visible",
+        "pass": true
+      },
+      {
+        "check": "Room left: selected",
+        "pass": true
+      },
+      {
+        "check": "Room left: description visible",
+        "pass": true
+      },
+      {
+        "check": "Room right: selected",
+        "pass": true
+      },
+      {
+        "check": "Room right: description visible",
+        "pass": true
+      },
+      {
+        "check": "Room bottom: selected",
+        "pass": true
+      },
+      {
+        "check": "Room bottom: description visible",
+        "pass": true
+      },
+      {
+        "check": "Materials initial category: six products",
+        "pass": true
+      },
+      {
+        "check": "Decor category: nine products",
+        "pass": true
+      },
+      {
+        "check": "Product details modal opens",
+        "pass": true
+      },
+      {
+        "check": "Product modal closes",
+        "pass": true
+      },
+      {
+        "check": "Kazakh navigation label",
+        "pass": true
+      },
+      {
+        "check": "BIART not duplicated after language change",
+        "pass": true
+      },
+      {
+        "check": "Russian form remains name and phone only",
+        "pass": true
+      },
+      {
+        "check": "Topic of inquiry not reintroduced",
+        "pass": true
+      },
+      {
+        "check": "Core mobile menu includes Articles",
+        "pass": true
+      },
+      {
+        "check": "Core menu closes",
+        "pass": true
+      },
+      {
+        "check": "Home interactions: no execution errors",
+        "pass": true
+      },
+      {
+        "check": "projects.html: contains BIART",
+        "pass": true
+      },
+      {
+        "check": "projects.html: no broad school coverage claim",
+        "pass": true
+      },
+      {
+        "check": "projects.html: no runtime errors",
+        "pass": true
+      },
+      {
+        "check": "projects/biart-astana.html: contains BIART",
+        "pass": true
+      },
+      {
+        "check": "projects/biart-astana.html: no broad school coverage claim",
+        "pass": true
+      },
+      {
+        "check": "projects/biart-astana.html: no runtime errors",
+        "pass": true
+      },
+      {
+        "check": "akustika-muzykalnogo-kabineta.html: substantive content without JavaScript",
+        "pass": true
+      },
+      {
+        "check": "gidroudar-i-stuk-v-trubah.html: substantive content without JavaScript",
+        "pass": true
+      },
+      {
+        "check": "nochnye-stuki-v-kvartire.html: substantive content without JavaScript",
+        "pass": true
+      },
+      {
+        "check": "rw-delta-rw-delta-lw.html: substantive content without JavaScript",
+        "pass": true
+      },
+      {
+        "check": "skolko-stoit-zvukoizolyatsiya-astana.html: substantive content without JavaScript",
+        "pass": true
+      },
+      {
+        "check": "strukturnyy-shum-v-dome.html: substantive content without JavaScript",
+        "pass": true
+      },
+      {
+        "check": "tresk-i-usadka-novostroyki.html: substantive content without JavaScript",
+        "pass": true
+      },
+      {
+        "check": "zvukoizolyatsiya-ili-zvukopogloshchenie.html: substantive content without JavaScript",
+        "pass": true
+      }
+    ],
+    "total": 47,
+    "passed": 47
+  },
+  "limits": [
+    "Offline DOM/resource harness, not a live-hosting test. Browser navigation blocked in this environment.",
+    "CSP was removed ONLY from harness documents so about:blank could load routed local resources; production CSP remains. External Google Fonts disabled in harness.",
+    "Storage and history were mocked only in functional harness. No real WhatsApp messages sent.",
+    "Physical iPhone/Android, Safari, HTTP deployments, external font/service availability and performance/network audits not tested."
+  ],
+  "school_case": "BIART only; picture is marked illustration, not BIART photo."
+}

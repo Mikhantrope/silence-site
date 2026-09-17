@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /data/
 
 Sitemap: https://mikhantrope.github.io/silence-site/sitemap.xml
