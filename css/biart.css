@@ -30,3 +30,18 @@
   object-fit: contain;
   background: var(--bg-overlay);
 }
+
+/* v33: a portrait exterior photo, kept whole. Scoped only to DalaEdge. */
+.project33-dalaedge .school30-highlight__media {display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg-overlay);padding:18px 18px 0;}
+.project33-media-button {display:flex;align-items:center;justify-content:center;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in;}
+.project33-dalaedge .school30-highlight__media img {display:block;width:auto;max-width:100%;height:auto;max-height:400px;aspect-ratio:1224/1530;object-fit:contain;border-radius:10px;}
+.project33-dalaedge .school30-highlight__media>span {position:static;display:block;margin:0;padding:10px 0 12px;background:transparent;color:var(--text-muted);font-size:.73rem;}
+.project33-facts {display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 8px;}
+.project33-facts>span {border:1px solid var(--border);border-radius:8px;padding:8px 12px;color:var(--text);font-size:.8rem;line-height:1.4;}
+.school30-hero.school33-dalaedge {align-items:start;}
+.school30-hero.school33-dalaedge figure {overflow:hidden;background:var(--bg-overlay);}
+.school30-hero.school33-dalaedge figure img {display:block;width:100%;height:auto;max-height:660px;aspect-ratio:1224/1530;object-fit:contain;}
+@media(max-width:600px){.project33-dalaedge .school30-highlight__media {padding:16px 16px 0;}.project33-dalaedge .school30-highlight__media img {max-height:none;width:100%;}.project33-dalaedge .school30-highlight__body h3{font-size:1.7rem;}.school30-hero.school33-dalaedge figure img{max-height:none;}}
+
+.school30-content.project33-consult .btn--primary {color:var(--accent-on);max-width:100%;text-align:center;}
+@media(max-width:600px){.project33-consult .btn {display:flex;justify-content:center;width:100%;}}

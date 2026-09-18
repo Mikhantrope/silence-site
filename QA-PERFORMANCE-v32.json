@@ -1,0 +1,900 @@
+{
+  "version": "32",
+  "baseArchive": "silence-v31-biart-photo-full-site.zip",
+  "date": "2026-09-17",
+  "published": false,
+  "methodology": {
+    "payload": "Measured file bytes; gzip level 6 generated locally per file. Not network transfer measurements. HTML, image and code totals are reported separately. Fonts and analytics services are excluded.",
+    "browser": "Chromium DOM/layout/interaction fixture with local source scripts and CSS inlined and preview images embedded as data URLs; font service omitted, system fallback used. Browser navigation to public/local sites was blocked by runtime policy.",
+    "fieldPerformance": "Not measured. No Lighthouse/PageSpeed score, network LCP, INP, or TTFB claimed.",
+    "devices": "Viewport/touch emulation only; no physical devices or Safari."
+  },
+  "payloadComparison": [
+    {
+      "page": "index.html",
+      "before": {
+        "jsRequests": 23,
+        "cssRequests": 8,
+        "codeBytes": 487537,
+        "codeGzip": 143073,
+        "htmlBytes": 14377,
+        "htmlGzip": 3944
+      },
+      "after": {
+        "jsRequests": 2,
+        "cssRequests": 1,
+        "codeBytes": 414454,
+        "codeGzip": 107024,
+        "htmlBytes": 45047,
+        "htmlGzip": 9517
+      }
+    },
+    {
+      "page": "contacts.html",
+      "before": {
+        "jsRequests": 13,
+        "cssRequests": 7,
+        "codeBytes": 432173,
+        "codeGzip": 121874,
+        "htmlBytes": 5933,
+        "htmlGzip": 1889
+      },
+      "after": {
+        "jsRequests": 1,
+        "cssRequests": 1,
+        "codeBytes": 137033,
+        "codeGzip": 33003,
+        "htmlBytes": 7870,
+        "htmlGzip": 2978
+      }
+    },
+    {
+      "page": "catalog.html",
+      "before": {
+        "jsRequests": 14,
+        "cssRequests": 7,
+        "codeBytes": 433970,
+        "codeGzip": 122801,
+        "htmlBytes": 7036,
+        "htmlGzip": 2147
+      },
+      "after": {
+        "jsRequests": 2,
+        "cssRequests": 1,
+        "codeBytes": 382117,
+        "codeGzip": 96730,
+        "htmlBytes": 18479,
+        "htmlGzip": 3926
+      }
+    },
+    {
+      "page": "systems.html",
+      "before": {
+        "jsRequests": 14,
+        "cssRequests": 7,
+        "codeBytes": 437264,
+        "codeGzip": 124188,
+        "htmlBytes": 7244,
+        "htmlGzip": 2200
+      },
+      "after": {
+        "jsRequests": 2,
+        "cssRequests": 1,
+        "codeBytes": 385518,
+        "codeGzip": 98073,
+        "htmlBytes": 17259,
+        "htmlGzip": 3858
+      }
+    },
+    {
+      "page": "projects.html",
+      "before": {
+        "jsRequests": 14,
+        "cssRequests": 8,
+        "codeBytes": 439819,
+        "codeGzip": 124650,
+        "htmlBytes": 6609,
+        "htmlGzip": 2075
+      },
+      "after": {
+        "jsRequests": 2,
+        "cssRequests": 1,
+        "codeBytes": 382699,
+        "codeGzip": 97118,
+        "htmlBytes": 20470,
+        "htmlGzip": 4262
+      }
+    },
+    {
+      "page": "pro.html",
+      "before": {
+        "jsRequests": 14,
+        "cssRequests": 7,
+        "codeBytes": 440195,
+        "codeGzip": 124396,
+        "htmlBytes": 7342,
+        "htmlGzip": 2148
+      },
+      "after": {
+        "jsRequests": 2,
+        "cssRequests": 1,
+        "codeBytes": 386485,
+        "codeGzip": 97651,
+        "htmlBytes": 25656,
+        "htmlGzip": 6079
+      }
+    },
+    {
+      "page": "articles.html",
+      "before": {
+        "jsRequests": 2,
+        "cssRequests": 7,
+        "codeBytes": 121170,
+        "codeGzip": 30798,
+        "htmlBytes": 22351,
+        "htmlGzip": 4858
+      },
+      "after": {
+        "jsRequests": 1,
+        "cssRequests": 1,
+        "codeBytes": 31088,
+        "codeGzip": 7724,
+        "htmlBytes": 23921,
+        "htmlGzip": 5375
+      }
+    },
+    {
+      "page": "articles/nochnye-stuki-v-kvartire.html",
+      "before": {
+        "jsRequests": 2,
+        "cssRequests": 7,
+        "codeBytes": 121170,
+        "codeGzip": 30798,
+        "htmlBytes": 31207,
+        "htmlGzip": 8548
+      },
+      "after": {
+        "jsRequests": 1,
+        "cssRequests": 1,
+        "codeBytes": 31088,
+        "codeGzip": 7724,
+        "htmlBytes": 31922,
+        "htmlGzip": 9018
+      }
+    },
+    {
+      "page": "projects/biart-astana.html",
+      "before": {
+        "jsRequests": 2,
+        "cssRequests": 8,
+        "codeBytes": 122029,
+        "codeGzip": 31172,
+        "htmlBytes": 12202,
+        "htmlGzip": 3666
+      },
+      "after": {
+        "jsRequests": 1,
+        "cssRequests": 1,
+        "codeBytes": 31088,
+        "codeGzip": 7724,
+        "htmlBytes": 12430,
+        "htmlGzip": 3956
+      }
+    }
+  ],
+  "static": {
+    "pages": 17,
+    "htmlReferences": 985,
+    "structuredDataBlocks": 20,
+    "bootstrapHashes": 16,
+    "deferredScripts": 21,
+    "inlineStyleAttributes": 0,
+    "errors": [],
+    "responsiveOriginals": 76,
+    "responsiveVariants": 162
+  },
+  "layoutCases": [
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": "Звукоизоляция музыкального кабинета в школе: что включить в проект",
+      "bodyHeight": 11493,
+      "file": "articles/akustika-muzykalnogo-kabineta.html",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": "Звукоизоляция музыкального кабинета в школе: что включить в проект",
+      "bodyHeight": 6892,
+      "file": "articles/akustika-muzykalnogo-kabineta.html",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": "Звукоизоляция музыкального кабинета в школе: что включить в проект",
+      "bodyHeight": 5874,
+      "file": "articles/akustika-muzykalnogo-kabineta.html",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": "Стук в трубах и гидроудар: как отличить версии и что делать",
+      "bodyHeight": 10901,
+      "file": "articles/gidroudar-i-stuk-v-trubah.html",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": "Стук в трубах и гидроудар: как отличить версии и что делать",
+      "bodyHeight": 6762,
+      "file": "articles/gidroudar-i-stuk-v-trubah.html",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": "Стук в трубах и гидроудар: как отличить версии и что делать",
+      "bodyHeight": 5650,
+      "file": "articles/gidroudar-i-stuk-v-trubah.html",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": "Ночные стуки в квартире: откуда берётся шум и как искать причину",
+      "bodyHeight": 10727,
+      "file": "articles/nochnye-stuki-v-kvartire.html",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": "Ночные стуки в квартире: откуда берётся шум и как искать причину",
+      "bodyHeight": 6573,
+      "file": "articles/nochnye-stuki-v-kvartire.html",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": "Ночные стуки в квартире: откуда берётся шум и как искать причину",
+      "bodyHeight": 5599,
+      "file": "articles/nochnye-stuki-v-kvartire.html",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": "Rw, ΔRw и ΔLw: как читать характеристики звукоизоляции",
+      "bodyHeight": 11346,
+      "file": "articles/rw-delta-rw-delta-lw.html",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": "Rw, ΔRw и ΔLw: как читать характеристики звукоизоляции",
+      "bodyHeight": 6973,
+      "file": "articles/rw-delta-rw-delta-lw.html",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": "Rw, ΔRw и ΔLw: как читать характеристики звукоизоляции",
+      "bodyHeight": 5913,
+      "file": "articles/rw-delta-rw-delta-lw.html",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": "Сколько стоит звукоизоляция в Астане: как сравнить сметы и не упустить работы",
+      "bodyHeight": 11266,
+      "file": "articles/skolko-stoit-zvukoizolyatsiya-astana.html",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": "Сколько стоит звукоизоляция в Астане: как сравнить сметы и не упустить работы",
+      "bodyHeight": 7044,
+      "file": "articles/skolko-stoit-zvukoizolyatsiya-astana.html",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": "Сколько стоит звукоизоляция в Астане: как сравнить сметы и не упустить работы",
+      "bodyHeight": 6037,
+      "file": "articles/skolko-stoit-zvukoizolyatsiya-astana.html",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": "Структурный шум в доме: почему слышны удары через стены и перекрытия",
+      "bodyHeight": 11818,
+      "file": "articles/strukturnyy-shum-v-dome.html",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": "Структурный шум в доме: почему слышны удары через стены и перекрытия",
+      "bodyHeight": 7006,
+      "file": "articles/strukturnyy-shum-v-dome.html",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": "Структурный шум в доме: почему слышны удары через стены и перекрытия",
+      "bodyHeight": 6026,
+      "file": "articles/strukturnyy-shum-v-dome.html",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": "Треск и трещины в новостройке: усадка, осадка или другая причина?",
+      "bodyHeight": 11002,
+      "file": "articles/tresk-i-usadka-novostroyki.html",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": "Треск и трещины в новостройке: усадка, осадка или другая причина?",
+      "bodyHeight": 6528,
+      "file": "articles/tresk-i-usadka-novostroyki.html",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": "Треск и трещины в новостройке: усадка, осадка или другая причина?",
+      "bodyHeight": 5506,
+      "file": "articles/tresk-i-usadka-novostroyki.html",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": "Звукоизоляция и звукопоглощение: что выбрать для своей задачи",
+      "bodyHeight": 11357,
+      "file": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": "Звукоизоляция и звукопоглощение: что выбрать для своей задачи",
+      "bodyHeight": 7018,
+      "file": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": "Звукоизоляция и звукопоглощение: что выбрать для своей задачи",
+      "bodyHeight": 5940,
+      "file": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": "Разбираемся в шуме.Выбираем решение.",
+      "bodyHeight": 6280,
+      "file": "articles.html",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": "Разбираемся в шуме.Выбираем решение.",
+      "bodyHeight": 3771,
+      "file": "articles.html",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": "Разбираемся в шуме.Выбираем решение.",
+      "bodyHeight": 3188,
+      "file": "articles.html",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": "Каталог материалов",
+      "bodyHeight": 3910,
+      "file": "catalog.html",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": "Каталог материалов",
+      "bodyHeight": 2397,
+      "file": "catalog.html",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": "Каталог материалов",
+      "bodyHeight": 1951,
+      "file": "catalog.html",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": "Консультация специалиста",
+      "bodyHeight": 1501,
+      "file": "contacts.html",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": "Консультация специалиста",
+      "bodyHeight": 991,
+      "file": "contacts.html",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": "Консультация специалиста",
+      "bodyHeight": 979,
+      "file": "contacts.html",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": "Акустические системы SILENCE",
+      "bodyHeight": 11103,
+      "file": "index.html",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": "Акустические системы SILENCE",
+      "bodyHeight": 7464,
+      "file": "index.html",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": "Акустические системы SILENCE",
+      "bodyHeight": 7283,
+      "file": "index.html",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": "Профессионалам",
+      "bodyHeight": 8459,
+      "file": "pro.html",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": "Профессионалам",
+      "bodyHeight": 6016,
+      "file": "pro.html",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": "Профессионалам",
+      "bodyHeight": 5741,
+      "file": "pro.html",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": "BIARTМузыкальные кабинеты",
+      "bodyHeight": 4041,
+      "file": "projects/biart-astana.html",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": "BIARTМузыкальные кабинеты",
+      "bodyHeight": 2747,
+      "file": "projects/biart-astana.html",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": "BIARTМузыкальные кабинеты",
+      "bodyHeight": 2245,
+      "file": "projects/biart-astana.html",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": "Объекты из презентации SILENCE",
+      "bodyHeight": 4670,
+      "file": "projects.html",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": "Объекты из презентации SILENCE",
+      "bodyHeight": 2105,
+      "file": "projects.html",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": "Объекты из презентации SILENCE",
+      "bodyHeight": 2675,
+      "file": "projects.html",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": "Системы звукоизоляции",
+      "bodyHeight": 4350,
+      "file": "systems.html",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": "Системы звукоизоляции",
+      "bodyHeight": 2734,
+      "file": "systems.html",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": "Системы звукоизоляции",
+      "bodyHeight": 3396,
+      "file": "systems.html",
+      "errors": []
+    }
+  ],
+  "functionalCases": [
+    {
+      "page": "index",
+      "version": "32",
+      "width": 390,
+      "scrollWidth": 390,
+      "heading": "Акустические системы SILENCE",
+      "textLength": 4956,
+      "images": 20,
+      "pending": 14,
+      "path": "index.html",
+      "viewport": 390,
+      "errors": [],
+      "calloutVisible": true,
+      "caption": "Музыка через стену справа",
+      "roomResultVisible": true,
+      "decorCards": 9,
+      "detailVisible": true,
+      "language": "kk",
+      "theme": "dark"
+    },
+    {
+      "page": "contacts",
+      "version": "32",
+      "width": 390,
+      "scrollWidth": 390,
+      "heading": "Консультация специалиста",
+      "textLength": 405,
+      "images": 1,
+      "pending": 0,
+      "path": "contacts.html",
+      "viewport": 390,
+      "errors": [],
+      "fields": [
+        "name",
+        "phone",
+        "consent"
+      ],
+      "validation": "Укажите имя."
+    },
+    {
+      "page": null,
+      "version": "32",
+      "width": 390,
+      "scrollWidth": 390,
+      "heading": "Ночные стуки в квартире: откуда берётся шум и как искать причину",
+      "textLength": 7587,
+      "images": 3,
+      "pending": 0,
+      "path": "articles/nochnye-stuki-v-kvartire.html",
+      "viewport": 390,
+      "errors": []
+    },
+    {
+      "page": "index",
+      "version": "32",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "heading": "Акустические системы SILENCE",
+      "textLength": 4958,
+      "images": 20,
+      "pending": 14,
+      "path": "index.html",
+      "viewport": 1440,
+      "errors": [],
+      "calloutVisible": true,
+      "caption": "Музыка через стену справа",
+      "roomResultVisible": true,
+      "decorCards": 9,
+      "detailVisible": true,
+      "language": "kk",
+      "theme": "dark"
+    },
+    {
+      "page": "catalog",
+      "version": "32",
+      "width": 390,
+      "scrollWidth": 390,
+      "heading": "Каталог материалов",
+      "textLength": 950,
+      "images": 11,
+      "pending": 5,
+      "path": "catalog.html",
+      "viewport": 390,
+      "errors": [],
+      "cards": 6
+    },
+    {
+      "page": "systems",
+      "version": "32",
+      "width": 390,
+      "scrollWidth": 390,
+      "heading": "Системы звукоизоляции",
+      "textLength": 1058,
+      "images": 9,
+      "pending": 5,
+      "path": "systems.html",
+      "viewport": 390,
+      "errors": []
+    },
+    {
+      "page": "projects",
+      "version": "32",
+      "width": 390,
+      "scrollWidth": 390,
+      "heading": "Объекты из презентации SILENCE",
+      "textLength": 926,
+      "images": 13,
+      "pending": 8,
+      "path": "projects.html",
+      "viewport": 390,
+      "errors": []
+    },
+    {
+      "page": "pro",
+      "version": "32",
+      "width": 390,
+      "scrollWidth": 390,
+      "heading": "Профессионалам",
+      "textLength": 1333,
+      "images": 9,
+      "pending": 7,
+      "path": "pro.html",
+      "viewport": 390,
+      "errors": []
+    },
+    {
+      "page": null,
+      "version": "32",
+      "width": 390,
+      "scrollWidth": 390,
+      "heading": "Разбираемся в шуме.\nВыбираем решение.",
+      "textLength": 2802,
+      "images": 7,
+      "pending": 0,
+      "path": "articles.html",
+      "viewport": 390,
+      "errors": [],
+      "matchingArticles": 2
+    },
+    {
+      "page": null,
+      "version": "32",
+      "width": 390,
+      "scrollWidth": 390,
+      "heading": "BIART\nМузыкальные кабинеты",
+      "textLength": 1900,
+      "images": 2,
+      "pending": 0,
+      "path": "projects/biart-astana.html",
+      "viewport": 390,
+      "errors": []
+    }
+  ],
+  "interactions": {
+    "results": [
+      {
+        "check": "mobile menu opens",
+        "value": true
+      },
+      {
+        "check": "mobile menu Escape closes",
+        "value": true
+      },
+      {
+        "check": "room top",
+        "value": {
+          "active": "true",
+          "caption": "Сверлят и стучат сверху"
+        }
+      },
+      {
+        "check": "room left",
+        "value": {
+          "active": "true",
+          "caption": "Разговоры за стеной слева"
+        }
+      },
+      {
+        "check": "room right",
+        "value": {
+          "active": "true",
+          "caption": "Музыка через стену справа"
+        }
+      },
+      {
+        "check": "room bottom",
+        "value": {
+          "active": "true",
+          "caption": "Басы и разговоры снизу"
+        }
+      },
+      {
+        "check": "callout close",
+        "value": true
+      },
+      {
+        "check": "carousel finite acoustics",
+        "value": {
+          "end": true,
+          "lastRight": 370,
+          "railRight": 370,
+          "pending": 5
+        }
+      },
+      {
+        "check": "last card image loaded acoustics",
+        "value": {
+          "width": 270,
+          "complete": true,
+          "placeholder": false
+        }
+      },
+      {
+        "check": "carousel finite isolation",
+        "value": {
+          "end": true,
+          "lastRight": 370,
+          "railRight": 370,
+          "pending": 4
+        }
+      },
+      {
+        "check": "last card image loaded isolation",
+        "value": {
+          "width": 195,
+          "complete": true,
+          "placeholder": false
+        }
+      },
+      {
+        "check": "in-page viewer",
+        "value": {
+          "visible": true,
+          "tabs": 1
+        }
+      },
+      {
+        "check": "zoom",
+        "value": {
+          "before": "90%",
+          "after": "134%"
+        }
+      },
+      {
+        "check": "viewer Escape",
+        "value": true
+      },
+      {
+        "check": "journal source viewer",
+        "value": true
+      },
+      {
+        "check": "object tab 1",
+        "value": {
+          "alt": "Звукоизоляция квартир",
+          "loaded": true,
+          "pending": false
+        }
+      },
+      {
+        "check": "object tab 2",
+        "value": {
+          "alt": "Звукоизоляция коттеджей",
+          "loaded": true,
+          "pending": false
+        }
+      },
+      {
+        "check": "object tab 3",
+        "value": {
+          "alt": "Офисы и переговорные",
+          "loaded": true,
+          "pending": false
+        }
+      },
+      {
+        "check": "object tab 4",
+        "value": {
+          "alt": "Концертные и event-площадки",
+          "loaded": true,
+          "pending": false
+        }
+      },
+      {
+        "check": "object tab 5",
+        "value": {
+          "alt": "Кинотеатры и private cinema",
+          "loaded": true,
+          "pending": false
+        }
+      },
+      {
+        "check": "object tab 6",
+        "value": {
+          "alt": "Спортивные и многофункциональные залы",
+          "loaded": true,
+          "pending": false
+        }
+      },
+      {
+        "check": "English",
+        "value": "SILENCE acoustic systems"
+      },
+      {
+        "check": "runtime errors",
+        "value": []
+      }
+    ],
+    "errors": []
+  },
+  "layoutPass": true,
+  "heroImages": {
+    "beforeDesktop": 180518,
+    "beforeMobile": 71832,
+    "after1040AVIF": 79353,
+    "after720AVIF": 42910
+  }
+}

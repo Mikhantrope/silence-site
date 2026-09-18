@@ -1,0 +1,183 @@
+[
+  {
+    "page": "catalog.html",
+    "javascript": [
+      "build/site.b8e6ce1d0f.js",
+      "build/page-catalog.60e6b1df3e.js"
+    ],
+    "css": "build/site.a607749e8f.css",
+    "responsiveImages": 9,
+    "prerenderedSections": 1,
+    "htmlBytesBefore": 7036,
+    "htmlBytesAfter": 18479
+  },
+  {
+    "page": "index.html",
+    "javascript": [
+      "build/site.b8e6ce1d0f.js",
+      "build/page-index.3ffb993798.js"
+    ],
+    "css": "build/site.a607749e8f.css",
+    "responsiveImages": 17,
+    "prerenderedSections": 7,
+    "htmlBytesBefore": 14377,
+    "htmlBytesAfter": 45047
+  },
+  {
+    "page": "pro.html",
+    "javascript": [
+      "build/site.b8e6ce1d0f.js",
+      "build/page-pro.c2017e9ea5.js"
+    ],
+    "css": "build/site.a607749e8f.css",
+    "responsiveImages": 7,
+    "prerenderedSections": 1,
+    "htmlBytesBefore": 7342,
+    "htmlBytesAfter": 25656
+  },
+  {
+    "page": "projects.html",
+    "javascript": [
+      "build/site.b8e6ce1d0f.js",
+      "build/page-projects.fd48c8e3ad.js"
+    ],
+    "css": "build/site.a607749e8f.css",
+    "responsiveImages": 11,
+    "prerenderedSections": 1,
+    "htmlBytesBefore": 6609,
+    "htmlBytesAfter": 20470
+  },
+  {
+    "page": "systems.html",
+    "javascript": [
+      "build/site.b8e6ce1d0f.js",
+      "build/page-systems.330d0a51fc.js"
+    ],
+    "css": "build/site.a607749e8f.css",
+    "responsiveImages": 7,
+    "prerenderedSections": 1,
+    "htmlBytesBefore": 7244,
+    "htmlBytesAfter": 17259
+  },
+  {
+    "page": "articles.html",
+    "javascript": [
+      "build/articles.150a041a05.js"
+    ],
+    "css": "build/articles.3e5c8fcc57.css",
+    "responsiveImages": 6,
+    "prerenderedSections": 0,
+    "htmlBytesBefore": 22351,
+    "htmlBytesAfter": 23921
+  },
+  {
+    "page": "contacts.html",
+    "javascript": [
+      "build/consultation.e77e59cd50.js"
+    ],
+    "css": "build/site.a607749e8f.css",
+    "responsiveImages": 0,
+    "prerenderedSections": 1,
+    "htmlBytesBefore": 5933,
+    "htmlBytesAfter": 7870
+  },
+  {
+    "page": "articles/akustika-muzykalnogo-kabineta.html",
+    "javascript": [
+      "build/articles.150a041a05.js"
+    ],
+    "css": "build/articles.3e5c8fcc57.css",
+    "responsiveImages": 4,
+    "prerenderedSections": 0,
+    "htmlBytesBefore": 31744,
+    "htmlBytesAfter": 32874
+  },
+  {
+    "page": "articles/skolko-stoit-zvukoizolyatsiya-astana.html",
+    "javascript": [
+      "build/articles.150a041a05.js"
+    ],
+    "css": "build/articles.3e5c8fcc57.css",
+    "responsiveImages": 4,
+    "prerenderedSections": 0,
+    "htmlBytesBefore": 31157,
+    "htmlBytesAfter": 32237
+  },
+  {
+    "page": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html",
+    "javascript": [
+      "build/articles.150a041a05.js"
+    ],
+    "css": "build/articles.3e5c8fcc57.css",
+    "responsiveImages": 4,
+    "prerenderedSections": 0,
+    "htmlBytesBefore": 32597,
+    "htmlBytesAfter": 33727
+  },
+  {
+    "page": "articles/gidroudar-i-stuk-v-trubah.html",
+    "javascript": [
+      "build/articles.150a041a05.js"
+    ],
+    "css": "build/articles.3e5c8fcc57.css",
+    "responsiveImages": 3,
+    "prerenderedSections": 0,
+    "htmlBytesBefore": 30827,
+    "htmlBytesAfter": 31713
+  },
+  {
+    "page": "articles/tresk-i-usadka-novostroyki.html",
+    "javascript": [
+      "build/articles.150a041a05.js"
+    ],
+    "css": "build/articles.3e5c8fcc57.css",
+    "responsiveImages": 3,
+    "prerenderedSections": 0,
+    "htmlBytesBefore": 30174,
+    "htmlBytesAfter": 31110
+  },
+  {
+    "page": "articles/strukturnyy-shum-v-dome.html",
+    "javascript": [
+      "build/articles.150a041a05.js"
+    ],
+    "css": "build/articles.3e5c8fcc57.css",
+    "responsiveImages": 4,
+    "prerenderedSections": 0,
+    "htmlBytesBefore": 33135,
+    "htmlBytesAfter": 34274
+  },
+  {
+    "page": "articles/rw-delta-rw-delta-lw.html",
+    "javascript": [
+      "build/articles.150a041a05.js"
+    ],
+    "css": "build/articles.3e5c8fcc57.css",
+    "responsiveImages": 4,
+    "prerenderedSections": 0,
+    "htmlBytesBefore": 32205,
+    "htmlBytesAfter": 33285
+  },
+  {
+    "page": "articles/nochnye-stuki-v-kvartire.html",
+    "javascript": [
+      "build/articles.150a041a05.js"
+    ],
+    "css": "build/articles.3e5c8fcc57.css",
+    "responsiveImages": 2,
+    "prerenderedSections": 0,
+    "htmlBytesBefore": 31207,
+    "htmlBytesAfter": 31922
+  },
+  {
+    "page": "projects/biart-astana.html",
+    "javascript": [
+      "build/articles.150a041a05.js"
+    ],
+    "css": "build/articles.3e5c8fcc57.css",
+    "responsiveImages": 1,
+    "prerenderedSections": 0,
+    "htmlBytesBefore": 12202,
+    "htmlBytesAfter": 12430
+  }
+]

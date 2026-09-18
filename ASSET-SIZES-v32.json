@@ -1,0 +1,1531 @@
+{
+  "assets/products/stena-back.webp": {
+    "width": 355,
+    "height": 954,
+    "variants": [
+      {
+        "src": "assets/fast/products-stena-back-320.webp",
+        "width": 320,
+        "height": 860,
+        "bytes": 61230
+      },
+      {
+        "src": "assets/fast/products-stena-back-355.webp",
+        "width": 355,
+        "height": 954,
+        "bytes": 75398
+      }
+    ],
+    "originalBytes": 138476
+  },
+  "assets/products/wood-hexa.webp": {
+    "width": 453,
+    "height": 518,
+    "variants": [
+      {
+        "src": "assets/fast/products-wood-hexa-320.webp",
+        "width": 320,
+        "height": 366,
+        "bytes": 18246
+      },
+      {
+        "src": "assets/fast/products-wood-hexa-453.webp",
+        "width": 453,
+        "height": 518,
+        "bytes": 25826
+      }
+    ],
+    "originalBytes": 47856
+  },
+  "assets/products/pol.webp": {
+    "width": 340,
+    "height": 913,
+    "variants": [
+      {
+        "src": "assets/fast/products-pol-320.webp",
+        "width": 320,
+        "height": 859,
+        "bytes": 32502
+      },
+      {
+        "src": "assets/fast/products-pol-340.webp",
+        "width": 340,
+        "height": 913,
+        "bytes": 35086
+      }
+    ],
+    "originalBytes": 79046
+  },
+  "assets/products/potolok-back.webp": {
+    "width": 341,
+    "height": 926,
+    "variants": [
+      {
+        "src": "assets/fast/products-potolok-back-320.webp",
+        "width": 320,
+        "height": 869,
+        "bytes": 68780
+      },
+      {
+        "src": "assets/fast/products-potolok-back-341.webp",
+        "width": 341,
+        "height": 926,
+        "bytes": 76104
+      }
+    ],
+    "originalBytes": 130548
+  },
+  "assets/products/wood-rhomb.webp": {
+    "width": 388,
+    "height": 541,
+    "variants": [
+      {
+        "src": "assets/fast/products-wood-rhomb-320.webp",
+        "width": 320,
+        "height": 446,
+        "bytes": 19146
+      },
+      {
+        "src": "assets/fast/products-wood-rhomb-388.webp",
+        "width": 388,
+        "height": 541,
+        "bytes": 22906
+      }
+    ],
+    "originalBytes": 42542
+  },
+  "assets/products/rever-rhomb.webp": {
+    "width": 349,
+    "height": 635,
+    "variants": [
+      {
+        "src": "assets/fast/products-rever-rhomb-320.webp",
+        "width": 320,
+        "height": 582,
+        "bytes": 33584
+      },
+      {
+        "src": "assets/fast/products-rever-rhomb-349.webp",
+        "width": 349,
+        "height": 635,
+        "bytes": 36024
+      }
+    ],
+    "originalBytes": 60790
+  },
+  "assets/products/wood-art.webp": {
+    "width": 273,
+    "height": 628,
+    "variants": [
+      {
+        "src": "assets/fast/products-wood-art-273.webp",
+        "width": 273,
+        "height": 628,
+        "bytes": 20592
+      }
+    ],
+    "originalBytes": 51014
+  },
+  "assets/products/echoguard.webp": {
+    "width": 1300,
+    "height": 1102,
+    "variants": [
+      {
+        "src": "assets/fast/products-echoguard-320.webp",
+        "width": 320,
+        "height": 271,
+        "bytes": 18158
+      },
+      {
+        "src": "assets/fast/products-echoguard-640.webp",
+        "width": 640,
+        "height": 543,
+        "bytes": 51696
+      }
+    ],
+    "originalBytes": 247710
+  },
+  "assets/products/stena.webp": {
+    "width": 298,
+    "height": 921,
+    "variants": [
+      {
+        "src": "assets/fast/products-stena-298.webp",
+        "width": 298,
+        "height": 921,
+        "bytes": 21818
+      }
+    ],
+    "originalBytes": 56722
+  },
+  "assets/products/rever-spiral.webp": {
+    "width": 420,
+    "height": 481,
+    "variants": [
+      {
+        "src": "assets/fast/products-rever-spiral-320.webp",
+        "width": 320,
+        "height": 366,
+        "bytes": 42222
+      },
+      {
+        "src": "assets/fast/products-rever-spiral-420.webp",
+        "width": 420,
+        "height": 481,
+        "bytes": 69262
+      }
+    ],
+    "originalBytes": 113330
+  },
+  "assets/products/rever-quad.webp": {
+    "width": 267,
+    "height": 588,
+    "variants": [
+      {
+        "src": "assets/fast/products-rever-quad-267.webp",
+        "width": 267,
+        "height": 588,
+        "bytes": 53560
+      }
+    ],
+    "originalBytes": 87790
+  },
+  "assets/products/wood-line.webp": {
+    "width": 261,
+    "height": 629,
+    "variants": [
+      {
+        "src": "assets/fast/products-wood-line-261.webp",
+        "width": 261,
+        "height": 629,
+        "bytes": 12086
+      }
+    ],
+    "originalBytes": 29192
+  },
+  "assets/products/pol-back.webp": {
+    "width": 399,
+    "height": 899,
+    "variants": [
+      {
+        "src": "assets/fast/products-pol-back-320.webp",
+        "width": 320,
+        "height": 721,
+        "bytes": 62020
+      },
+      {
+        "src": "assets/fast/products-pol-back-399.webp",
+        "width": 399,
+        "height": 899,
+        "bytes": 93064
+      }
+    ],
+    "originalBytes": 156932
+  },
+  "assets/products/vibroguard.webp": {
+    "width": 1300,
+    "height": 954,
+    "variants": [
+      {
+        "src": "assets/fast/products-vibroguard-320.webp",
+        "width": 320,
+        "height": 235,
+        "bytes": 11340
+      },
+      {
+        "src": "assets/fast/products-vibroguard-640.webp",
+        "width": 640,
+        "height": 470,
+        "bytes": 33982
+      }
+    ],
+    "originalBytes": 187248
+  },
+  "assets/products/rever-hexa.webp": {
+    "width": 498,
+    "height": 478,
+    "variants": [
+      {
+        "src": "assets/fast/products-rever-hexa-320.webp",
+        "width": 320,
+        "height": 307,
+        "bytes": 24762
+      },
+      {
+        "src": "assets/fast/products-rever-hexa-498.webp",
+        "width": 498,
+        "height": 478,
+        "bytes": 52020
+      }
+    ],
+    "originalBytes": 90554
+  },
+  "assets/products/loft-hexa.webp": {
+    "width": 365,
+    "height": 461,
+    "variants": [
+      {
+        "src": "assets/fast/products-loft-hexa-320.webp",
+        "width": 320,
+        "height": 404,
+        "bytes": 19554
+      },
+      {
+        "src": "assets/fast/products-loft-hexa-365.webp",
+        "width": 365,
+        "height": 461,
+        "bytes": 21632
+      }
+    ],
+    "originalBytes": 48260
+  },
+  "assets/products/potolok.webp": {
+    "width": 300,
+    "height": 942,
+    "variants": [
+      {
+        "src": "assets/fast/products-potolok-300.webp",
+        "width": 300,
+        "height": 942,
+        "bytes": 20594
+      }
+    ],
+    "originalBytes": 48776
+  },
+  "assets/products/soundfiber.webp": {
+    "width": 1300,
+    "height": 936,
+    "variants": [
+      {
+        "src": "assets/fast/products-soundfiber-320.webp",
+        "width": 320,
+        "height": 230,
+        "bytes": 15082
+      },
+      {
+        "src": "assets/fast/products-soundfiber-640.webp",
+        "width": 640,
+        "height": 461,
+        "bytes": 48950
+      }
+    ],
+    "originalBytes": 243566
+  },
+  "assets/solutions/sport.webp": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "src": "assets/fast/solutions-sport-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 10826
+      },
+      {
+        "src": "assets/fast/solutions-sport-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 30986
+      },
+      {
+        "src": "assets/fast/solutions-sport-960.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 61132
+      }
+    ],
+    "originalBytes": 201418
+  },
+  "assets/solutions/cinema.webp": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "src": "assets/fast/solutions-cinema-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 7048
+      },
+      {
+        "src": "assets/fast/solutions-cinema-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 20062
+      },
+      {
+        "src": "assets/fast/solutions-cinema-960.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 38788
+      }
+    ],
+    "originalBytes": 132562
+  },
+  "assets/solutions/concert.webp": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "src": "assets/fast/solutions-concert-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 10294
+      },
+      {
+        "src": "assets/fast/solutions-concert-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 27746
+      },
+      {
+        "src": "assets/fast/solutions-concert-960.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 48528
+      }
+    ],
+    "originalBytes": 149704
+  },
+  "assets/solutions/apartments.webp": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "src": "assets/fast/solutions-apartments-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 9526
+      },
+      {
+        "src": "assets/fast/solutions-apartments-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 30574
+      },
+      {
+        "src": "assets/fast/solutions-apartments-960.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 63998
+      }
+    ],
+    "originalBytes": 222826
+  },
+  "assets/solutions/cottages.webp": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "src": "assets/fast/solutions-cottages-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 19014
+      },
+      {
+        "src": "assets/fast/solutions-cottages-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 66094
+      },
+      {
+        "src": "assets/fast/solutions-cottages-960.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 127056
+      }
+    ],
+    "originalBytes": 353930
+  },
+  "assets/solutions/offices.webp": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "src": "assets/fast/solutions-offices-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 8808
+      },
+      {
+        "src": "assets/fast/solutions-offices-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 27324
+      },
+      {
+        "src": "assets/fast/solutions-offices-960.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 54656
+      }
+    ],
+    "originalBytes": 197440
+  },
+  "assets/schemes/c-business.webp": {
+    "width": 723,
+    "height": 723,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-c-business-320.webp",
+        "width": 320,
+        "height": 320,
+        "bytes": 11232
+      },
+      {
+        "src": "assets/fast/schemes-c-business-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 35796
+      }
+    ],
+    "originalBytes": 99090
+  },
+  "assets/schemes/w-premium.webp": {
+    "width": 719,
+    "height": 695,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-w-premium-320.webp",
+        "width": 320,
+        "height": 309,
+        "bytes": 9978
+      },
+      {
+        "src": "assets/fast/schemes-w-premium-640.webp",
+        "width": 640,
+        "height": 619,
+        "bytes": 33580
+      }
+    ],
+    "originalBytes": 93756
+  },
+  "assets/schemes/p-standart.webp": {
+    "width": 728,
+    "height": 695,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-p-standart-320.webp",
+        "width": 320,
+        "height": 305,
+        "bytes": 7412
+      },
+      {
+        "src": "assets/fast/schemes-p-standart-640.webp",
+        "width": 640,
+        "height": 611,
+        "bytes": 21146
+      }
+    ],
+    "originalBytes": 51110
+  },
+  "assets/schemes/w-frame.webp": {
+    "width": 727,
+    "height": 709,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-w-frame-320.webp",
+        "width": 320,
+        "height": 312,
+        "bytes": 10676
+      },
+      {
+        "src": "assets/fast/schemes-w-frame-640.webp",
+        "width": 640,
+        "height": 624,
+        "bytes": 36854
+      }
+    ],
+    "originalBytes": 108398
+  },
+  "assets/schemes/c-apex.webp": {
+    "width": 732,
+    "height": 732,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-c-apex-320.webp",
+        "width": 320,
+        "height": 320,
+        "bytes": 10246
+      },
+      {
+        "src": "assets/fast/schemes-c-apex-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 33534
+      }
+    ],
+    "originalBytes": 89964
+  },
+  "assets/schemes/w-plus.webp": {
+    "width": 729,
+    "height": 729,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-w-plus-320.webp",
+        "width": 320,
+        "height": 320,
+        "bytes": 10262
+      },
+      {
+        "src": "assets/fast/schemes-w-plus-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 36766
+      }
+    ],
+    "originalBytes": 104238
+  },
+  "assets/schemes/c-premium.webp": {
+    "width": 728,
+    "height": 728,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-c-premium-320.webp",
+        "width": 320,
+        "height": 320,
+        "bytes": 10444
+      },
+      {
+        "src": "assets/fast/schemes-c-premium-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 34992
+      }
+    ],
+    "originalBytes": 96466
+  },
+  "assets/schemes/c-comfort.webp": {
+    "width": 725,
+    "height": 722,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-c-comfort-320.webp",
+        "width": 320,
+        "height": 319,
+        "bytes": 9482
+      },
+      {
+        "src": "assets/fast/schemes-c-comfort-640.webp",
+        "width": 640,
+        "height": 637,
+        "bytes": 31574
+      }
+    ],
+    "originalBytes": 87160
+  },
+  "assets/schemes/w-business.webp": {
+    "width": 859,
+    "height": 859,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-w-business-320.webp",
+        "width": 320,
+        "height": 320,
+        "bytes": 9538
+      },
+      {
+        "src": "assets/fast/schemes-w-business-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 33620
+      }
+    ],
+    "originalBytes": 130518
+  },
+  "assets/schemes/cf-comfort.webp": {
+    "width": 734,
+    "height": 734,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-cf-comfort-320.webp",
+        "width": 320,
+        "height": 320,
+        "bytes": 9048
+      },
+      {
+        "src": "assets/fast/schemes-cf-comfort-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 31940
+      }
+    ],
+    "originalBytes": 89632
+  },
+  "assets/schemes/wf-standart.webp": {
+    "width": 728,
+    "height": 728,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-wf-standart-320.webp",
+        "width": 320,
+        "height": 320,
+        "bytes": 8146
+      },
+      {
+        "src": "assets/fast/schemes-wf-standart-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 29870
+      }
+    ],
+    "originalBytes": 92146
+  },
+  "assets/schemes/f-antistomp.webp": {
+    "width": 741,
+    "height": 729,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-f-antistomp-320.webp",
+        "width": 320,
+        "height": 315,
+        "bytes": 7202
+      },
+      {
+        "src": "assets/fast/schemes-f-antistomp-640.webp",
+        "width": 640,
+        "height": 630,
+        "bytes": 26902
+      }
+    ],
+    "originalBytes": 76866
+  },
+  "assets/schemes/w-comfort.webp": {
+    "width": 713,
+    "height": 728,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-w-comfort-320.webp",
+        "width": 320,
+        "height": 327,
+        "bytes": 10414
+      },
+      {
+        "src": "assets/fast/schemes-w-comfort-640.webp",
+        "width": 640,
+        "height": 653,
+        "bytes": 34912
+      }
+    ],
+    "originalBytes": 98074
+  },
+  "assets/schemes/wf-comfort.webp": {
+    "width": 728,
+    "height": 701,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-wf-comfort-320.webp",
+        "width": 320,
+        "height": 308,
+        "bytes": 7904
+      },
+      {
+        "src": "assets/fast/schemes-wf-comfort-640.webp",
+        "width": 640,
+        "height": 616,
+        "bytes": 27494
+      }
+    ],
+    "originalBytes": 85956
+  },
+  "assets/schemes/p-basic.webp": {
+    "width": 728,
+    "height": 721,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-p-basic-320.webp",
+        "width": 320,
+        "height": 317,
+        "bytes": 7078
+      },
+      {
+        "src": "assets/fast/schemes-p-basic-640.webp",
+        "width": 640,
+        "height": 634,
+        "bytes": 21952
+      }
+    ],
+    "originalBytes": 52652
+  },
+  "assets/schemes/cf-standart.webp": {
+    "width": 728,
+    "height": 728,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-cf-standart-320.webp",
+        "width": 320,
+        "height": 320,
+        "bytes": 8038
+      },
+      {
+        "src": "assets/fast/schemes-cf-standart-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 29316
+      }
+    ],
+    "originalBytes": 82240
+  },
+  "assets/schemes/p-premium.webp": {
+    "width": 728,
+    "height": 695,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-p-premium-320.webp",
+        "width": 320,
+        "height": 305,
+        "bytes": 6896
+      },
+      {
+        "src": "assets/fast/schemes-p-premium-640.webp",
+        "width": 640,
+        "height": 611,
+        "bytes": 20568
+      }
+    ],
+    "originalBytes": 48314
+  },
+  "assets/schemes/f-sfgb.webp": {
+    "width": 749,
+    "height": 691,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-f-sfgb-320.webp",
+        "width": 320,
+        "height": 295,
+        "bytes": 8452
+      },
+      {
+        "src": "assets/fast/schemes-f-sfgb-640.webp",
+        "width": 640,
+        "height": 590,
+        "bytes": 33662
+      }
+    ],
+    "originalBytes": 96824
+  },
+  "assets/schemes/f-sf.webp": {
+    "width": 728,
+    "height": 728,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-f-sf-320.webp",
+        "width": 320,
+        "height": 320,
+        "bytes": 6266
+      },
+      {
+        "src": "assets/fast/schemes-f-sf-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 25544
+      }
+    ],
+    "originalBytes": 74366
+  },
+  "assets/schemes/p-comfort.webp": {
+    "width": 728,
+    "height": 728,
+    "variants": [
+      {
+        "src": "assets/fast/schemes-p-comfort-320.webp",
+        "width": 320,
+        "height": 320,
+        "bytes": 6514
+      },
+      {
+        "src": "assets/fast/schemes-p-comfort-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 19182
+      }
+    ],
+    "originalBytes": 48740
+  },
+  "assets/projects/kaspi.webp": {
+    "width": 962,
+    "height": 538,
+    "variants": [
+      {
+        "src": "assets/fast/projects-kaspi-320.webp",
+        "width": 320,
+        "height": 179,
+        "bytes": 16720
+      },
+      {
+        "src": "assets/fast/projects-kaspi-640.webp",
+        "width": 640,
+        "height": 358,
+        "bytes": 53212
+      },
+      {
+        "src": "assets/fast/projects-kaspi-960.webp",
+        "width": 960,
+        "height": 537,
+        "bytes": 108100
+      }
+    ],
+    "originalBytes": 158744
+  },
+  "assets/projects/intercontinental.webp": {
+    "width": 670,
+    "height": 447,
+    "variants": [
+      {
+        "src": "assets/fast/projects-intercontinental-320.webp",
+        "width": 320,
+        "height": 213,
+        "bytes": 13026
+      },
+      {
+        "src": "assets/fast/projects-intercontinental-640.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 45348
+      },
+      {
+        "src": "assets/fast/projects-intercontinental-670.webp",
+        "width": 670,
+        "height": 447,
+        "bytes": 53424
+      }
+    ],
+    "originalBytes": 71454
+  },
+  "assets/projects/qamaqor.webp": {
+    "width": 290,
+    "height": 290,
+    "variants": [
+      {
+        "src": "assets/fast/projects-qamaqor-290.webp",
+        "width": 290,
+        "height": 290,
+        "bytes": 14726
+      }
+    ],
+    "originalBytes": 19734
+  },
+  "assets/projects/golden.webp": {
+    "width": 750,
+    "height": 470,
+    "variants": [
+      {
+        "src": "assets/fast/projects-golden-320.webp",
+        "width": 320,
+        "height": 201,
+        "bytes": 19632
+      },
+      {
+        "src": "assets/fast/projects-golden-640.webp",
+        "width": 640,
+        "height": 401,
+        "bytes": 60542
+      },
+      {
+        "src": "assets/fast/projects-golden-750.webp",
+        "width": 750,
+        "height": 470,
+        "bytes": 80876
+      }
+    ],
+    "originalBytes": 106724
+  },
+  "assets/projects/radisson.webp": {
+    "width": 500,
+    "height": 323,
+    "variants": [
+      {
+        "src": "assets/fast/projects-radisson-320.webp",
+        "width": 320,
+        "height": 207,
+        "bytes": 10512
+      },
+      {
+        "src": "assets/fast/projects-radisson-500.webp",
+        "width": 500,
+        "height": 323,
+        "bytes": 22708
+      }
+    ],
+    "originalBytes": 29672
+  },
+  "assets/projects/biart-exterior-960.webp": {
+    "width": 960,
+    "height": 540,
+    "variants": [
+      {
+        "src": "assets/fast/projects-biart-exterior-960-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 10586
+      },
+      {
+        "src": "assets/fast/projects-biart-exterior-960-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 29374
+      },
+      {
+        "src": "assets/fast/projects-biart-exterior-960-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 48750
+      }
+    ],
+    "originalBytes": 79398
+  },
+  "assets/projects/museum.webp": {
+    "width": 853,
+    "height": 463,
+    "variants": [
+      {
+        "src": "assets/fast/projects-museum-320.webp",
+        "width": 320,
+        "height": 174,
+        "bytes": 10966
+      },
+      {
+        "src": "assets/fast/projects-museum-640.webp",
+        "width": 640,
+        "height": 347,
+        "bytes": 31256
+      },
+      {
+        "src": "assets/fast/projects-museum-853.webp",
+        "width": 853,
+        "height": 463,
+        "bytes": 50486
+      }
+    ],
+    "originalBytes": 70866
+  },
+  "assets/projects/resident.webp": {
+    "width": 856,
+    "height": 481,
+    "variants": [
+      {
+        "src": "assets/fast/projects-resident-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 11316
+      },
+      {
+        "src": "assets/fast/projects-resident-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 37304
+      },
+      {
+        "src": "assets/fast/projects-resident-856.webp",
+        "width": 856,
+        "height": 481,
+        "bytes": 61824
+      }
+    ],
+    "originalBytes": 111690
+  },
+  "assets/projects/aport.webp": {
+    "width": 1024,
+    "height": 723,
+    "variants": [
+      {
+        "src": "assets/fast/projects-aport-320.webp",
+        "width": 320,
+        "height": 226,
+        "bytes": 8734
+      },
+      {
+        "src": "assets/fast/projects-aport-640.webp",
+        "width": 640,
+        "height": 452,
+        "bytes": 25784
+      },
+      {
+        "src": "assets/fast/projects-aport-960.webp",
+        "width": 960,
+        "height": 678,
+        "bytes": 44216
+      }
+    ],
+    "originalBytes": 74994
+  },
+  "assets/projects/biart-exterior.webp": {
+    "width": 2048,
+    "height": 1152,
+    "variants": [
+      {
+        "src": "assets/fast/projects-biart-exterior-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 10808
+      },
+      {
+        "src": "assets/fast/projects-biart-exterior-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 29662
+      },
+      {
+        "src": "assets/fast/projects-biart-exterior-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 48434
+      }
+    ],
+    "originalBytes": 230128
+  },
+  "assets/projects/hilton.webp": {
+    "width": 1019,
+    "height": 573,
+    "variants": [
+      {
+        "src": "assets/fast/projects-hilton-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 10934
+      },
+      {
+        "src": "assets/fast/projects-hilton-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 31394
+      },
+      {
+        "src": "assets/fast/projects-hilton-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 56444
+      }
+    ],
+    "originalBytes": 94338
+  },
+  "assets/projects/ab-residence.webp": {
+    "width": 741,
+    "height": 568,
+    "variants": [
+      {
+        "src": "assets/fast/projects-ab-residence-320.webp",
+        "width": 320,
+        "height": 245,
+        "bytes": 11224
+      },
+      {
+        "src": "assets/fast/projects-ab-residence-640.webp",
+        "width": 640,
+        "height": 491,
+        "bytes": 31052
+      },
+      {
+        "src": "assets/fast/projects-ab-residence-741.webp",
+        "width": 741,
+        "height": 568,
+        "bytes": 41600
+      }
+    ],
+    "originalBytes": 57596
+  },
+  "assets/prod/boxes.webp": {
+    "width": 393,
+    "height": 276,
+    "variants": [
+      {
+        "src": "assets/fast/prod-boxes-320.webp",
+        "width": 320,
+        "height": 225,
+        "bytes": 9790
+      },
+      {
+        "src": "assets/fast/prod-boxes-393.webp",
+        "width": 393,
+        "height": 276,
+        "bytes": 10302
+      }
+    ],
+    "originalBytes": 12312
+  },
+  "assets/prod/csp.webp": {
+    "width": 638,
+    "height": 1388,
+    "variants": [
+      {
+        "src": "assets/fast/prod-csp-320.webp",
+        "width": 320,
+        "height": 696,
+        "bytes": 35666
+      },
+      {
+        "src": "assets/fast/prod-csp-638.webp",
+        "width": 638,
+        "height": 1388,
+        "bytes": 119454
+      }
+    ],
+    "originalBytes": 204558
+  },
+  "assets/prod/sys-wall-frameless.webp": {
+    "width": 900,
+    "height": 866,
+    "variants": [
+      {
+        "src": "assets/fast/prod-sys-wall-frameless-320.webp",
+        "width": 320,
+        "height": 308,
+        "bytes": 8132
+      },
+      {
+        "src": "assets/fast/prod-sys-wall-frameless-640.webp",
+        "width": 640,
+        "height": 616,
+        "bytes": 29892
+      }
+    ],
+    "originalBytes": 85076
+  },
+  "assets/prod/tapes.webp": {
+    "width": 896,
+    "height": 850,
+    "variants": [
+      {
+        "src": "assets/fast/prod-tapes-320.webp",
+        "width": 320,
+        "height": 304,
+        "bytes": 13322
+      },
+      {
+        "src": "assets/fast/prod-tapes-640.webp",
+        "width": 640,
+        "height": 607,
+        "bytes": 39966
+      }
+    ],
+    "originalBytes": 90260
+  },
+  "assets/prod/sys-wall-frame.webp": {
+    "width": 900,
+    "height": 871,
+    "variants": [
+      {
+        "src": "assets/fast/prod-sys-wall-frame-320.webp",
+        "width": 320,
+        "height": 310,
+        "bytes": 9778
+      },
+      {
+        "src": "assets/fast/prod-sys-wall-frame-640.webp",
+        "width": 640,
+        "height": 619,
+        "bytes": 31532
+      }
+    ],
+    "originalBytes": 76462
+  },
+  "assets/prod/hangers.webp": {
+    "width": 345,
+    "height": 210,
+    "variants": [
+      {
+        "src": "assets/fast/prod-hangers-320.webp",
+        "width": 320,
+        "height": 195,
+        "bytes": 12318
+      },
+      {
+        "src": "assets/fast/prod-hangers-345.webp",
+        "width": 345,
+        "height": 210,
+        "bytes": 11012
+      }
+    ],
+    "originalBytes": 12556
+  },
+  "assets/prod/acousticloft.webp": {
+    "width": 729,
+    "height": 729,
+    "variants": [
+      {
+        "src": "assets/fast/prod-acousticloft-320.webp",
+        "width": 320,
+        "height": 320,
+        "bytes": 17862
+      },
+      {
+        "src": "assets/fast/prod-acousticloft-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 44616
+      }
+    ],
+    "originalBytes": 70246
+  },
+  "assets/prod/profiles.webp": {
+    "width": 927,
+    "height": 611,
+    "variants": [
+      {
+        "src": "assets/fast/prod-profiles-320.webp",
+        "width": 320,
+        "height": 211,
+        "bytes": 18922
+      },
+      {
+        "src": "assets/fast/prod-profiles-640.webp",
+        "width": 640,
+        "height": 422,
+        "bytes": 57960
+      }
+    ],
+    "originalBytes": 100772
+  },
+  "assets/prod/acousticwood.webp": {
+    "width": 728,
+    "height": 724,
+    "variants": [
+      {
+        "src": "assets/fast/prod-acousticwood-320.webp",
+        "width": 320,
+        "height": 318,
+        "bytes": 14384
+      },
+      {
+        "src": "assets/fast/prod-acousticwood-640.webp",
+        "width": 640,
+        "height": 636,
+        "bytes": 37838
+      }
+    ],
+    "originalBytes": 60480
+  },
+  "assets/prod/sys-floor-screed.webp": {
+    "width": 900,
+    "height": 830,
+    "variants": [
+      {
+        "src": "assets/fast/prod-sys-floor-screed-320.webp",
+        "width": 320,
+        "height": 295,
+        "bytes": 7988
+      },
+      {
+        "src": "assets/fast/prod-sys-floor-screed-640.webp",
+        "width": 640,
+        "height": 590,
+        "bytes": 30550
+      }
+    ],
+    "originalBytes": 84282
+  },
+  "assets/prod/sys-floor-dry.webp": {
+    "width": 900,
+    "height": 885,
+    "variants": [
+      {
+        "src": "assets/fast/prod-sys-floor-dry-320.webp",
+        "width": 320,
+        "height": 315,
+        "bytes": 6738
+      },
+      {
+        "src": "assets/fast/prod-sys-floor-dry-640.webp",
+        "width": 640,
+        "height": 629,
+        "bytes": 23258
+      }
+    ],
+    "originalBytes": 65240
+  },
+  "assets/prod/sys-partition-basic.webp": {
+    "width": 900,
+    "height": 892,
+    "variants": [
+      {
+        "src": "assets/fast/prod-sys-partition-basic-320.webp",
+        "width": 320,
+        "height": 317,
+        "bytes": 6996
+      },
+      {
+        "src": "assets/fast/prod-sys-partition-basic-640.webp",
+        "width": 640,
+        "height": 634,
+        "bytes": 20696
+      }
+    ],
+    "originalBytes": 49168
+  },
+  "assets/prod/sys-ceiling-frameless.webp": {
+    "width": 900,
+    "height": 900,
+    "variants": [
+      {
+        "src": "assets/fast/prod-sys-ceiling-frameless-320.webp",
+        "width": 320,
+        "height": 320,
+        "bytes": 8570
+      },
+      {
+        "src": "assets/fast/prod-sys-ceiling-frameless-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 29310
+      }
+    ],
+    "originalBytes": 71624
+  },
+  "assets/prod/sys-partition-multi.webp": {
+    "width": 900,
+    "height": 860,
+    "variants": [
+      {
+        "src": "assets/fast/prod-sys-partition-multi-320.webp",
+        "width": 320,
+        "height": 306,
+        "bytes": 7872
+      },
+      {
+        "src": "assets/fast/prod-sys-partition-multi-640.webp",
+        "width": 640,
+        "height": 612,
+        "bytes": 23576
+      }
+    ],
+    "originalBytes": 62860
+  },
+  "assets/prod/gsp.webp": {
+    "width": 591,
+    "height": 1379,
+    "variants": [
+      {
+        "src": "assets/fast/prod-gsp-320.webp",
+        "width": 320,
+        "height": 747,
+        "bytes": 44212
+      },
+      {
+        "src": "assets/fast/prod-gsp-591.webp",
+        "width": 591,
+        "height": 1379,
+        "bytes": 168208
+      }
+    ],
+    "originalBytes": 253756
+  },
+  "assets/prod/trims.webp": {
+    "width": 740,
+    "height": 446,
+    "variants": [
+      {
+        "src": "assets/fast/prod-trims-320.webp",
+        "width": 320,
+        "height": 193,
+        "bytes": 10406
+      },
+      {
+        "src": "assets/fast/prod-trims-640.webp",
+        "width": 640,
+        "height": 386,
+        "bytes": 28312
+      }
+    ],
+    "originalBytes": 39564
+  },
+  "assets/prod/wool.webp": {
+    "width": 1100,
+    "height": 784,
+    "variants": [
+      {
+        "src": "assets/fast/prod-wool-320.webp",
+        "width": 320,
+        "height": 228,
+        "bytes": 11610
+      },
+      {
+        "src": "assets/fast/prod-wool-640.webp",
+        "width": 640,
+        "height": 456,
+        "bytes": 31418
+      }
+    ],
+    "originalBytes": 83276
+  },
+  "assets/prod/sys-ceiling-frame.webp": {
+    "width": 900,
+    "height": 901,
+    "variants": [
+      {
+        "src": "assets/fast/prod-sys-ceiling-frame-320.webp",
+        "width": 320,
+        "height": 320,
+        "bytes": 10290
+      },
+      {
+        "src": "assets/fast/prod-sys-ceiling-frame-640.webp",
+        "width": 640,
+        "height": 641,
+        "bytes": 34342
+      }
+    ],
+    "originalBytes": 83670
+  },
+  "assets/prod/reverboard.webp": {
+    "width": 726,
+    "height": 726,
+    "variants": [
+      {
+        "src": "assets/fast/prod-reverboard-320.webp",
+        "width": 320,
+        "height": 320,
+        "bytes": 10320
+      },
+      {
+        "src": "assets/fast/prod-reverboard-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 25920
+      }
+    ],
+    "originalBytes": 47728
+  },
+  "assets/prod/soundfiber.webp": {
+    "width": 1100,
+    "height": 792,
+    "variants": [
+      {
+        "src": "assets/fast/prod-soundfiber-320.webp",
+        "width": 320,
+        "height": 230,
+        "bytes": 14972
+      },
+      {
+        "src": "assets/fast/prod-soundfiber-640.webp",
+        "width": 640,
+        "height": 461,
+        "bytes": 47842
+      }
+    ],
+    "originalBytes": 133724
+  },
+  "assets/projects/dalaedge-kaskelen.webp": {
+    "width": 1224,
+    "height": 1530,
+    "variants": [
+      {
+        "src": "assets/fast/projects-dalaedge-kaskelen-320.webp",
+        "width": 320,
+        "height": 400,
+        "bytes": 32080
+      },
+      {
+        "src": "assets/fast/projects-dalaedge-kaskelen-640.webp",
+        "width": 640,
+        "height": 800,
+        "bytes": 97540
+      },
+      {
+        "src": "assets/fast/projects-dalaedge-kaskelen-960.webp",
+        "width": 960,
+        "height": 1200,
+        "bytes": 169840
+      }
+    ],
+    "originalBytes": 328180
+  }
+}

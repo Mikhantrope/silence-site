@@ -1,0 +1,177 @@
+[
+  {
+    "page": "articles/akustika-muzykalnogo-kabineta.html",
+    "javascript": [
+      "../build/articles.150a041a05.js"
+    ],
+    "styles": [
+      "../build/articles.e3f8fdb625.css"
+    ],
+    "htmlBytes": 32874
+  },
+  {
+    "page": "articles/gidroudar-i-stuk-v-trubah.html",
+    "javascript": [
+      "../build/articles.150a041a05.js"
+    ],
+    "styles": [
+      "../build/articles.e3f8fdb625.css"
+    ],
+    "htmlBytes": 31713
+  },
+  {
+    "page": "articles/nochnye-stuki-v-kvartire.html",
+    "javascript": [
+      "../build/articles.150a041a05.js"
+    ],
+    "styles": [
+      "../build/articles.e3f8fdb625.css"
+    ],
+    "htmlBytes": 31922
+  },
+  {
+    "page": "articles/rw-delta-rw-delta-lw.html",
+    "javascript": [
+      "../build/articles.150a041a05.js"
+    ],
+    "styles": [
+      "../build/articles.e3f8fdb625.css"
+    ],
+    "htmlBytes": 33285
+  },
+  {
+    "page": "articles/skolko-stoit-zvukoizolyatsiya-astana.html",
+    "javascript": [
+      "../build/articles.150a041a05.js"
+    ],
+    "styles": [
+      "../build/articles.e3f8fdb625.css"
+    ],
+    "htmlBytes": 32237
+  },
+  {
+    "page": "articles/strukturnyy-shum-v-dome.html",
+    "javascript": [
+      "../build/articles.150a041a05.js"
+    ],
+    "styles": [
+      "../build/articles.e3f8fdb625.css"
+    ],
+    "htmlBytes": 34274
+  },
+  {
+    "page": "articles/tresk-i-usadka-novostroyki.html",
+    "javascript": [
+      "../build/articles.150a041a05.js"
+    ],
+    "styles": [
+      "../build/articles.e3f8fdb625.css"
+    ],
+    "htmlBytes": 31110
+  },
+  {
+    "page": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html",
+    "javascript": [
+      "../build/articles.150a041a05.js"
+    ],
+    "styles": [
+      "../build/articles.e3f8fdb625.css"
+    ],
+    "htmlBytes": 33727
+  },
+  {
+    "page": "articles.html",
+    "javascript": [
+      "build/articles.150a041a05.js"
+    ],
+    "styles": [
+      "build/articles.e3f8fdb625.css"
+    ],
+    "htmlBytes": 23921
+  },
+  {
+    "page": "catalog.html",
+    "javascript": [
+      "build/site.861086ff99.js",
+      "build/page-catalog.60e6b1df3e.js"
+    ],
+    "styles": [
+      "build/site.a3dc7b7c1a.css"
+    ],
+    "htmlBytes": 18479
+  },
+  {
+    "page": "contacts.html",
+    "javascript": [
+      "build/consultation.e77e59cd50.js"
+    ],
+    "styles": [
+      "build/site.a3dc7b7c1a.css"
+    ],
+    "htmlBytes": 7870
+  },
+  {
+    "page": "index.html",
+    "javascript": [
+      "build/site.861086ff99.js",
+      "build/page-index.ea2fda988f.js"
+    ],
+    "styles": [
+      "build/site.a3dc7b7c1a.css"
+    ],
+    "htmlBytes": 46612
+  },
+  {
+    "page": "pro.html",
+    "javascript": [
+      "build/site.861086ff99.js",
+      "build/page-pro.c2017e9ea5.js"
+    ],
+    "styles": [
+      "build/site.a3dc7b7c1a.css"
+    ],
+    "htmlBytes": 25656
+  },
+  {
+    "page": "projects/biart-astana.html",
+    "javascript": [
+      "../build/articles.150a041a05.js"
+    ],
+    "styles": [
+      "../build/articles.e3f8fdb625.css"
+    ],
+    "htmlBytes": 12357
+  },
+  {
+    "page": "projects/dalaedge-kaskelen.html",
+    "javascript": [
+      "../build/articles.150a041a05.js"
+    ],
+    "styles": [
+      "../build/articles.e3f8fdb625.css"
+    ],
+    "htmlBytes": 11736
+  },
+  {
+    "page": "projects.html",
+    "javascript": [
+      "build/site.861086ff99.js",
+      "build/page-projects.d96ac2bdb0.js"
+    ],
+    "styles": [
+      "build/site.a3dc7b7c1a.css"
+    ],
+    "htmlBytes": 22044
+  },
+  {
+    "page": "systems.html",
+    "javascript": [
+      "build/site.861086ff99.js",
+      "build/page-systems.330d0a51fc.js"
+    ],
+    "styles": [
+      "build/site.a3dc7b7c1a.css"
+    ],
+    "htmlBytes": 17259
+  }
+]

@@ -19,6 +19,7 @@
   function el(tag, attrs, children) {
     var node = document.createElement(tag);
     attrs = attrs || {};
+    if (tag.toLowerCase() === 'img' && global.SILENCE_PERF) attrs = global.SILENCE_PERF.prepareImage(attrs);
     for (var key in attrs) {
       if (!Object.prototype.hasOwnProperty.call(attrs, key)) continue;
       var val = attrs[key];
@@ -37,6 +38,7 @@
       if (child == null) continue;
       node.appendChild(typeof child === 'string' ? document.createTextNode(child) : child);
     }
+    if (tag.toLowerCase() === 'img' && global.SILENCE_PERF) global.SILENCE_PERF.watchImage(node);
     return node;
   }
 

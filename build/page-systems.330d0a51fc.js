@@ -1,0 +1,36 @@
+(function (g) {
+'use strict';
+var mountedNode = null;
+function render(node) {
+mountedNode = node;
+var C = g.SILENCE_CORE, U = g.SILENCE_V27_UI, l = C.getLang(), tr = function (r, k, e) { return l === 'kz' ? k : l === 'en' ? e : r; };
+var places = ['wall', 'ceiling', 'floor', 'partition'], labels = [tr('Стены', 'Қабырғалар', 'Walls'), tr('Потолки', 'Төбелер', 'Ceilings'), tr('Полы', 'Едендер', 'Floors'), tr('Перегородки', 'Қалқалар', 'Partitions')];
+var qp = new URLSearchParams(location.search).get('place');
+var place = node._place || (places.includes(qp) ? qp : 'wall');
+node._place = place;
+node.innerHTML = '';
+var wrap = C.el('div', { class: 'container systems27' }, [C.el('p', { class: 'eyebrow' }, ['SILENCE / ' + tr('Конструкции', 'Конструкциялар', 'Assemblies')]), C.el('h1', {}, [C.t('sysTitle', l)]), C.el('p', { class: 'lead' }, [C.t('sysLead', l)])]);
+var tabs = C.el('div', { class: 'segment27', role: 'group', 'aria-label': tr('Выбор поверхности', 'Бетті таңдау', 'Choose a surface') });
+places.forEach(function (p, i) { var b = C.el('button', { type: 'button', class: 'segment27-button', 'data-place': p, 'aria-pressed': String(p === place) }, [labels[i]]); b.addEventListener('click', function () { node._place = p; node._kind = ''; render(node); }); tabs.appendChild(b); });
+wrap.appendChild(tabs);
+if (place === 'wall' || place === 'ceiling') {
+var kinds = C.el('div', { class: 'systems27-kinds', role: 'group', 'aria-label': tr('Тип конструкции', 'Конструкция түрі', 'Assembly type') });
+[['', tr('Все варианты', 'Барлық нұсқалар', 'All types')], ['frameless', tr('Бескаркасные', 'Қаңқасыз', 'Frameless')], ['frame', tr('Каркасные', 'Қаңқалы', 'Framed')]].forEach(function (v) { var b = C.el('button', { type: 'button', class: 'filter27', 'data-kind': v[0], 'aria-pressed': String((node._kind || '') === v[0]) }, [v[1]]); b.addEventListener('click', function () { node._kind = v[0]; render(node); }); kinds.appendChild(b); });
+wrap.appendChild(kinds);
+}
+var note = place === 'floor' ? tr('Показатель пола описывает снижение ударного шума. Он не сравнивается с Rw перегородок или ΔRw облицовок.', 'Еден көрсеткіші соққы шуды азайтуды сипаттайды. Ол қалқалардың Rw не қаптаманың ΔRw көрсеткішімен салыстырылмайды.', 'Floor ratings describe impact-noise reduction, not partition Rw or lining ΔRw.') : place === 'partition' ? tr('Rw — показатель готовой перегородки. Это не прирост звукоизоляции существующей стены.', 'Rw — дайын қалқаның көрсеткіші, бар қабырғаның қосымша оқшаулауы емес.', 'Rw describes the complete partition, not an improvement to an existing wall.') : tr('ΔRw — дополнительная звукоизоляция по данным журнала. Условия испытаний и применимость к объекту уточняются отдельно.', 'ΔRw — журнал бойынша қосымша дыбыс оқшаулау. Сынақ шарттары мен нысанға жарамдылығы бөлек нақтыланады.', 'ΔRw describes added sound insulation in the journal. Confirm test conditions and applicability separately.');
+wrap.appendChild(C.el('p', { class: 'technical-note' }, [note]));
+var grid = C.el('div', { class: 'systems27-grid' }), rows = g.CATALOG.systems.filter(function (s) { return s.place === place && (!node._kind || s.kind === node._kind); });
+rows.forEach(function (s) { var img = C.el('button', { type: 'button', class: 'system27-picture', 'aria-label': tr('Схема: ', 'Схема: ', 'Diagram: ') + s.name }, [C.el('img', { src: s.img, alt: s.name, loading: 'lazy' })]); var more = C.el('button', { type: 'button', class: 'text-link', 'data-system-detail': s.id }, [tr('Состав и схема', 'Құрамы мен схемасы', 'Layers and diagram') + ' ↗']); function open() { C.openCardOverlay(C.renderCardBody(s, l)); if (g.SILENCE_TRACK)
+g.SILENCE_TRACK('system_details', { value: s.id }); } img.addEventListener('click', open); more.addEventListener('click', open); grid.appendChild(C.el('article', { class: 'system27-card', 'data-system': s.id }, [img, C.el('div', { class: 'system27-body' }, [C.el('p', { class: 'eyebrow' }, [labels[places.indexOf(place)]]), C.el('h2', {}, [s.name]), C.el('p', { class: 'system27-index' }, [s.ix + ' ' + s.from + (s.from !== s.to ? '–' + s.to : '') + ' ' + tr('дБ', 'дБ', 'dB')]), C.el('p', { class: 'source27-note' }, [U.t('source') + ' ' + s.page]), more])])); });
+wrap.appendChild(grid);
+node.appendChild(wrap);
+}
+g.SILENCE_PAGES = g.SILENCE_PAGES || {};
+g.SILENCE_PAGES.systems = render;
+g.addEventListener('hashchange', function () { var id = location.hash.replace(/^#sys-/, ''), s = g.CATALOG.systems.find(function (x) { return x.id === id; }); if (s && mountedNode) {
+mountedNode._place = s.place;
+render(mountedNode);
+g.SILENCE_CORE.openCardOverlay(g.SILENCE_CORE.renderCardBody(s, g.SILENCE_CORE.getLang()));
+} });
+}(window));

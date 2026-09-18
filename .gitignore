@@ -5,3 +5,5 @@ __pycache__/
 node_modules/
 data/*.json
 data/*.jsonl
+
+*.pyc

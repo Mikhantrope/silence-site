@@ -1,0 +1,16 @@
+{
+  "name": "silence-static-site",
+  "version": "33.0.0",
+  "private": true,
+  "description": "Static deployable site. Build tools are needed only for future edits.",
+  "scripts": {
+    "build": "node tools/rebuild-performance.cjs"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3",
+    "postcss": "8.5.6"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

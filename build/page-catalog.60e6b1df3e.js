@@ -1,0 +1,23 @@
+(function (g) {
+'use strict';
+function render(node) {
+var C = g.SILENCE_CORE, U = g.SILENCE_V27_UI, D = g.SILENCE_V27, l = C.getLang(), tr = function (r, k, e) { return l === 'kz' ? k : l === 'en' ? e : r; };
+node.innerHTML = '';
+var group = node._group || (location.hash === '#decor' ? 'acoustics' : 'isolation');
+node._group = group;
+var wrap = C.el('div', { class: 'container catalog27' }, [C.el('p', { class: 'eyebrow' }, ['SILENCE / ' + U.t('navMat')]), C.el('h1', {}, [C.t('catTitle', l)]), C.el('p', { class: 'lead' }, [C.t('catLead', l)]), C.el('a', { class: 'text-link', href: 'systems.html' }, [U.t('heroSecondary') + ' ↗'])]);
+var tabs = C.el('div', { class: 'segment27', role: 'group', 'aria-label': C.t('catTitle', l) });
+['isolation', 'acoustics', 'parts'].forEach(function (k) { var b = C.el('button', { type: 'button', class: 'segment27-button', 'data-catalog-group': k, 'aria-pressed': String(k === group) }, [k === 'parts' ? tr('Комплектующие', 'Жинақтаушылар', 'Accessories') : U.t(k)]); b.addEventListener('click', function () { node._group = k; render(node); }); tabs.appendChild(b); });
+wrap.appendChild(tabs);
+var grid = C.el('div', { class: 'catalog27-grid' });
+if (group !== 'parts')
+D.products.filter(function (p) { return p.family === group; }).forEach(function (p) { grid.appendChild(U.card(p)); });
+else
+g.CATALOG.parts.concat(g.CATALOG.boards || []).forEach(function (p) { var name = typeof p.name === 'string' ? p.name : p.name[l] || p.name.ru; var b = C.el('button', { class: 'accessory27', type: 'button' }, [p.img ? C.el('img', { src: p.img, alt: name, loading: 'lazy' }) : null, C.el('h2', {}, [name]), C.el('span', { class: 'text-link' }, [U.t('detail') + ' ↗'])]); b.addEventListener('click', function () { C.openCardOverlay(C.renderCardBody(p, l)); }); grid.appendChild(b); });
+wrap.appendChild(grid);
+node.appendChild(wrap);
+}
+g.SILENCE_PAGES = g.SILENCE_PAGES || {};
+g.SILENCE_PAGES.catalog = render;
+g.SILENCE_PAGES['catalog-teaser'] = render;
+}(window));

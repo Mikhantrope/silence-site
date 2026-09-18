@@ -1,0 +1,168 @@
+{
+  "base": "silence-v32-performance-full-site.zip",
+  "localReferencesChecked": 1036,
+  "jsonLdBlocks": 22,
+  "bootstrapCspHashesVerified": 17,
+  "staticErrors": [],
+  "browser": {
+    "method": "Chromium, local resources fulfilled via route; no live network/navigation measurements",
+    "checks": [
+      {
+        "page": "index.html",
+        "width": 320,
+        "pass": true,
+        "overflow": 0
+      },
+      {
+        "page": "projects.html",
+        "width": 320,
+        "pass": true,
+        "overflow": 0
+      },
+      {
+        "page": "projects/biart-astana.html",
+        "width": 320,
+        "pass": true,
+        "overflow": 0
+      },
+      {
+        "page": "projects/dalaedge-kaskelen.html",
+        "width": 320,
+        "pass": true,
+        "overflow": 0
+      },
+      {
+        "page": "index.html",
+        "width": 390,
+        "pass": true,
+        "overflow": 0
+      },
+      {
+        "page": "projects.html",
+        "width": 390,
+        "pass": true,
+        "overflow": 0
+      },
+      {
+        "page": "projects/biart-astana.html",
+        "width": 390,
+        "pass": true,
+        "overflow": 0
+      },
+      {
+        "page": "projects/dalaedge-kaskelen.html",
+        "width": 390,
+        "pass": true,
+        "overflow": 0
+      },
+      {
+        "page": "index.html",
+        "width": 768,
+        "pass": true,
+        "overflow": 0
+      },
+      {
+        "page": "projects.html",
+        "width": 768,
+        "pass": true,
+        "overflow": 0
+      },
+      {
+        "page": "projects/biart-astana.html",
+        "width": 768,
+        "pass": true,
+        "overflow": 0
+      },
+      {
+        "page": "projects/dalaedge-kaskelen.html",
+        "width": 768,
+        "pass": true,
+        "overflow": 0
+      },
+      {
+        "page": "index.html",
+        "width": 1440,
+        "pass": true,
+        "overflow": 0
+      },
+      {
+        "page": "projects.html",
+        "width": 1440,
+        "pass": true,
+        "overflow": 0
+      },
+      {
+        "page": "projects/biart-astana.html",
+        "width": 1440,
+        "pass": true,
+        "overflow": 0
+      },
+      {
+        "page": "projects/dalaedge-kaskelen.html",
+        "width": 1440,
+        "pass": true,
+        "overflow": 0
+      }
+    ],
+    "failures": []
+  },
+  "functional": {
+    "checks": [
+      "index.html kz single DalaEdge",
+      "index.html kz BIART caption",
+      "index.html kz project link",
+      "index.html en single DalaEdge",
+      "index.html en BIART caption",
+      "index.html en project link",
+      "index.html ru single DalaEdge",
+      "index.html ru BIART caption",
+      "index.html ru project link",
+      "index.html image opens within site",
+      "index.html original image for zoom",
+      "index.html close gallery",
+      "Room 0 selects",
+      "Room 0 caption",
+      "Room 1 selects",
+      "Room 1 caption",
+      "Room 2 selects",
+      "Room 2 caption",
+      "Room 3 selects",
+      "Room 3 caption",
+      "form still only name and phone",
+      "no theme in form",
+      "rail finite end",
+      "projects.html kz single DalaEdge",
+      "projects.html kz BIART caption",
+      "projects.html kz project link",
+      "projects.html en single DalaEdge",
+      "projects.html en BIART caption",
+      "projects.html en project link",
+      "projects.html ru single DalaEdge",
+      "projects.html ru BIART caption",
+      "projects.html ru project link",
+      "projects.html image opens within site",
+      "projects.html original image for zoom",
+      "projects.html close gallery",
+      "light consultation text visible",
+      "dark consultation text visible",
+      "new page mobile menu",
+      "new page menu closes",
+      "no JS: DalaEdge text",
+      "no JS: full image"
+    ],
+    "errors": [],
+    "method": "offline Chromium; resources served from local files via browser interception"
+  },
+  "limitations": [
+    "Chromium offline harness with local resource interception; public and localhost navigation was blocked by the environment.",
+    "No PageSpeed or real-world LCP/INP/TTFB measurements.",
+    "No physical device or Safari testing.",
+    "Language-state testing used a localStorage shim for the opaque-origin offline document."
+  ],
+  "preservation": {
+    "previousAssetsUnchanged": 347,
+    "roomScriptUnchanged": true,
+    "consultationScriptUnchanged": true,
+    "imageViewerUnchanged": true
+  }
+}
