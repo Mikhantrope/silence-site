@@ -1,0 +1,1388 @@
+{
+  "base": "v33 optimized full site",
+  "build": "v34",
+  "network_note": "HTTP page navigation blocked by Chromium policy. Tests use offline local built code; image URLs mapped to local data. External web fonts not loaded. Not a live-network, physical-device or Safari test.",
+  "layout": [
+    {
+      "name": "articles.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "articles/akustika-muzykalnogo-kabineta.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/akustika-muzykalnogo-kabineta.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/akustika-muzykalnogo-kabineta.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/akustika-muzykalnogo-kabineta.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/akustika-muzykalnogo-kabineta.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "articles/gidroudar-i-stuk-v-trubah.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/gidroudar-i-stuk-v-trubah.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/gidroudar-i-stuk-v-trubah.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/gidroudar-i-stuk-v-trubah.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/gidroudar-i-stuk-v-trubah.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "articles/nochnye-stuki-v-kvartire.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/nochnye-stuki-v-kvartire.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/nochnye-stuki-v-kvartire.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/nochnye-stuki-v-kvartire.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/nochnye-stuki-v-kvartire.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "articles/rw-delta-rw-delta-lw.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/rw-delta-rw-delta-lw.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/rw-delta-rw-delta-lw.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/rw-delta-rw-delta-lw.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/rw-delta-rw-delta-lw.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "articles/skolko-stoit-zvukoizolyatsiya-astana.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/skolko-stoit-zvukoizolyatsiya-astana.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/skolko-stoit-zvukoizolyatsiya-astana.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/skolko-stoit-zvukoizolyatsiya-astana.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/skolko-stoit-zvukoizolyatsiya-astana.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "articles/strukturnyy-shum-v-dome.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/strukturnyy-shum-v-dome.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/strukturnyy-shum-v-dome.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/strukturnyy-shum-v-dome.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/strukturnyy-shum-v-dome.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "articles/tresk-i-usadka-novostroyki.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/tresk-i-usadka-novostroyki.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/tresk-i-usadka-novostroyki.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/tresk-i-usadka-novostroyki.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/tresk-i-usadka-novostroyki.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "catalog.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "catalog.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "catalog.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "catalog.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "catalog.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contacts.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "contacts.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "contacts.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "contacts.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "contacts.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "index-vertical.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "index-vertical.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "index-vertical.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "index-vertical.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "index-vertical.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "index.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "index.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "index.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "index.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "index.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "pro.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "pro.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "pro.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "pro.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "pro.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "projects.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "projects.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "projects.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "projects.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "projects.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "projects/biart-astana.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "projects/biart-astana.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "projects/biart-astana.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "projects/biart-astana.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "projects/biart-astana.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "projects/dalaedge-kaskelen.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "projects/dalaedge-kaskelen.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "projects/dalaedge-kaskelen.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "projects/dalaedge-kaskelen.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "projects/dalaedge-kaskelen.html end no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "systems.html width 320",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "systems.html width 390",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "systems.html width 768",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 768,
+          "scroll": 768,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "systems.html width 1440",
+      "passed": true,
+      "detail": {
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "overflow": false
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "systems.html end no overflow",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "functional": [
+    {
+      "name": "intro followed by house, not side-by-side",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source label plus 4 directional controls",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "two other tasks kept separate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "hover opens instruction without selecting",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "instruction stays while hovered",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Escape dismisses instruction with body focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Escape does not scroll",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "keyboard focus opens instruction",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "keyboard Escape keeps room focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "top selects with callout",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "top only others dim, no global filter",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "top image dimensions stable and no auto scroll",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "left selects with callout",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "left only others dim, no global filter",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "left image dimensions stable and no auto scroll",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "right selects with callout",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "right only others dim, no global filter",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "right image dimensions stable and no auto scroll",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "bottom selects with callout",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "bottom only others dim, no global filter",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "bottom image dimensions stable and no auto scroll",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "show solutions focuses title",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "title is below sticky header",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "kz translated source label and rooms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en translated source label and rooms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru translated source label and rooms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "impact-down task switches and removes shading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "echo task switches and removes shading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "acoustic material group retains 9 cards",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "carousel finite end retains disabled next",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "material details still open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "enlarge image inside page",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "form values preserved on language switch",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "subject line remains removed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no console JS exceptions on desktop",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "320 tap top",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320 callout contained top",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320 tap right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320 callout contained right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320 tap bottom",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320 callout contained bottom",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320 tap left",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320 callout contained left",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320 drag is not room selection",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320 mobile menu opens",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320 mobile menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320 no mobile overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390 tap top",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390 callout contained top",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390 tap right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390 callout contained right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390 tap bottom",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390 callout contained bottom",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390 tap left",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390 callout contained left",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390 drag is not room selection",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390 mobile menu opens",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390 mobile menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390 no mobile overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768 tap top",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768 callout contained top",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768 tap right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768 callout contained right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768 tap bottom",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768 callout contained bottom",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768 tap left",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768 callout contained left",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768 drag is not room selection",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768 mobile menu opens",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768 mobile menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "768 no mobile overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "alternative 390 no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "alternative 390 excluded from index",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "alternative mobile menu works",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "alternative 1200 no overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "alternative 1200 excluded from index",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "alternative 1200 vertically stacked menu",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "alternative 1200 result scroll not blocked by sidebar",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "alternative 1440 result scroll and sidebar verified separately",
+      "passed": true,
+      "detail": {
+        "result_title_y": 69.828125,
+        "sidebar_width": 224
+      }
+    }
+  ],
+  "static_checks": {
+    "local_references": 986,
+    "missing": [],
+    "assets_changed": [],
+    "unchanged_files": {
+      "css/tokens.css": true,
+      "js/ui.contacts.js": true,
+      "js/ui.form.js": true,
+      "js/config.js": true,
+      "js/performance.js": true,
+      "js/data.catalog.js": true,
+      "js/data.redesign.js": true
+    }
+  },
+  "summary": {
+    "layout_pages": 18,
+    "viewport_widths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "page_viewport_combinations": 72,
+    "additional_end_of_page_checks": 18,
+    "functional_checks": 79,
+    "failed": 0
+  }
+}

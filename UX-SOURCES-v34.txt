@@ -1,0 +1,8 @@
+Research for this implementation, checked 2026-09-18:
+https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html
+https://www.w3.org/WAI/tutorials/menus/
+https://web.dev/articles/optimize-lcp
+
+Local source for proposed future game: Журнал Silence 20.04.2026.pdf,
+page 25 (construction layers), page 32 (floor assemblies).
+No game code is included in this release.

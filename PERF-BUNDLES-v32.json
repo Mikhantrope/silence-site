@@ -1,15 +1,15 @@
 {
   "bundles": {
     "common": "build/site.861086ff99.js",
-    "index": "build/page-index.ea2fda988f.js",
+    "index": "build/page-index.00139f185f.js",
     "catalog": "build/page-catalog.60e6b1df3e.js",
     "systems": "build/page-systems.330d0a51fc.js",
     "projects": "build/page-projects.d96ac2bdb0.js",
     "pro": "build/page-pro.c2017e9ea5.js",
     "contacts": "build/consultation.e77e59cd50.js",
     "editorial": "build/articles.150a041a05.js",
-    "css": "build/site.a3dc7b7c1a.css",
-    "editorialCSS": "build/articles.e3f8fdb625.css"
+    "css": "build/site.2431c1b208.css",
+    "editorialCSS": "build/articles.de82b35bc7.css"
   },
   "removedRules": 163
 }

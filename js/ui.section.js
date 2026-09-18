@@ -1,4 +1,4 @@
-/* SILENCE v29: selected-room callout and local room shading.
+/* SILENCE v34: hover instruction + selected-room callout and local room shading.
    Four independent masks never cover the central apartment.
    Selecting a room does not scroll; the callout action is the only scroll trigger. */
 (function (g) {
@@ -16,10 +16,17 @@
   var overlay=node.querySelector('[data-cutaway-overlay]');
   var host=node.querySelector('[data-cutaway-content]');
   var choices=node.querySelector('[data-room-choices]');
+  var otherChoices=node.querySelector('[data-room-other]');
   if(!overlay||!host||!choices)return;
   if(node._room29Cleanup)node._room29Cleanup();
-  overlay.innerHTML='';host.innerHTML='';choices.innerHTML='';
-  node.dataset.roomUiVersion='29';
+  overlay.innerHTML='';host.innerHTML='';choices.innerHTML='';if(otherChoices)otherChoices.innerHTML='';
+  var sourceLabel=node.querySelector('[data-room-source-label]');
+  if(sourceLabel)sourceLabel.textContent=tr('Источник шума:','Шу көзі:','Noise source:');
+  var otherLabel=node.querySelector('[data-room-other-label]');
+  if(otherLabel)otherLabel.textContent=tr('Другие задачи','Басқа міндеттер','Other tasks');
+  var instruction=node.querySelector('[data-room-instruction]');
+  if(instruction)instruction.textContent=tr('Картинка интерактивная: нажмите на комнату или выберите источник шума кнопками.','Сурет интерактивті: бөлмені басыңыз немесе шу көзін түймелермен таңдаңыз.','Interactive image: tap a room or choose the noise source using the buttons.');
+  node.dataset.roomUiVersion='34';
   var entries=[
    {id:'top',short:tr('Сверху','Жоғарыдан','Above'),title:tr('Сверлят и стучат сверху','Жоғарыдан бұрғылау мен соққы','Drilling and impacts above'),desc:tr('Для потолка рассматриваем систему с виброразвязкой. При ударах и ремонте сначала проверяем, как звук передаётся через перекрытие и примыкания.','Төбе үшін дірілді ажырататын жүйе қарастырылады. Алдымен дыбыстың жабын мен түйіспелер арқылы таралуын тексереміз.','Consider an isolated ceiling assembly. First assess how impacts and drilling travel through the slab and adjoining junctions.'),place:'ceiling',systems:['c-apex','c-comfort','c-premium']},
    {id:'left',short:tr('Слева','Сол жақтан','Left'),title:tr('Разговоры и бытовой шум за стеной','Қабырға артындағы әңгіме мен тұрмыстық шу','Speech and household noise behind the wall'),desc:tr('Дополнительная облицовка существующей стены. Конструкцию выбирают с учётом основания, розеток, щелей и примыканий.','Бар қабырғаның қосымша қаптамасы. Негіз, розеткалар, саңылаулар мен түйіспелер ескеріледі.','Additional lining for an existing wall. Selection depends on the base, sockets, gaps and junctions.'),place:'wall',systems:['wf-standart','w-comfort','w-premium']},
@@ -38,6 +45,29 @@
   var hits=[],buttons=[],cleanups=[],positionFrame=0,focusTimer=0;
   var figure=overlay.parentElement,lastTrigger=null;
   var motion=g.matchMedia('(prefers-reduced-motion: reduce)');
+  // A vertical sidebar is not a sticky bar covering the top of the viewport.
+  function headerOffset(){var h=document.querySelector('.header27');if(!h)return 0;var r=h.getBoundingClientRect();return r.width>=g.innerWidth*.6?Math.max(0,r.bottom):0;}
+  var guideTimer=0,guideLeaveTimer=0,guideSuppressed=false,guideHover=false,guidePointer=null;
+  var guide=C.el('div',{id:'room34-guide',class:'room34-guide',role:'tooltip',hidden:''},[
+    C.el('strong',{},[tr('На комнаты можно нажимать','Бөлмелерді басуға болады','The rooms are clickable')]),
+    C.el('span',{},[tr('Выберите, откуда слышен шум. Покажем описание и варианты решения.','Шу қай жақтан естілетінін таңдаңыз. Сипаттама мен шешім нұсқаларын көрсетеміз.','Choose where the noise comes from to see details and possible solutions.')])
+  ]);
+  overlay.appendChild(guide);
+  function hideGuide(suppress){g.clearTimeout(guideTimer);g.clearTimeout(guideLeaveTimer);guide.hidden=true;if(suppress)guideSuppressed=true;}
+  function positionGuide(){
+    if(guide.hidden)return;
+    var r=overlay.getBoundingClientRect(),w=guide.offsetWidth,h=guide.offsetHeight,pad=10;
+    var minY=Math.max(pad,headerOffset()-r.top+pad),maxY=Math.min(r.height-h-pad,g.innerHeight-r.top-h-pad);
+    if(minY>maxY){minY=pad;maxY=Math.max(pad,r.height-h-pad);}
+    var maxX=Math.max(pad,r.width-w-pad),p=guidePointer||{x:r.width*.5,y:r.height*.15};
+    var targets=hits.map(function(b){var t=b.querySelector('.room27-pin').getBoundingClientRect();return {x:t.left-r.left-6,y:t.top-r.top-6,w:t.width+12,h:t.height+12};});
+    var candidate=[{x:p.x+16,y:p.y+20},{x:p.x-w-16,y:p.y+20},{x:pad,y:minY},{x:maxX,y:minY},{x:pad,y:maxY},{x:maxX,y:maxY}],best;
+    candidate.forEach(function(c){var b={x:clamp(c.x,pad,maxX),y:clamp(c.y,minY,maxY),w:w,h:h};var covered=targets.reduce(function(n,t){return n+area(b,t);},0);var pointerOverlap=area(b,{x:p.x-10,y:p.y-10,w:20,h:20});var score=(covered+pointerOverlap)*10000+Math.hypot(b.x+w/2-p.x,b.y+h/2-p.y);if(!best||score<best.score)best={x:b.x,y:b.y,score:score};});
+    guide.style.left=Math.round(best.x)+'px';guide.style.top=Math.round(best.y)+'px';
+  }
+  function showGuide(){if(guideSuppressed||node._selectedProblem||!figure.isConnected)return;guide.hidden=false;positionGuide();}
+  function requestGuide(){g.clearTimeout(guideLeaveTimer);g.clearTimeout(guideTimer);if(!guide.hidden)return;guideTimer=g.setTimeout(showGuide,180);}
+
   function on(target,event,handler,options){target.addEventListener(event,handler,options);cleanups.push(function(){target.removeEventListener(event,handler,options);});}
   function clamp(n,a,b){return Math.max(a,Math.min(b,n));}
   function area(a,b){return Math.max(0,Math.min(a.x+a.w,b.x+b.w)-Math.max(a.x,b.x))*Math.max(0,Math.min(a.y+a.h,b.y+b.h)-Math.max(a.y,b.y));}
@@ -84,7 +114,7 @@
    var w=caption.offsetWidth,h=caption.offsetHeight,pad=8,gap=box.width<400?6:10;
    var anchor={x:pin.left-box.left,y:pin.top-box.top,w:pin.width,h:pin.height};
    var cx=anchor.x+anchor.w/2,cy=anchor.y+anchor.h/2;
-   var header=document.querySelector('.header27'),headerBottom=header?header.getBoundingClientRect().bottom:0;
+   var headerBottom=headerOffset();
    var vv=g.visualViewport,vtop=vv?vv.offsetTop:0,vbottom=vtop+(vv?vv.height:g.innerHeight);
    var ymin=pad,ymax=Math.max(pad,box.height-h-pad);
    // Keep the callout visible when a room is selected near a sticky header.
@@ -136,6 +166,7 @@
   }
 
   function select(id,user,trigger){
+   hideGuide(true);
    var e=entries.find(function(x){return x.id===id;});if(!e)return;
    g.clearTimeout(focusTimer);
    node._selectedProblem=id;node.dataset.activeRoom=id;
@@ -187,7 +218,7 @@
 
   zones.forEach(function(z){
    var e=entries.find(function(x){return x.id===z.id;});
-   var b=C.el('button',{type:'button',class:'room27-hotspot room27-hotspot--'+z.id,'data-room':z.id,'aria-label':e.title,'aria-pressed':'false','aria-expanded':'false','aria-controls':'room29-caption room27-result'},[C.el('span',{class:'room27-pin','aria-hidden':'true'},[z.n])]);
+   var b=C.el('button',{type:'button',class:'room27-hotspot room27-hotspot--'+z.id,'data-room':z.id,'aria-label':e.title,'aria-pressed':'false','aria-expanded':'false','aria-controls':'room29-caption room27-result','aria-describedby':'room34-instruction room34-guide'},[C.el('span',{class:'room27-pin','aria-hidden':'true'},[z.n])]);
    b.style.left=z.x+'%';b.style.top=z.y+'%';b.style.width=z.w+'%';b.style.height=z.h+'%';
    var start=null,suppressUntil=0;
    on(b,'pointerdown',function(ev){start={x:ev.clientX,y:ev.clientY};},{passive:true});
@@ -201,19 +232,32 @@
   });
   entries.forEach(function(e,i){
    var b=C.el('button',{type:'button',class:'room27-choice','data-room':e.id,'aria-pressed':'false','aria-controls':'room27-result'},[i<4?C.el('span',{class:'room27-choice__num','aria-hidden':'true'},[String(i+1)]):null,e.short]);
-   on(b,'click',function(){select(e.id,true,b);});choices.appendChild(b);buttons.push(b);
+   on(b,'click',function(){select(e.id,true,b);});(i<4||!otherChoices?choices:otherChoices).appendChild(b);buttons.push(b);
   });
   // Put disclosure controls after the room controls in the reading order.
   overlay.appendChild(leader);overlay.appendChild(caption);overlay.appendChild(live);
+  on(figure,'pointerenter',function(ev){
+   if(ev.pointerType==='touch')return;
+   guideHover=true;var r=figure.getBoundingClientRect();guidePointer={x:ev.clientX-r.left,y:ev.clientY-r.top};requestGuide();
+  },{passive:true});
+  on(figure,'pointerleave',function(){guideHover=false;g.clearTimeout(guideTimer);guideSuppressed=false;guideLeaveTimer=g.setTimeout(function(){if(!figure.contains(document.activeElement))hideGuide(false);},120);},{passive:true});
+  on(guide,'pointerenter',function(){guideHover=true;g.clearTimeout(guideLeaveTimer);},{passive:true});
+  on(figure,'focusin',function(ev){
+   if(!ev.target.classList.contains('room27-hotspot'))return;
+   var r=figure.getBoundingClientRect(),b=ev.target.querySelector('.room27-pin').getBoundingClientRect();guidePointer={x:b.left-r.left+b.width/2,y:b.top-r.top+b.height/2};requestGuide();
+  });
+  on(figure,'focusout',function(ev){if(!figure.contains(ev.relatedTarget)){guideSuppressed=false;if(!guideHover)hideGuide(false);}});
+  on(document,'keydown',function(ev){if(ev.key==='Escape'&&!guide.hidden){ev.preventDefault();hideGuide(true);}});
   on(close,'click',function(){hideCaption(true);});
   on(node,'keydown',function(ev){
+   if(ev.key==='Escape'&&!guide.hidden){ev.preventDefault();ev.stopPropagation();hideGuide(true);return;}
    if(ev.key==='Escape'&&!caption.hidden){ev.preventDefault();ev.stopPropagation();hideCaption(caption.contains(document.activeElement));}
   });
   on(more,'keydown',function(ev){if(ev.key==='Tab'&&ev.shiftKey){ev.preventDefault();safeFocus(lastTrigger);}});
   on(more,'click',function(){
    var heading=host.querySelector('h2');if(!heading)return;
    hideCaption(false);
-   var header=document.querySelector('.header27'),offset=(header?header.getBoundingClientRect().height:0)+16;
+   var offset=headerOffset()+16;
    // window.scrollTo avoids adding HTML scroll-padding and scroll-margin twice.
    var target=Math.max(0,g.scrollY+host.getBoundingClientRect().top-offset);
    if(motion.matches){
@@ -226,15 +270,15 @@
    }
    if(g.SILENCE_TRACK)g.SILENCE_TRACK('room_show_solutions',{value:node._selectedProblem});
   });
-  on(g,'resize',queuePosition,{passive:true});on(g,'scroll',queuePosition,{passive:true});
+  on(g,'resize',function(){queuePosition();positionGuide();},{passive:true});on(g,'scroll',function(){queuePosition();positionGuide();},{passive:true});
   if(g.visualViewport){on(g.visualViewport,'resize',queuePosition,{passive:true});on(g.visualViewport,'scroll',queuePosition,{passive:true});}
   var ro=null;if(g.ResizeObserver){ro=new ResizeObserver(queuePosition);ro.observe(figure);ro.observe(caption);}
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){if(caption.isConnected)queuePosition();});
-  node._room29Cleanup=function(){cleanups.forEach(function(f){f();});if(ro)ro.disconnect();g.cancelAnimationFrame(positionFrame);g.clearTimeout(focusTimer);};
+  node._room29Cleanup=function(){cleanups.forEach(function(f){f();});if(ro)ro.disconnect();g.cancelAnimationFrame(positionFrame);g.clearTimeout(focusTimer);g.clearTimeout(guideTimer);g.clearTimeout(guideLeaveTimer);};
   if(node._selectedProblem)select(node._selectedProblem,false);
   else{
    host.className='room27-result room27-result--empty';host.removeAttribute('aria-labelledby');
-   host.appendChild(C.el('div',{},[C.el('p',{class:'eyebrow'},[t('selection')]),C.el('h2',{},[t('resultTitle')]),C.el('p',{},[t('resultIntro')])]));
+   host.appendChild(C.el('div',{},[C.el('p',{class:'eyebrow'},[t('selection')]),C.el('h2',{},[t('resultTitle')]),C.el('p',{},[tr('Нажмите на комнату или на кнопку источника шума. Здесь появятся описание ситуации и варианты решения.','Бөлмені немесе шу көзінің түймесін басыңыз. Мұнда жағдай сипаттамасы мен шешім нұсқалары пайда болады.','Tap a room or a noise-source button. The situation and possible solutions will appear here.')])]));
   }
  }
  g.SILENCE_PAGES=g.SILENCE_PAGES||{};g.SILENCE_PAGES['section-cutaway']=render;g.SILENCE_SECTION={ZONES:zones};
