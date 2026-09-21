@@ -1,0 +1,12 @@
+{
+  "version": "35",
+  "base": "SILENCE v34 full site",
+  "added": [
+    "game.html",
+    "homepage game teaser",
+    "game navigation links",
+    "game sitemap entry"
+  ],
+  "game": "Какая стена тише? — 5 wall options, 3 demo sound sources, before/after comparison, local audio upload",
+  "files": 468
+}
