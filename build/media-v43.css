@@ -1,1 +1,17 @@
-.project27-media--video{display:block;padding:0;border:0;background:transparent;width:100%;overflow:hidden;border-radius:inherit}.project27-media--video video{display:block;width:100%;aspect-ratio:9/16;max-height:620px;object-fit:cover;background:#0d0f11}.project27-card--video .project27-body{min-height:auto}.gallery40-video-card{padding:0;overflow:hidden;background:var(--surface,#171a1d);border:1px solid var(--line,rgba(255,255,255,.12));border-radius:18px}.gallery40-video-card video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#0d0f11}.gallery40-video-card__body{padding:14px 16px 16px}.gallery40-video-card__body strong{display:block;margin-bottom:4px}.gallery40-video-card__body span{font-size:.88rem;opacity:.72}.object-zones__media img[src*="restaurant-karaoke"],.object-zones__media img[src*="hammam"]{object-fit:cover}@media(max-width:680px){.project27-media--video video,.gallery40-video-card video{max-height:520px}.gallery40-video-card__body{padding:12px 14px 14px}}
+.project27-media--video{display:grid;place-items:center;padding:0;border:0;background:#0d0f11;width:100%;aspect-ratio:16/10;overflow:hidden;border-radius:14px;cursor:default}
+.project27-media--video video{display:block;width:auto;height:100%;max-width:100%;max-height:100%;aspect-ratio:9/16;object-fit:contain;background:#0d0f11}
+.project27-card--video .project27-body{min-height:auto}
+.gallery40-video-section{padding:8px 0 88px}
+.gallery40-video-head{max-width:760px;margin:0 0 24px}
+.gallery40-video-head .eyebrow{margin-bottom:8px}
+.gallery40-video-head h2{margin:0 0 10px;font-size:clamp(28px,4vw,48px);line-height:1.05;letter-spacing:-.03em}
+.gallery40-video-head>p:last-child{margin:0;color:var(--muted,#6b7470);font-size:1rem;line-height:1.65}
+.gallery40-video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+.gallery40-video-card{padding:0;overflow:hidden;background:var(--bg-raised,#171a1d);border:1px solid var(--border,rgba(255,255,255,.12));border-radius:18px;min-width:0}
+.gallery40-video-card video{display:block;width:100%;aspect-ratio:9/16;max-height:580px;object-fit:contain;background:#0d0f11}
+.gallery40-video-card__body{padding:14px 16px 16px}
+.gallery40-video-card__body strong{display:block;margin-bottom:4px;font-size:1rem}
+.gallery40-video-card__body span{font-size:.88rem;opacity:.72}
+.object-zones__media img[src*="restaurant-karaoke"],.object-zones__media img[src*="hammam"]{object-fit:cover}
+@media(max-width:900px){.gallery40-video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery40-video-card:last-child{grid-column:1/-1;max-width:calc(50% - 9px);width:100%;justify-self:center}}
+@media(max-width:680px){.project27-media--video{aspect-ratio:4/3}.gallery40-video-section{padding-bottom:64px}.gallery40-video-grid{grid-template-columns:minmax(0,1fr);gap:16px}.gallery40-video-card,.gallery40-video-card:last-child{grid-column:auto;max-width:420px;width:100%;justify-self:center}.gallery40-video-card video{max-height:72vh}.gallery40-video-card__body{padding:12px 14px 14px}}
