@@ -1,0 +1,69 @@
+{
+  "version": 41,
+  "sample_rate": 44100,
+  "sources": {
+    "top": {
+      "path": "assets/audio/room-top-drill.v41.mp3",
+      "duration_seconds": 26.114,
+      "original_files": [
+        "Звук дрели сверху.wav"
+      ],
+      "loudness_lufs": -19.05,
+      "peak_dbfs": -2.75,
+      "size_bytes": 523537,
+      "sha256": "b098f083c28a7972d1486558117a63be23d6fd18a08f60eeb36cd2f15f32eb5f",
+      "boundary_step": 9.027228225022554e-05
+    },
+    "left": {
+      "path": "assets/audio/room-left-vacuum-dog.v41.mp3",
+      "duration_seconds": 27.8,
+      "original_files": [
+        "Пылесос слева.wav",
+        "Лай Собаки слева.wav"
+      ],
+      "loudness_lufs": -20.57,
+      "peak_dbfs": -6.41,
+      "size_bytes": 557497,
+      "sha256": "0c8106b0ac689ce0107e2d597d6271b5bbab485c76bea223e3353fca6768cda8",
+      "boundary_step": 0.035853379406034946
+    },
+    "right": {
+      "path": "assets/audio/room-right-music.v41.mp3",
+      "duration_seconds": 6.379,
+      "original_files": [
+        "Музыка правой комнаты.wav"
+      ],
+      "loudness_lufs": -20.79,
+      "peak_dbfs": -9.31,
+      "size_bytes": 129088,
+      "sha256": "799c9322edd76901495891bf5ff209f79cb7899529bae72308949b811f4283df",
+      "boundary_step": 0.011186577379703522
+    },
+    "bottom": {
+      "path": "assets/audio/room-bottom-concert.v41.mp3",
+      "duration_seconds": 31.65,
+      "original_files": [
+        "Звук Концерта снизу.mp3"
+      ],
+      "loudness_lufs": -19.73,
+      "peak_dbfs": -6.5,
+      "size_bytes": 634297,
+      "sha256": "e8c5a96990bef0c25795439729c58d7d20bcc1c4af874b5d72b9c8d9d933fb54",
+      "boundary_step": 0.013350334018468857
+    }
+  },
+  "left_mix": {
+    "background": "Пылесос слева.wav",
+    "barks": "Лай Собаки слева.wav",
+    "bark_episodes_seconds": [
+      2.2,
+      7.9,
+      14.6,
+      22.2
+    ]
+  },
+  "notes": [
+    "No AI-generated or external audio.",
+    "Loop joins are crossfaded. Audio processing is not a measurement of sound isolation."
+  ]
+}

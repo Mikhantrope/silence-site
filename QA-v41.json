@@ -1,0 +1,361 @@
+{
+  "version": 41,
+  "basis": "silence-v40-gallery-final-site.zip",
+  "local_references_checked": 1299,
+  "missing_local_references": [],
+  "unchanged_base_files": 529,
+  "changed_base_files": [
+    "index.html",
+    "README.md",
+    "package.json"
+  ],
+  "removed_base_files": [],
+  "approved_wave_code_unchanged": true,
+  "browser_environment": "Chromium offline harness; all resources served from in-memory interception under /silence-site/. Shipping CSP unchanged; test CSP removed to accommodate sandbox navigation policy. No physical devices, Safari or published-site test.",
+  "audio_tests": {
+    "checks": [
+      {
+        "test": "One game on the homepage",
+        "passed": true
+      },
+      {
+        "test": "AudioContext not created on load",
+        "passed": true
+      },
+      {
+        "test": "No MP3 fetched on load",
+        "passed": true
+      },
+      {
+        "test": "Silent source click left",
+        "passed": true
+      },
+      {
+        "test": "Silent source click top",
+        "passed": true
+      },
+      {
+        "test": "Silent source click bottom",
+        "passed": true
+      },
+      {
+        "test": "Silent source click right",
+        "passed": true
+      },
+      {
+        "test": "Selecting silent rooms does not fetch audio",
+        "passed": true
+      },
+      {
+        "test": "Right room plays provided music",
+        "passed": true
+      },
+      {
+        "test": "Right buffer is source duration",
+        "passed": true
+      },
+      {
+        "test": "Wall gain gas",
+        "passed": true
+      },
+      {
+        "test": "Wall gain gsp",
+        "passed": true
+      },
+      {
+        "test": "Wall gain brick",
+        "passed": true
+      },
+      {
+        "test": "Wall gain concrete",
+        "passed": true
+      },
+      {
+        "test": "Wall gain silence",
+        "passed": true
+      },
+      {
+        "test": "Five wall selections do not restart the recording",
+        "passed": true
+      },
+      {
+        "test": "Comparison restores original signal",
+        "passed": true
+      },
+      {
+        "test": "Comparison restores SILENCE signal",
+        "passed": true
+      },
+      {
+        "test": "Do / after keep the very same BufferSource",
+        "passed": true
+      },
+      {
+        "test": "Loaded recording top",
+        "passed": true
+      },
+      {
+        "test": "Loop enabled top",
+        "passed": true
+      },
+      {
+        "test": "Nonzero decoded output top",
+        "passed": true
+      },
+      {
+        "test": "Loaded recording left",
+        "passed": true
+      },
+      {
+        "test": "Loop enabled left",
+        "passed": true
+      },
+      {
+        "test": "Nonzero decoded output left",
+        "passed": true
+      },
+      {
+        "test": "Loaded recording bottom",
+        "passed": true
+      },
+      {
+        "test": "Loop enabled bottom",
+        "passed": true
+      },
+      {
+        "test": "Nonzero decoded output bottom",
+        "passed": true
+      },
+      {
+        "test": "Loaded recording right",
+        "passed": true
+      },
+      {
+        "test": "Loop enabled right",
+        "passed": true
+      },
+      {
+        "test": "Nonzero decoded output right",
+        "passed": true
+      },
+      {
+        "test": "Exactly four audio files fetched",
+        "passed": true
+      },
+      {
+        "test": "Decoded recordings are cached",
+        "passed": true
+      },
+      {
+        "test": "Short music loop keeps same source",
+        "passed": true
+      },
+      {
+        "test": "Volume control applies",
+        "passed": true
+      },
+      {
+        "test": "Volume label updates",
+        "passed": true
+      },
+      {
+        "test": "Volume zero really mutes output",
+        "passed": true
+      },
+      {
+        "test": "Mute stops the active source",
+        "passed": true
+      },
+      {
+        "test": "Mute suspends the audio hardware",
+        "passed": true
+      },
+      {
+        "test": "Playback resumes saved position",
+        "passed": true
+      },
+      {
+        "test": "Hidden tab pauses audio",
+        "passed": true
+      },
+      {
+        "test": "Return does not autoplay",
+        "passed": true
+      },
+      {
+        "test": "Cancelled load cannot start playback later",
+        "passed": true
+      },
+      {
+        "test": "Failure shows readable message",
+        "passed": true
+      },
+      {
+        "test": "Failure leaves audio off",
+        "passed": true
+      },
+      {
+        "test": "Retry after failure succeeds",
+        "passed": true
+      },
+      {
+        "test": "No JavaScript page errors",
+        "passed": true
+      }
+    ],
+    "page_errors": []
+  },
+  "layout_tests": {
+    "checks": [
+      {
+        "test": "No horizontal page overflow 320",
+        "passed": true
+      },
+      {
+        "test": "Room selection 320 top",
+        "passed": true
+      },
+      {
+        "test": "Room selection 320 left",
+        "passed": true
+      },
+      {
+        "test": "Room selection 320 bottom",
+        "passed": true
+      },
+      {
+        "test": "Room selection 320 right",
+        "passed": true
+      },
+      {
+        "test": "User click/tap plays audio 320",
+        "passed": true
+      },
+      {
+        "test": "Left mix plays on 320",
+        "passed": true
+      },
+      {
+        "test": "Volume control within viewport 320",
+        "passed": true
+      },
+      {
+        "test": "No horizontal page overflow 390",
+        "passed": true
+      },
+      {
+        "test": "Room selection 390 top",
+        "passed": true
+      },
+      {
+        "test": "Room selection 390 left",
+        "passed": true
+      },
+      {
+        "test": "Room selection 390 bottom",
+        "passed": true
+      },
+      {
+        "test": "Room selection 390 right",
+        "passed": true
+      },
+      {
+        "test": "User click/tap plays audio 390",
+        "passed": true
+      },
+      {
+        "test": "Left mix plays on 390",
+        "passed": true
+      },
+      {
+        "test": "Volume control within viewport 390",
+        "passed": true
+      },
+      {
+        "test": "No horizontal page overflow 768",
+        "passed": true
+      },
+      {
+        "test": "Room selection 768 top",
+        "passed": true
+      },
+      {
+        "test": "Room selection 768 left",
+        "passed": true
+      },
+      {
+        "test": "Room selection 768 bottom",
+        "passed": true
+      },
+      {
+        "test": "Room selection 768 right",
+        "passed": true
+      },
+      {
+        "test": "User click/tap plays audio 768",
+        "passed": true
+      },
+      {
+        "test": "Left mix plays on 768",
+        "passed": true
+      },
+      {
+        "test": "Volume control within viewport 768",
+        "passed": true
+      },
+      {
+        "test": "No horizontal page overflow 1440",
+        "passed": true
+      },
+      {
+        "test": "Room selection 1440 top",
+        "passed": true
+      },
+      {
+        "test": "Room selection 1440 left",
+        "passed": true
+      },
+      {
+        "test": "Room selection 1440 bottom",
+        "passed": true
+      },
+      {
+        "test": "Room selection 1440 right",
+        "passed": true
+      },
+      {
+        "test": "User click/tap plays audio 1440",
+        "passed": true
+      },
+      {
+        "test": "Left mix plays on 1440",
+        "passed": true
+      },
+      {
+        "test": "Volume control within viewport 1440",
+        "passed": true
+      },
+      {
+        "test": "Gallery still contains all 20 photos",
+        "passed": true
+      },
+      {
+        "test": "Gallery lightbox opens",
+        "passed": true
+      },
+      {
+        "test": "Gallery next photo",
+        "passed": true
+      },
+      {
+        "test": "Gallery Escape closes",
+        "passed": true
+      },
+      {
+        "test": "No JS page errors at four widths/gallery",
+        "passed": true
+      }
+    ],
+    "page_errors": []
+  }
+}

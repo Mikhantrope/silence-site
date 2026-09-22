@@ -1,0 +1,9 @@
+/* v41 — controls for the four uploaded room recordings. */
+.game41-volume{display:grid;grid-template-columns:auto minmax(100px,1fr) 3.2em;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:var(--bg-raised);font-size:.82rem;color:var(--text-muted)}
+.game41-volume input{width:100%;min-width:0;height:32px;accent-color:var(--accent);cursor:pointer;touch-action:pan-y}
+.game41-volume output{text-align:right;font-variant-numeric:tabular-nums;color:var(--text)}
+.game41-volume input:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.game41-audio-status{font-size:.77rem;line-height:1.5;color:var(--text-muted);margin:0;min-height:2.9em}
+[data-game41-playback="loading"] [data-game36-audio]{opacity:.82}
+[data-game41-playback="error"] .game41-audio-status{color:var(--text)}
+@media(max-width:420px){.game41-volume{gap:8px;padding:10px 12px;grid-template-columns:auto minmax(70px,1fr) 3em}}
