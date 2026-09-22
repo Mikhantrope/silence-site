@@ -48,6 +48,20 @@
           img: 'assets/solutions/sport.webp',
           title: 'Спортивные и многофункциональные залы',
           text: 'Снижение гулкости и избыточного шума в помещениях с большими площадями, жёсткими поверхностями и высоким уровнем активности.'
+        },
+        {
+          id: 'restaurant',
+          tab: 'Ресторан / караоке',
+          img: 'assets/solutions/restaurant-karaoke.webp',
+          title: 'Рестораны и караоке',
+          text: 'Звукоизоляция между залами и соседними помещениями, а также акустическая обработка для контроля эха, речи и музыки.'
+        },
+        {
+          id: 'hammam',
+          tab: 'Хаммам',
+          img: 'assets/solutions/hammam.webp',
+          title: 'Хаммам и SPA-зоны',
+          text: 'Решения для влажных помещений с учётом ограждающих конструкций, инженерного шума и требований к акустическому комфорту.'
         }
       ]
     },
@@ -61,7 +75,9 @@
         { id:'offices', tab:'Кеңселер', img:'assets/solutions/offices.webp', title:'Кеңсе және келіссөз бөлмелері', text:'Кабинеттер арасындағы естілуін азайту, open space, келіссөз және жұмыс бөлмелерінде акустикалық жайлылық жасау.' },
         { id:'concert', tab:'Концерт залдары', img:'assets/solutions/concert.webp', title:'Концерт және event-алаңдар', text:'Үлкен көлемдерге арналған кешенді шешімдер: акустикалық түзету, реверберацияны басқару және паразиттік шағылуды азайту.' },
         { id:'cinema', tab:'Кинотеатрлар', img:'assets/solutions/cinema.webp', title:'Кинотеатрлар және private cinema', text:'Сөйлеудің анықтығына, бас контроліне және көрермен жайлылығына жоғары талап қойылатын залдарға арналған шешімдер.' },
-        { id:'sport', tab:'Спорт залдары', img:'assets/solutions/sport.webp', title:'Спорт және көпфункциялы залдар', text:'Аумағы үлкен, қатты беттері көп және белсенділігі жоғары бөлмелердегі гуілді және артық шуды азайту.' }
+        { id:'sport', tab:'Спорт залдары', img:'assets/solutions/sport.webp', title:'Спорт және көпфункциялы залдар', text:'Аумағы үлкен, қатты беттері көп және белсенділігі жоғары бөлмелердегі гуілді және артық шуды азайту.' },
+        { id:'restaurant', tab:'Мейрамхана / караоке', img:'assets/solutions/restaurant-karaoke.webp', title:'Мейрамханалар мен караоке', text:'Залдар мен көрші үй-жайлар арасындағы дыбыс оқшаулауы, сондай-ақ жаңғырықты, сөйлеуді және музыканы бақылауға арналған акустикалық өңдеу.' },
+        { id:'hammam', tab:'Хаммам', img:'assets/solutions/hammam.webp', title:'Хаммам және SPA-аймақтар', text:'Қоршау конструкцияларын, инженерлік шуды және акустикалық жайлылық талаптарын ескеретін ылғалды үй-жайларға арналған шешімдер.' }
       ]
     },
     en: {
@@ -74,7 +90,9 @@
         { id:'offices', tab:'Offices', img:'assets/solutions/offices.webp', title:'Offices and meeting rooms', text:'Reducing audibility between rooms and improving acoustic comfort in open-space offices, meeting rooms and workplaces.' },
         { id:'concert', tab:'Concert halls', img:'assets/solutions/concert.webp', title:'Concert and event venues', text:'Integrated solutions for large volumes: acoustic correction, reverberation control and reduction of unwanted reflections.' },
         { id:'cinema', tab:'Cinemas', img:'assets/solutions/cinema.webp', title:'Cinemas and private cinema', text:'Facings and acoustic solutions for halls with high demands on intelligibility, bass control and audience comfort.' },
-        { id:'sport', tab:'Sports halls', img:'assets/solutions/sport.webp', title:'Sports and multifunctional halls', text:'Reducing boominess and excessive noise in spaces with large areas, hard surfaces and high activity levels.' }
+        { id:'sport', tab:'Sports halls', img:'assets/solutions/sport.webp', title:'Sports and multifunctional halls', text:'Reducing boominess and excessive noise in spaces with large areas, hard surfaces and high activity levels.' },
+        { id:'restaurant', tab:'Restaurant / karaoke', img:'assets/solutions/restaurant-karaoke.webp', title:'Restaurants and karaoke venues', text:'Sound insulation between halls and neighbouring spaces, plus acoustic treatment to control echo, speech and music.' },
+        { id:'hammam', tab:'Hammam', img:'assets/solutions/hammam.webp', title:'Hammam and spa areas', text:'Solutions for wet areas that account for enclosure assemblies, building-services noise and acoustic-comfort requirements.' }
       ]
     }
   };

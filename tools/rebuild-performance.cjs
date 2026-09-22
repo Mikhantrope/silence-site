@@ -26,7 +26,7 @@ const site={t:W.SITE.t,contacts:W.SITE.contacts};
 const contactCopy=['cta','formLead','formConsent','waSubmit','waNote','dataNote','dataText','footerText'];
 const D={copy:Object.fromEntries(contactCopy.map(k=>[k,W.SILENCE_V27.copy[k]]))};
 // Keep translation keys used by core/app/header; compact object, no catalogue dependencies.
-const keys=new Set(['cta','headerAddress','footRights','navCat','navSystems','navPro','navGal','navContacts','skip','close','themeLight','themeDark','slogan','formTitle','formLead']);
+const keys=new Set(['cta','headerAddress','footRights','navCat','navSystems','navPro','navGal','navGallery','navGame','navContacts','skip','close','themeLight','themeDark','slogan','formTitle','formLead']);
 for(const lang of Object.keys(site.t))site.t[lang]=Object.fromEntries(Object.entries(site.t[lang]).filter(([key])=>keys.has(key)));
 const adapter=`(function(g){var C=g.SILENCE_CORE;function t(k){var o=g.SILENCE_V27.copy[k];return typeof o==='string'?o:(o&&(o[C.getLang()]||o.ru))||k;}function copy(){document.querySelectorAll('[data-v27]').forEach(function(n){n.textContent=t(n.dataset.v27);});document.querySelectorAll('[data-journal-nav]').forEach(function(n){n.textContent=C.getLang()==='kz'?'Мақалалар':C.getLang()==='en'?'Articles':'Статьи';});}g.SILENCE_V27_UI={t:t};document.addEventListener('DOMContentLoaded',copy);document.addEventListener('silence:lang',copy);})(window);`;
 let contact='window.SITE='+JSON.stringify(site)+';window.SILENCE_V27='+JSON.stringify(D)+';\n'+['core','config','analytics'].map(f=>compact(read('js/'+f+'.js'))).join('\n;\n')+'\n'+adapter+'\n'+['ui.form','ui.contacts','app'].map(f=>compact(read('js/'+f+'.js'))).join('\n;\n');

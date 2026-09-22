@@ -9,6 +9,7 @@
   var THEME_KEY = 'silence.theme';
   var DEFAULT_LANG = 'ru';
   var LANGS = ['ru', 'kz', 'en'];
+  var activeLang = null;
 
   // ---------- DOM helpers ----------
   function $(sel, root) { return (root || document).querySelector(sel); }
@@ -44,6 +45,7 @@
 
   // ---------- i18n ----------
   function getLang() {
+    if (LANGS.indexOf(activeLang) !== -1) return activeLang;
     var stored = null;
     try { stored = global.localStorage.getItem(LANG_KEY); } catch (e) { /* noop */ }
     return LANGS.indexOf(stored) !== -1 ? stored : DEFAULT_LANG;
@@ -58,6 +60,7 @@
 
   function applyLang(lang) {
     if (LANGS.indexOf(lang) === -1) lang = DEFAULT_LANG;
+    activeLang = lang;
     try { global.localStorage.setItem(LANG_KEY, lang); } catch (e) { /* noop */ }
     document.documentElement.setAttribute('lang', lang === 'kz' ? 'kk' : lang);
 

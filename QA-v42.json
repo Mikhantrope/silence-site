@@ -1,0 +1,324 @@
+{
+  "version": 42,
+  "basis": "silence-v41-room-sounds-full-site.zip",
+  "environment": "Offline Chromium with local resource interception at /silence-site/. Navigation to localhost blocked by environment; test-only CSP removed. Shipping CSP unchanged. No physical device, Safari or published-site test.",
+  "checks": [
+    {
+      "test": "v42 module initialised",
+      "passed": true
+    },
+    {
+      "test": "No audio context / MP3 request until click",
+      "passed": true
+    },
+    {
+      "test": "Mute selected before start",
+      "passed": true
+    },
+    {
+      "test": "Label stays 90%",
+      "passed": true
+    },
+    {
+      "test": "Visual residual stays 10%",
+      "passed": true
+    },
+    {
+      "test": "Start under SILENCE is fully muted",
+      "passed": true
+    },
+    {
+      "test": "right muted at zero",
+      "passed": true
+    },
+    {
+      "test": "right output PCM silent",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "test": "right compare restores gain",
+      "passed": true
+    },
+    {
+      "test": "right compare produces audio",
+      "passed": true,
+      "detail": 0.014209492684323147
+    },
+    {
+      "test": "right return to SILENCE restores mute",
+      "passed": true
+    },
+    {
+      "test": "right recording node unchanged across comparisons",
+      "passed": true
+    },
+    {
+      "test": "right playing source position advances",
+      "passed": true
+    },
+    {
+      "test": "top muted at zero",
+      "passed": true
+    },
+    {
+      "test": "top output PCM silent",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "test": "top compare restores gain",
+      "passed": true
+    },
+    {
+      "test": "top compare produces audio",
+      "passed": true,
+      "detail": 0.01340770269034117
+    },
+    {
+      "test": "top return to SILENCE restores mute",
+      "passed": true
+    },
+    {
+      "test": "top recording node unchanged across comparisons",
+      "passed": true
+    },
+    {
+      "test": "top playing source position advances",
+      "passed": true
+    },
+    {
+      "test": "left muted at zero",
+      "passed": true
+    },
+    {
+      "test": "left output PCM silent",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "test": "left compare restores gain",
+      "passed": true
+    },
+    {
+      "test": "left compare produces audio",
+      "passed": true,
+      "detail": 0.016334142294674055
+    },
+    {
+      "test": "left return to SILENCE restores mute",
+      "passed": true
+    },
+    {
+      "test": "left recording node unchanged across comparisons",
+      "passed": true
+    },
+    {
+      "test": "left playing source position advances",
+      "passed": true
+    },
+    {
+      "test": "bottom muted at zero",
+      "passed": true
+    },
+    {
+      "test": "bottom output PCM silent",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "test": "bottom compare restores gain",
+      "passed": true
+    },
+    {
+      "test": "bottom compare produces audio",
+      "passed": true,
+      "detail": 0.06489674193489217
+    },
+    {
+      "test": "bottom return to SILENCE restores mute",
+      "passed": true
+    },
+    {
+      "test": "bottom recording node unchanged across comparisons",
+      "passed": true
+    },
+    {
+      "test": "bottom playing source position advances",
+      "passed": true
+    },
+    {
+      "test": "gas previous level preserved",
+      "passed": true
+    },
+    {
+      "test": "gas -> SILENCE is mute",
+      "passed": true
+    },
+    {
+      "test": "gsp previous level preserved",
+      "passed": true
+    },
+    {
+      "test": "gsp -> SILENCE is mute",
+      "passed": true
+    },
+    {
+      "test": "brick previous level preserved",
+      "passed": true
+    },
+    {
+      "test": "brick -> SILENCE is mute",
+      "passed": true
+    },
+    {
+      "test": "concrete previous level preserved",
+      "passed": true
+    },
+    {
+      "test": "concrete -> SILENCE is mute",
+      "passed": true
+    },
+    {
+      "test": "Master volume 100 cannot bypass wall mute",
+      "passed": true
+    },
+    {
+      "test": "Manual off respected",
+      "passed": true
+    },
+    {
+      "test": "Another wall does not turn audio on",
+      "passed": true
+    },
+    {
+      "test": "Resume under SILENCE stays silent",
+      "passed": true
+    },
+    {
+      "test": "Keyboard compare returns audio",
+      "passed": true
+    },
+    {
+      "test": "Keyboard return mutes audio",
+      "passed": true
+    },
+    {
+      "test": "No horizontal overflow 320",
+      "passed": true
+    },
+    {
+      "test": "Responsive mute 320",
+      "passed": true
+    },
+    {
+      "test": "No horizontal overflow 390",
+      "passed": true
+    },
+    {
+      "test": "Responsive mute 390",
+      "passed": true
+    },
+    {
+      "test": "No horizontal overflow 768",
+      "passed": true
+    },
+    {
+      "test": "Responsive mute 768",
+      "passed": true
+    },
+    {
+      "test": "No horizontal overflow 1440",
+      "passed": true
+    },
+    {
+      "test": "Responsive mute 1440",
+      "passed": true
+    },
+    {
+      "test": "Mobile tap mutes",
+      "passed": true
+    },
+    {
+      "test": "Mobile tap comparison restores",
+      "passed": true
+    },
+    {
+      "test": "Mobile tap return mutes",
+      "passed": true
+    },
+    {
+      "test": "No JavaScript errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "No missing requested assets",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "Minimal baseline diff",
+      "passed": true,
+      "detail": [
+        "index.html",
+        "js/home-game.js",
+        "package.json"
+      ]
+    },
+    {
+      "test": "Wave drawing unchanged",
+      "passed": true
+    },
+    {
+      "test": "Wall labels and visual levels unchanged",
+      "passed": true
+    },
+    {
+      "test": "CSP unchanged",
+      "passed": true
+    },
+    {
+      "test": "Readable and deployed JS match",
+      "passed": true
+    }
+  ],
+  "pcm": [
+    {
+      "source": "right",
+      "silence_rms": 0,
+      "without_silence_rms": 0.014209492684323147
+    },
+    {
+      "source": "top",
+      "silence_rms": 0,
+      "without_silence_rms": 0.01340770269034117
+    },
+    {
+      "source": "left",
+      "silence_rms": 0,
+      "without_silence_rms": 0.016334142294674055
+    },
+    {
+      "source": "bottom",
+      "silence_rms": 0,
+      "without_silence_rms": 0.06489674193489217
+    }
+  ],
+  "page_errors": [],
+  "missing_requests": [],
+  "changed_base_files": [
+    "index.html",
+    "js/home-game.js",
+    "package.json"
+  ],
+  "passed": true,
+  "html_local_references_checked": 1065,
+  "missing_html_local_references": [],
+  "new_files": [
+    "CHANGELOG-v42.md",
+    "QA-v42.json",
+    "build/home-game.v42.js"
+  ],
+  "unchanged_base_file_count": 543
+}
