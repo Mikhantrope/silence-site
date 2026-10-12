@@ -12,7 +12,7 @@
    ]),
    C.el('div',{class:'school30-highlight__body'},[
     C.el('p',{class:'eyebrow'},[tr('Образовательный объект · Астана','Білім беру нысаны · Астана','Educational facility · Astana')]),
-    C.el('h3',{},['BIART']),
+    C.el(document.body.getAttribute('data-page')==='projects'?'h2':'h3',{},['BIART']),
     C.el('p',{},[tr('Звукоизоляция музыкальных кабинетов. По информации SILENCE, в BIART применены решения компании.','Музыкалық кабинеттерді дыбыс оқшаулау. SILENCE ақпараты бойынша BIART-та компания шешімдері қолданылған.','Sound insulation for music classrooms. According to SILENCE, the company’s solutions were used at BIART.')]),
     C.el('a',{class:'text-link',href:'projects/biart-astana.html','data-analytics':'biart_project_open'},[tr('Подробнее об объекте ↗','Нысан туралы ↗','View project ↗')])
    ])
@@ -27,7 +27,7 @@
    C.el('div',{class:'school30-highlight__media'},[media,C.el('span',{},[tr('DalaEdge, Каскелен','DalaEdge, Қаскелең','DalaEdge, Kaskelen')])]),
    C.el('div',{class:'school30-highlight__body'},[
     C.el('p',{class:'eyebrow'},[tr('Кинопавильон · Каскелен','Кинопавильон · Қаскелең','Film pavilion · Kaskelen')]),
-    C.el('h3',{},[tr('Кинопавильон DalaEdge','DalaEdge кинопавильоны','DalaEdge film pavilion')]),
+    C.el(document.body.getAttribute('data-page')==='projects'?'h2':'h3',{},[tr('Кинопавильон DalaEdge','DalaEdge кинопавильоны','DalaEdge film pavilion')]),
     C.el('p',{},[tr('Полная звуко- и шумоизоляция кинопавильона. Перегородка — 16 м.','Кинопавильонды толық дыбыс пен шудан оқшаулау. Қалқа — 16 м.','Full sound and noise insulation for the film pavilion. Partition — 16 m.')]),
     C.el('div',{class:'project33-facts'},[
      C.el('span',{},[tr('Перегородка — 16 м','Қалқа — 16 м','Partition — 16 m')]),

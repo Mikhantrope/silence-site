@@ -24,13 +24,13 @@
   box.appendChild(el('p',{class:'technical-note'},[t('paramsNote')]));box.appendChild(sourceButton(p.page));
   box.appendChild(el('a',{class:'btn btn--primary',href:'contacts.html?system='+encodeURIComponent(p.id),'data-analytics':'consultation_product','data-analytics-value':p.id},[t('cta')]));return box;
  }
- function card(p){
+ function card(p,headingTag){
   var box=el('article',{class:'product27-card','data-product':p.id});
   var media=el('div',{class:'product27-visual'+(p.back?' product27-visual--pair':'')});
   var open=el('button',{type:'button',class:'product27-image-button','aria-label':t('detail')+': '+p.title},[el('img',{src:p.img,alt:p.title,loading:'lazy',decoding:'async',draggable:'false'})]);
   if(p.back)open.appendChild(el('img',{src:p.back,alt:'',loading:'lazy',decoding:'async',draggable:'false'}));
   open.addEventListener('click',function(){if(Date.now()<(box._suppressClick||0))return;openProduct(p);});media.appendChild(open);
-  var body=el('div',{class:'product27-body'},[el('p',{class:'product27-category'},[t(p.family)]),el('h3',{},[p.title]),el('p',{class:'product27-description'},[txt(p.desc)])]);
+  var body=el('div',{class:'product27-body'},[el('p',{class:'product27-category'},[t(p.family)]),el(headingTag||'h3',{},[p.title]),el('p',{class:'product27-description'},[txt(p.desc)])]);
   var specs=el('div',{class:'product27-specs'});p.stats.forEach(function(s){specs.appendChild(el('span',{},[s[0]+' '+(C.getLang()==='en'?s[2]:s[1])]));});body.appendChild(specs);
   var more=el('button',{type:'button',class:'text-link'},[t('detail'),el('span',{'aria-hidden':'true'},['↗'])]);more.addEventListener('click',function(){openProduct(p);});body.appendChild(more);
   box.appendChild(media);box.appendChild(body);return box;
@@ -62,11 +62,11 @@
  }
  function projects(node,full){
   node.innerHTML='';var wrap=el('div',{class:'container projects27'});
-  if(full){wrap.appendChild(el('h1',{},[t('projectTitle')]));wrap.appendChild(el('p',{class:'lead'},[t('projectLead')]));}
+  if(full){wrap.appendChild(el('h1',{},[tr('Объекты SILENCE: звукоизоляция и акустические решения','SILENCE нысандары: дыбыс оқшаулау және акустикалық шешімдер','SILENCE projects: soundproofing and acoustic solutions')]));wrap.appendChild(el('p',{class:'lead'},[t('projectLead')]));}
   else wrap.appendChild(heading('03',t('projectTitle'),t('projectLead'),el('a',{class:'text-link section27-all',href:'projects.html'},[t('allProjects')+' ↗'])));
   var grid=el('div',{class:'projects27-grid'}),items=full?D.projects:D.projects.slice(0,3);
   items.forEach(function(p){var pt=p.title,pc=p.city;if(p.id==='museum')pt=tr('Музей современного искусства','Заманауи өнер музейі','Museum of Contemporary Art');else if(p.id==='golden')pt=tr('ЖК Golden Residence','Golden Residence ТК','Golden Residence residential complex');else if(p.id==='aport')pt=tr('ТЦ Апорт','Aport сауда орталығы','Aport shopping mall');else if(p.id==='qamaqor')pt=tr('ЖК QAMQOR QALA','QAMQOR QALA ТК','QAMQOR QALA residential complex');else if(p.id==='ab-residence')pt=tr('ЖК АВ Residence','AB Residence ТК','AB Residence residential complex');else if(p.id==='kaspi')pt=tr('ЖК Каспий','Каспий ТК','Kaspi residential complex');if(pc==='Алматы')pc=tr('Алматы','Алматы','Almaty');else if(pc==='Астана')pc=tr('Астана','Астана','Astana');else if(pc==='Ташкент')pc=tr('Ташкент','Ташкент','Tashkent');else if(pc==='Усть-Каменогорск')pc=tr('Усть-Каменогорск','Өскемен','Oskemen');var btn=el('button',{type:'button',class:'project27-media','aria-label':tr('Увеличить: ','Үлкейту: ','Enlarge: ')+pt},[el('img',{src:p.img,alt:pt,width:p.width,height:p.height,loading:'lazy',decoding:'async'})]);btn.addEventListener('click',function(){C.openGalleryViewer([p.img],0,[pt+' · '+pc]);});
-   grid.appendChild(el('article',{class:'project27-card'},[btn,el('div',{class:'project27-body'},[el('p',{class:'eyebrow'},[pc]),el('h3',{},[pt]),el('a',{class:'text-link',href:'contacts.html?project='+encodeURIComponent(p.title)},[t('projectContact')])])]));});
+   grid.appendChild(el('article',{class:'project27-card'},[btn,el('div',{class:'project27-body'},[el('p',{class:'eyebrow'},[pc]),el(full?'h2':'h3',{},[pt]),el('a',{class:'text-link',href:'contacts.html?project='+encodeURIComponent(p.title)},[t('projectContact')])])]));});
   if(full){[
     ['assets/videos/aiwa-partitions.mp4','assets/posters/aiwa-partitions.webp',tr('ЖК Aiwa · перегородки','Aiwa ТК · қалқалар','Aiwa residential complex · partitions')],
     ['assets/videos/hammam-01.mp4','assets/posters/hammam-01.webp',tr('Хаммам · акустические работы','Хаммам · акустикалық жұмыстар','Hammam · acoustic works')],

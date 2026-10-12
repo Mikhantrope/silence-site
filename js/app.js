@@ -32,10 +32,35 @@
      трекинг с именем события из атрибута и необязательным значением
      из data-analytics-value — так не нужно вешать отдельный listener
      на каждую кнопку в каждом ui.*.js модуле. */
+  function analyticsPlacement(el) {
+    if (!el || !el.closest) return 'content';
+    if (el.closest('.site-header')) return 'header';
+    if (el.closest('.site-footer')) return 'footer';
+    if (el.closest('.floating-whatsapp')) return 'floating';
+    if (el.closest('[data-lead-form], .consultation27')) return 'consultation';
+    if (el.closest('.overlay')) return 'overlay';
+    return 'content';
+  }
+
   document.addEventListener('click', function (e) {
     var el = e.target.closest && e.target.closest('[data-analytics]');
-    if (!el) return;
-    track(el.getAttribute('data-analytics'), { value: el.getAttribute('data-analytics-value') || undefined });
+    var anchor = e.target.closest && e.target.closest('a[href]');
+    if (el) {
+      var detail = {
+        value: el.getAttribute('data-analytics-value') || undefined,
+        placement: analyticsPlacement(el)
+      };
+      if (anchor) detail.link_url = anchor.getAttribute('href') || undefined;
+      track(el.getAttribute('data-analytics'), detail);
+      return;
+    }
+    if (!anchor) return;
+    var href = anchor.getAttribute('href') || '';
+    if (/^tel:/i.test(href)) {
+      track('phone_click', { placement: analyticsPlacement(anchor) });
+    } else if (/^(?:https?:\/\/)?(?:wa\.me|api\.whatsapp\.com)\//i.test(href)) {
+      track('whatsapp_click', { placement: analyticsPlacement(anchor) });
+    }
   });
 
   var NAV_MAP = {
@@ -46,49 +71,64 @@
     contacts: 'contacts.html'
   };
 
-  /* Заголовок вкладки (Шаг 11): полные SEO-версии на трёх языках, ru
-     совпадает буквально с тем, что уже статично лежит в <title> каждой
-     страницы — при первой загрузке (ru, язык по умолчанию) переписывать
-     его тем же текстом безопасно, а при переключении языка заголовок
-     вкладки честно следует за языком интерфейса. */
-  var SEO_TITLE = {
+  /* SEO metadata follows the selected interface language. Russian remains the
+     static crawlable fallback in HTML; this keeps the browser title/description
+     coherent when visitors switch to Kazakh or English. */
+  var SEO_META = {
     index: {
-      ru: 'SILENCE \u2014 звукоизоляция стен, потолка и пола в Астане',
-      kz: 'SILENCE \u2014 Астанада қабырға, төбе және еденді дыбыстан оқшаулау',
-      en: 'SILENCE \u2014 wall, ceiling and floor soundproofing in Astana'
+      ru: {title:'Звукоизоляция стен, потолка и пола в Астане — SILENCE',desc:'Системы звукоизоляции SILENCE для стен, потолка, пола и перегородок в Астане. Материалы, акустические панели, примеры объектов и консультация.'},
+      kz: {title:'Астанада қабырға, төбе және еденді дыбыстан оқшаулау — SILENCE',desc:'Астанада қабырға, төбе, еден және қалқаларға арналған SILENCE дыбыс оқшаулау жүйелері. Материалдар, акустикалық панельдер, нысандар және кеңес.'},
+      en: {title:'Wall, ceiling and floor soundproofing in Astana — SILENCE',desc:'SILENCE soundproofing systems in Astana for walls, ceilings, floors and partitions. Materials, acoustic panels, project examples and consultation.'}
     },
     catalog: {
-      ru: 'Каталог материалов \u2014 SILENCE Астана',
-      kz: 'Дыбыс оқшаулау жүйелерінің каталогы \u2014 SILENCE Астана',
-      en: 'Soundproofing systems catalogue \u2014 SILENCE Astana'
+      ru: {title:'Материалы для звукоизоляции и акустики — SILENCE',desc:'Каталог SILENCE: панели для стен, потолка и пола, SoundFiber, VibroGuard, EchoGuard, интерьерные акустические панели и комплектующие.'},
+      kz: {title:'Дыбыс оқшаулау материалдары мен акустикалық панельдер — SILENCE',desc:'SILENCE каталогы: қабырға, төбе және еден панельдері, SoundFiber, VibroGuard, EchoGuard, интерьерлік акустикалық панельдер және жинақтауыштар.'},
+      en: {title:'Soundproofing materials and acoustic panels — SILENCE',desc:'SILENCE catalogue: wall, ceiling and floor panels, SoundFiber, VibroGuard, EchoGuard, interior acoustic panels and installation components.'}
     },
     systems: {
-      ru: 'Таблица конструкций \u2014 звукоизоляция SILENCE',
-      kz: 'Конструкциялар кестесі \u2014 SILENCE дыбыс оқшаулауы',
-      en: 'Construction table \u2014 SILENCE soundproofing'
+      ru: {title:'Системы звукоизоляции стен, потолка и пола — SILENCE',desc:'Каркасные и бескаркасные системы SILENCE для стен, потолка, пола и перегородок: состав слоёв, показатели ΔRw, ΔLn,w и Rw, схемы.'},
+      kz: {title:'Қабырға, төбе және еденді дыбыс оқшаулау жүйелері — SILENCE',desc:'Қабырға, төбе, еден және қалқаларға арналған SILENCE қаңқалы және қаңқасыз жүйелері: қабаттар, ΔRw, ΔLn,w және Rw көрсеткіштері, схемалар.'},
+      en: {title:'Soundproofing systems for walls, ceilings and floors — SILENCE',desc:'SILENCE framed and frameless systems for walls, ceilings, floors and partitions with layer build-ups, ΔRw, ΔLn,w and Rw ratings and diagrams.'}
     },
     pro: {
-      ru: 'Профессионалам \u2014 акустические решения и нормативы SILENCE',
-      kz: 'Кәсіпқойларға \u2014 SILENCE акустикалық шешімдері мен нормативтері',
-      en: 'For professionals \u2014 SILENCE acoustic solutions and standards'
+      ru: {title:'SILENCE для проектировщиков и дизайнеров — акустические решения',desc:'Технические решения SILENCE для проектировщиков, дизайнеров и бизнеса: нормативы СН/СП РК, состав систем, характеристики материалов и типовые задачи.'},
+      kz: {title:'Жобалаушылар мен дизайнерлерге арналған SILENCE шешімдері',desc:'Жобалаушыларға, дизайнерлерге және бизнеске арналған SILENCE техникалық шешімдері: ҚР СН/СП нормативтері, жүйе құрамы, материал сипаттамалары және типтік міндеттер.'},
+      en: {title:'SILENCE solutions for architects and designers',desc:'SILENCE technical solutions for architects, interior designers and business: Kazakhstan standards, assembly build-ups, material specifications and typical acoustic tasks.'}
     },
     projects: {
-      ru: 'Объекты из презентации SILENCE',
-      kz: 'SILENCE объектілері \u2014 дыбыс оқшаулау монтажының мысалдары',
-      en: 'SILENCE projects \u2014 soundproofing installation examples'
+      ru: {title:'Объекты SILENCE — звукоизоляция и акустические решения',desc:'Примеры объектов SILENCE: жилые комплексы, гостиницы, общественные пространства, кинопавильон и музыкальные кабинеты.'},
+      kz: {title:'SILENCE нысандары — дыбыс оқшаулау және акустикалық шешімдер',desc:'SILENCE нысандарының мысалдары: тұрғын кешендер, қонақ үйлер, қоғамдық кеңістіктер, кинопавильон және музыкалық кабинеттер.'},
+      en: {title:'SILENCE projects — soundproofing and acoustic solutions',desc:'Examples of SILENCE projects: residential developments, hotels, public spaces, a film pavilion and music classrooms.'}
+    },
+    gallery: {
+      ru: {title:'Галерея SILENCE — звукоизоляция и акустические панели',desc:'Фото и видео решений SILENCE: звукоизоляционные конструкции, интерьерные акустические панели, перегородки, кинозалы, хаммамы и другие объекты.'},
+      kz: {title:'SILENCE галереясы — дыбыс оқшаулау және акустикалық панельдер',desc:'SILENCE шешімдерінің фото және видеолары: дыбыс оқшаулау конструкциялары, интерьерлік акустикалық панельдер, қалқалар және нысандар.'},
+      en: {title:'SILENCE gallery — soundproofing and acoustic panels',desc:'Photos and videos of SILENCE solutions: soundproofing assemblies, interior acoustic panels, partitions and completed spaces.'}
     },
     contacts: {
-      ru: 'Консультация специалиста \u2014 SILENCE Астана',
-      kz: 'Дыбыс оқшаулау есебіне өтінім \u2014 SILENCE Астана',
-      en: 'Request a soundproofing quote \u2014 SILENCE Astana'
+      ru: {title:'Расчёт звукоизоляции в Астане — консультация SILENCE',desc:'Консультация по звукоизоляции в Астане. Подберём систему для стены, потолка, пола или перегородки и подготовим предварительный расчёт через WhatsApp.'},
+      kz: {title:'Астанада дыбыс оқшаулауды есептеу — SILENCE кеңесі',desc:'Астанада дыбыс оқшаулау бойынша кеңес. Қабырға, төбе, еден немесе қалқаға жүйе таңдап, WhatsApp арқылы алдын ала есеп дайындаймыз.'},
+      en: {title:'Soundproofing quote in Astana — SILENCE consultation',desc:'Soundproofing consultation in Astana. We help select a system for a wall, ceiling, floor or partition and prepare a preliminary quote via WhatsApp.'}
     }
   };
 
-  function renderTitle(lang) {
+  function renderMeta(lang) {
     var page = document.body.getAttribute('data-page') || 'index';
-    var entry = SEO_TITLE[page];
+    var entry = SEO_META[page];
     if (!entry) return;
-    document.title = entry[lang] || entry.ru;
+    var meta = entry[lang] || entry.ru;
+    document.title = meta.title;
+    var desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.setAttribute('content', meta.desc);
+    var fields = [
+      ['meta[property="og:title"]','content',meta.title],
+      ['meta[property="og:description"]','content',meta.desc],
+      ['meta[name="twitter:title"]','content',meta.title],
+      ['meta[name="twitter:description"]','content',meta.desc]
+    ];
+    fields.forEach(function (row) { var node=document.querySelector(row[0]); if(node) node.setAttribute(row[1],row[2]); });
+    var locale = document.querySelector('meta[property="og:locale"]');
+    if (locale) locale.setAttribute('content', lang==='kz'?'kk_KZ':lang==='en'?'en_US':'ru_RU');
   }
 
   function renderSlogan(lang) {
@@ -166,14 +206,14 @@
     renderSlogan(lang);
     renderContacts();
     markCurrentNav();
-    renderTitle(lang);
+    renderMeta(lang);
     runMounts();
     track('page_view', { lang: lang });
   });
 
   document.addEventListener('silence:lang', function (e) {
     renderSlogan(e.detail.lang);
-    renderTitle(e.detail.lang);
+    renderMeta(e.detail.lang);
     rerunMounts();
     track('lang_change', { lang: e.detail.lang });
   });
@@ -241,6 +281,58 @@
   }
 
   document.addEventListener('DOMContentLoaded', initFloatingWhatsApp);
+
+  /* --- engagement / conversion instrumentation (v52) ---
+     No form values, phone numbers or other personal data are sent. */
+  function initEngagementTracking() {
+    var seenDepth = {};
+    function depthCheck() {
+      if (global.scrollY < 40) return;
+      var doc = document.documentElement;
+      var max = Math.max(1, doc.scrollHeight - global.innerHeight);
+      var pct = Math.min(100, Math.round((global.scrollY / max) * 100));
+      [25, 50, 75, 90].forEach(function (n) {
+        if (pct >= n && !seenDepth[n]) { seenDepth[n] = true; track('scroll_depth', { percent: n }); }
+      });
+    }
+    global.addEventListener('scroll', depthCheck, { passive: true });
+
+    var videoState = new WeakMap();
+    function videoInfo(v) {
+      var src = v.currentSrc || (v.querySelector('source') && v.querySelector('source').getAttribute('src')) || '';
+      return {
+        video_name: v.getAttribute('aria-label') || (src.split('/').pop() || 'video'),
+        video_src: src ? src.split('?')[0].split('/').pop() : undefined
+      };
+    }
+    document.addEventListener('play', function (e) {
+      if (!e.target || e.target.tagName !== 'VIDEO') return;
+      var v = e.target, st = videoState.get(v) || { started: false, marks: {} };
+      if (!st.started) { st.started = true; track('video_start', videoInfo(v)); }
+      videoState.set(v, st);
+    }, true);
+    document.addEventListener('timeupdate', function (e) {
+      if (!e.target || e.target.tagName !== 'VIDEO') return;
+      var v=e.target; if (!isFinite(v.duration) || v.duration <= 0) return;
+      var st=videoState.get(v) || { started:false, marks:{} };
+      var pct=(v.currentTime/v.duration)*100;
+      [25,50,75].forEach(function(n){ if(pct>=n && !st.marks[n]){ st.marks[n]=true; var d=videoInfo(v); d.percent=n; track('video_progress',d); } });
+      videoState.set(v,st);
+    }, true);
+    document.addEventListener('ended', function (e) {
+      if (!e.target || e.target.tagName !== 'VIDEO') return;
+      track('video_complete', videoInfo(e.target));
+    }, true);
+
+    var startedForms = new WeakSet();
+    document.addEventListener('focusin', function (e) {
+      var form = e.target && e.target.closest && e.target.closest('[data-lead-form]');
+      if (!form || startedForms.has(form)) return;
+      startedForms.add(form);
+      track('consultation_form_start', { source: document.body.getAttribute('data-page') || 'index' });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', initEngagementTracking);
 
 
   function initMobileMenu() {

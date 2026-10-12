@@ -1,15 +1,15 @@
 {
   "bundles": {
-    "common": "build/site.49a4364b24.js",
-    "index": "build/page-index.f818c3833d.js",
-    "catalog": "build/page-catalog.60e6b1df3e.js",
+    "common": "build/site.6828a8ce9d.js",
+    "index": "build/page-index.e4786c5689.js",
+    "catalog": "build/page-catalog.0393d4f32f.js",
     "systems": "build/page-systems.330d0a51fc.js",
-    "projects": "build/page-projects.d96ac2bdb0.js",
+    "projects": "build/page-projects.805ab1686c.js",
     "pro": "build/page-pro.c2017e9ea5.js",
-    "contacts": "build/consultation.d529290d85.js",
+    "contacts": "build/consultation.52825ba4df.js",
     "editorial": "build/articles.150a041a05.js",
-    "css": "build/site.2431c1b208.css",
-    "editorialCSS": "build/articles.de82b35bc7.css"
+    "css": "build/site.681f796889.css",
+    "editorialCSS": "build/articles.1a2c35ba8a.css"
   },
   "removedRules": 163
 }

@@ -1,21 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://mikhantrope.github.io/silence-site/</loc><lastmod>2026-09-18</lastmod></url>
-<url><loc>https://mikhantrope.github.io/silence-site/catalog.html</loc><lastmod>2026-09-17</lastmod></url>
-<url><loc>https://mikhantrope.github.io/silence-site/systems.html</loc><lastmod>2026-09-17</lastmod></url>
-<url><loc>https://mikhantrope.github.io/silence-site/projects.html</loc><lastmod>2026-09-18</lastmod></url>
-<url><loc>https://mikhantrope.github.io/silence-site/pro.html</loc><lastmod>2026-09-17</lastmod></url>
-<url><loc>https://mikhantrope.github.io/silence-site/contacts.html</loc><lastmod>2026-09-17</lastmod></url>
-<url><loc>https://mikhantrope.github.io/silence-site/articles.html</loc><lastmod>2026-09-17</lastmod></url>
-<url><loc>https://mikhantrope.github.io/silence-site/projects/biart-astana.html</loc><lastmod>2026-09-18</lastmod></url>
-<url><loc>https://mikhantrope.github.io/silence-site/articles/nochnye-stuki-v-kvartire.html</loc><lastmod>2026-09-17</lastmod></url>
-<url><loc>https://mikhantrope.github.io/silence-site/articles/strukturnyy-shum-v-dome.html</loc><lastmod>2026-09-17</lastmod></url>
-<url><loc>https://mikhantrope.github.io/silence-site/articles/gidroudar-i-stuk-v-trubah.html</loc><lastmod>2026-09-17</lastmod></url>
-<url><loc>https://mikhantrope.github.io/silence-site/articles/tresk-i-usadka-novostroyki.html</loc><lastmod>2026-09-17</lastmod></url>
-<url><loc>https://mikhantrope.github.io/silence-site/articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html</loc><lastmod>2026-09-17</lastmod></url>
-<url><loc>https://mikhantrope.github.io/silence-site/articles/skolko-stoit-zvukoizolyatsiya-astana.html</loc><lastmod>2026-09-17</lastmod></url>
-<url><loc>https://mikhantrope.github.io/silence-site/articles/akustika-muzykalnogo-kabineta.html</loc><lastmod>2026-09-17</lastmod></url>
-<url><loc>https://mikhantrope.github.io/silence-site/articles/rw-delta-rw-delta-lw.html</loc><lastmod>2026-09-17</lastmod></url>
-<url><loc>https://mikhantrope.github.io/silence-site/projects/dalaedge-kaskelen.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://mikhantrope.github.io/silence-site/gallery.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://tishina.kz/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/kk/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/en/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/catalog.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/catalog.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/catalog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/catalog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/catalog.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/kk/catalog.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/catalog.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/catalog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/catalog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/catalog.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/en/catalog.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/catalog.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/catalog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/catalog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/catalog.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/systems.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/systems.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/systems.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/systems.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/systems.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/kk/systems.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/systems.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/systems.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/systems.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/systems.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/en/systems.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/systems.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/systems.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/systems.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/systems.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/pro.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/pro.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/pro.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/pro.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/pro.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/kk/pro.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/pro.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/pro.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/pro.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/pro.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/en/pro.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/pro.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/pro.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/pro.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/pro.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/projects.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/projects.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/kk/projects.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/projects.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/en/projects.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/projects.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/gallery.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/gallery.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/kk/gallery.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/gallery.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/en/gallery.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/gallery.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/contacts.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/contacts.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/contacts.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/contacts.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/contacts.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/kk/contacts.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/contacts.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/contacts.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/contacts.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/contacts.html"/>
+  </url>
+  <url>
+    <loc>https://tishina.kz/en/contacts.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tishina.kz/contacts.html"/>
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tishina.kz/kk/contacts.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tishina.kz/en/contacts.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tishina.kz/contacts.html"/>
+  </url>
+  <url><loc>https://tishina.kz/articles.html</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://tishina.kz/articles/akustika-muzykalnogo-kabineta.html</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://tishina.kz/articles/gidroudar-i-stuk-v-trubah.html</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://tishina.kz/articles/nochnye-stuki-v-kvartire.html</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://tishina.kz/articles/rw-delta-rw-delta-lw.html</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://tishina.kz/articles/skolko-stoit-zvukoizolyatsiya-astana.html</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://tishina.kz/articles/strukturnyy-shum-v-dome.html</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://tishina.kz/articles/tresk-i-usadka-novostroyki.html</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://tishina.kz/articles/zvukoizolyatsiya-ili-zvukopogloshchenie.html</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://tishina.kz/projects/biart-astana.html</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://tishina.kz/projects/dalaedge-kaskelen.html</loc><lastmod>2026-10-12</lastmod></url>
 </urlset>

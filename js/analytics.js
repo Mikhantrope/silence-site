@@ -59,20 +59,38 @@
     return out;
   }
 
+  var conversionEvents = {
+    consultation_whatsapp_handoff: true,
+    phone_click: true,
+    phone_click_consultation: true,
+    whatsapp_click: true,
+    whatsapp_click_floating: true,
+    problem_picker_quote: true,
+    problem_picker_quote_echo: true,
+    problem_picker_diagnostic_quote: true,
+    problem_picker_no_match_quote: true,
+    price_quote_click: true,
+    object_zone_quote_click: true,
+    consultation_product: true,
+    commercial_quote_click: true
+  };
+
   function track(name, detail) {
     var payload = cleanParams(detail || {});
     payload.page_location = payload.page_location || global.location.href;
     payload.page_path = payload.page_path || (global.location.pathname + global.location.search);
     payload.page_title = payload.page_title || document.title;
+    if (conversionEvents[name]) payload.is_conversion = true;
     payload.event = name;
     global.dataLayer.push(payload);
 
     if (useGa4 && typeof global.gtag === 'function') {
       var ga = {};
       Object.keys(payload).forEach(function (k) { if (k !== 'event') ga[k] = payload[k]; });
+      if (conversionEvents[name]) ga.transport_type = 'beacon';
       global.gtag('event', name, ga);
     }
-    if (ymId && typeof global.ym === 'function') {
+    if (ymId && typeof global.ym === 'function' && conversionEvents[name]) {
       global.ym(ymId, 'reachGoal', name, payload);
     }
     if (cfg.debug && global.console) console.info('[SILENCE analytics]', name, payload);

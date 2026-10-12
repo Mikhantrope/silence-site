@@ -18,7 +18,7 @@ window.SILENCE_CONFIG = {
     yandexMetrikaId: '',    // numeric counter id
     yandexWebvisor: false,
     respectDoNotTrack: true,
-    debug: false
+    debug: false // temporarily set true to inspect SILENCE events in DevTools console
   }
 };
 

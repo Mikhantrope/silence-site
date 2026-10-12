@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mikhantrope.github.io/silence-site/sitemap.xml
+Sitemap: https://tishina.kz/sitemap.xml
