@@ -1,0 +1,15 @@
+{
+  "version": "49",
+  "stage": "seo-content-stage3",
+  "indexable_pages": 18,
+  "duplicate_titles": 0,
+  "duplicate_descriptions": 0,
+  "missing_local_targets": 0,
+  "canonical_domain": "https://tishina.kz",
+  "separate_language_urls": false,
+  "notes": [
+    "RU static fallback retained",
+    "Dynamic RU/KZ/EN title and description added for core pages",
+    "No DNS or analytics changes"
+  ]
+}

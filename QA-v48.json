@@ -1,0 +1,12 @@
+{
+  "version": 48,
+  "pages_checked": 22,
+  "missing_local_refs": 0,
+  "videos_checked": 7,
+  "videos_preload_none": 7,
+  "images_with_nonempty_src_missing_dimensions": 0,
+  "gallery_images": 20,
+  "gallery_images_with_srcset": 20,
+  "gallery_images_with_dimensions": 20,
+  "missing_examples": []
+}
