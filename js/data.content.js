@@ -319,7 +319,7 @@ window.SITE = (function () {
       gateProSub: 'Проектирование и монтаж',
 
       navAbout: 'О нас', navPick: 'Подбор', navCat: 'Каталог',
-      navNorm: 'Нормативы', navPro: 'Профессионалам', navGal: 'Галерея',
+      navNorm: 'Нормативы', navPro: 'Профессионалам', navGal: 'Объекты', navGallery: 'Галерея', navGame: 'Игра',
       /* добавлено при переходе на 6 отдельных страниц (New2 был одностраничным) */
       navSystems: 'Системы', navContacts: 'Контакты',
       albumPrev: 'Предыдущая страница', albumNext: 'Следующая страница',
@@ -485,7 +485,7 @@ window.SITE = (function () {
       gateProSub: 'Жобалау және монтаждау',
 
       navAbout: 'Біз туралы', navPick: 'Таңдау', navCat: 'Каталог',
-      navNorm: 'Нормативтер', navPro: 'Кәсіпқойларға', navGal: 'Галерея',
+      navNorm: 'Нормативтер', navPro: 'Кәсіпқойларға', navGal: 'Нысандар', navGallery: 'Галерея', navGame: 'Ойын',
       navSystems: 'Жүйелер', navContacts: 'Байланыс',
       albumPrev: 'Алдыңғы бет', albumNext: 'Келесі бет',
       albumPageAlt: 'Каталог парағы, {{n}}-бет',
@@ -650,7 +650,7 @@ window.SITE = (function () {
       gateProSub: 'Design and installation',
 
       navAbout: 'About', navPick: 'Selection', navCat: 'Catalogue',
-      navNorm: 'Standards', navPro: 'Professionals', navGal: 'Gallery',
+      navNorm: 'Standards', navPro: 'Professionals', navGal: 'Projects', navGallery: 'Gallery', navGame: 'Game',
       navSystems: 'Systems', navContacts: 'Contacts',
       albumPrev: 'Previous page', albumNext: 'Next page',
       albumPageAlt: 'Catalogue spread, page {{n}}',

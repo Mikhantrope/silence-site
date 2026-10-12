@@ -5,103 +5,44 @@ if(!canvas)return;
 var ctx=canvas.getContext('2d');
 var sourceTitle=root.querySelector('[data-game36-source-title]'),sourceMeta=root.querySelector('[data-game36-source-meta]'),wallTitle=root.querySelector('[data-game36-wall-title]'),meterText=root.querySelector('[data-game36-meter-text]'),strength=root.querySelector('[data-game36-strength]'),audioBtn=root.querySelector('[data-game36-audio]'),compareBtn=root.querySelector('[data-game36-compare]');
 var roomBtns=[].slice.call(root.querySelectorAll('[data-game36-room]')),wallBtns=[].slice.call(root.querySelectorAll('[data-game36-wall]')),sourcePills=[].slice.call(root.querySelectorAll('[data-game36-source-pill]'));
+function lang(){return window.SILENCE_CORE?window.SILENCE_CORE.getLang():'ru';}
+function pick(o){var l=lang();return o&&typeof o==='object'?(o[l]||o.ru||o.en||''):o;}
 var sources={
- top:{id:'top',label:'Ремонт сверху',meta:'Дрель и сверление',side:'top',tone:'repair'},
- left:{id:'left',label:'Пылесос и собака слева',meta:'Пылесос работает, собака лает время от времени',side:'left',tone:'household'},
- right:{id:'right',label:'Музыка справа',meta:'Музыка и бас',side:'right',tone:'music'},
- bottom:{id:'bottom',label:'Концерт снизу',meta:'Концертная музыка у соседей',side:'bottom',tone:'cinema'}
+ top:{id:'top',label:{ru:'Ремонт сверху',kz:'Жоғарыдағы жөндеу',en:'Renovation above'},meta:{ru:'Дрель и сверление',kz:'Бұрғылау дыбысы',en:'Drilling and construction noise'},short:{ru:'Ремонт',kz:'Жөндеу',en:'Renovation'},side:'top',tone:'repair'},
+ left:{id:'left',label:{ru:'Пылесос и собака слева',kz:'Сол жақта шаңсорғыш пен ит',en:'Vacuum cleaner and dog on the left'},meta:{ru:'Пылесос работает, собака периодически лает',kz:'Шаңсорғыш жұмыс істеп тұр, ит анда-санда үреді',en:'A vacuum cleaner is running and a dog barks occasionally'},short:{ru:'Пылесос и собака',kz:'Шаңсорғыш пен ит',en:'Vacuum & dog'},side:'left',tone:'household'},
+ right:{id:'right',label:{ru:'Музыка справа',kz:'Оң жақтағы музыка',en:'Music on the right'},meta:{ru:'Музыка и бас',kz:'Музыка және бас',en:'Music and bass'},short:{ru:'Музыка',kz:'Музыка',en:'Music'},side:'right',tone:'music'},
+ bottom:{id:'bottom',label:{ru:'Концерт снизу',kz:'Төмендегі концерт',en:'Concert below'},meta:{ru:'Концертная музыка у соседей',kz:'Төмендегі көршілерден концерт дыбысы',en:'Concert music from the neighbours below'},short:{ru:'Концерт',kz:'Концерт',en:'Concert'},side:'bottom',tone:'cinema'}
 };
 var walls={
- gas:{title:'Газоблок',residual:100,status:'Шум проходит почти без изменений',sub:'Базовая стена'},
- gsp:{title:'Газоблок + ГСП',residual:76,status:'Шум становится тише',sub:'Дополнительный слой'},
- brick:{title:'Кирпичная стена',residual:60,status:'Шум заметно тише',sub:'Плотная кладка'},
- concrete:{title:'Бетонная стена',residual:46,status:'Шум сильно ослаблен',sub:'Массивная стена'},
- silence:{title:'Стена + SILENCE',residual:10,status:'90% поглощения',sub:'Система SILENCE'},
- base:{title:'Стена без SILENCE',residual:100,status:'Шум проходит в комнату',sub:'Без системы SILENCE'}
+ gas:{title:{ru:'Газоблок',kz:'Газоблок',en:'AAC block'},residual:90,status:{ru:'Громкость после стены: 90%',kz:'Қабырғадан кейінгі дыбыс: 90%',en:'Volume after wall: 90%'},sub:{ru:'Исходная стена',kz:'Бастапқы қабырға',en:'Base wall'}},
+ gsp:{title:{ru:'Газоблок + ГКЛ',kz:'Газоблок + ГКЛ',en:'AAC block + plasterboard'},residual:80,status:{ru:'Громкость после стены: 80%',kz:'Қабырғадан кейінгі дыбыс: 80%',en:'Volume after wall: 80%'},sub:{ru:'Дополнительный слой',kz:'Қосымша қабат',en:'Additional layer'}},
+ brick:{title:{ru:'Кирпичная стена',kz:'Кірпіш қабырға',en:'Brick wall'},residual:50,status:{ru:'Громкость после стены: 50%',kz:'Қабырғадан кейінгі дыбыс: 50%',en:'Volume after wall: 50%'},sub:{ru:'Плотная кладка',kz:'Тығыз қалау',en:'Dense masonry'}},
+ concrete:{title:{ru:'Бетонная стена',kz:'Бетон қабырға',en:'Concrete wall'},residual:10,status:{ru:'Громкость после стены: 10%',kz:'Қабырғадан кейінгі дыбыс: 10%',en:'Volume after wall: 10%'},sub:{ru:'Массивная стена',kz:'Массивті қабырға',en:'Massive wall'}},
+ silence:{title:{ru:'Стена + SILENCE',kz:'Қабырға + SILENCE',en:'Wall + SILENCE'},residual:0,status:{ru:'Громкость после стены: 0%',kz:'Қабырғадан кейінгі дыбыс: 0%',en:'Volume after wall: 0%'},sub:{ru:'Система SILENCE',kz:'SILENCE жүйесі',en:'SILENCE system'}},
+ base:{title:{ru:'Стена без SILENCE',kz:'SILENCE жүйесінсіз қабырға',en:'Wall without SILENCE'},residual:90,status:{ru:'Громкость после стены: 90%',kz:'Қабырғадан кейінгі дыбыс: 90%',en:'Volume after wall: 90%'},sub:{ru:'Без системы SILENCE',kz:'SILENCE жүйесінсіз',en:'Without SILENCE'} }
 };
-/* Exact source / wall / target geometry of the approved “Отражённый фронт” prototype. */
-var route={
- top:{x:.48,y:.17,wall:{x:.50,y:.34},target:{x:.50,y:.53}},
- left:{x:.19,y:.50,wall:{x:.31,y:.50},target:{x:.49,y:.53}},
- right:{x:.82,y:.50,wall:{x:.70,y:.50},target:{x:.51,y:.53}},
- bottom:{x:.50,y:.80,wall:{x:.50,y:.68},target:{x:.50,y:.55}}
+var copy={
+ ru:{lead:'Выберите, откуда идёт шум, и попробуйте разные стены. Смотрите, как меняется громкость в вашей комнате.',primary:'Консультация специалиста',secondary:'Системы звукоизоляции',note:'Игра со звуком · звук включается только по вашему нажатию',caption:'Нажмите на шумную комнату. Волны покажут, сколько звука проходит в вашу комнату.',kicker:'ИГРА СО ЗВУКОМ',title:'Какая стена тише?',intro:'Выберите источник шума, меняйте стену и смотрите, сколько звука доходит до вашей комнаты.',sourceLabel:'Источник шума',wallLabel:'Вариант стены',readout:'Что происходит со звуком',before:'До стены',comparePick:'Выберите SILENCE для сравнения',compareBack:'Вернуть SILENCE',compareBase:'Показать без SILENCE',audioOn:'Включить звук',audioOff:'Выключить звук',loading:'Загружается…',volume:'Громкость',volumeAria:'Громкость звука',initial:'Выберите комнату и нажмите «Включить звук».',claim:'SILENCE:',claimText:'0% громкости после стены',disclaimer:'Шкала и звук в игре показывают принцип работы, а не замер на вашем объекте.',selected:'Выбрано: ',press:'Нажмите «Включить звук».',loadRec:'Загружаем запись: ',local:'Для звука откройте сайт через start.bat или на GitHub Pages.',unsupported:'Этот браузер не поддерживает звук в игре. Попробуйте другой браузер.',loadError:'Не удалось загрузить запись. Проверьте интернет и нажмите «Включить звук» ещё раз.',paused:'Звук на паузе. Нажмите «Включить звук», чтобы продолжить.',off:'Звук выключен. Запись продолжится с того же места.',silenced:'SILENCE включён — громкость 0%.',playing:'Звучит: ',playerError:'Не удалось загрузить проигрыватель. Обновите страницу.'},
+ kz:{lead:'Шудың қайдан келетінін таңдаңыз да, әртүрлі қабырғаларды салыстырыңыз. Бөлмедегі дыбыс деңгейінің қалай өзгеретінін көріңіз.',primary:'Маманның кеңесі',secondary:'Дыбыс оқшаулау жүйелері',note:'Дыбысы бар ойын · дыбыс тек өзіңіз басқанда қосылады',caption:'Шулы бөлмені басыңыз. Толқындар бөлмеңізге қанша дыбыс өтетінін көрсетеді.',kicker:'ДЫБЫСПЕН ОЙЫН',title:'Қай қабырға тынышырақ?',intro:'Шу көзін таңдап, қабырғаны ауыстырыңыз және бөлмеңізге қанша дыбыс жететінін көріңіз.',sourceLabel:'Шу көзі',wallLabel:'Қабырға нұсқасы',readout:'Дыбысқа не болады',before:'Қабырғаға дейін',comparePick:'Салыстыру үшін SILENCE таңдаңыз',compareBack:'SILENCE жүйесін қайтару',compareBase:'SILENCE жүйесінсіз көрсету',audioOn:'Дыбысты қосу',audioOff:'Дыбысты өшіру',loading:'Жүктелуде…',volume:'Дыбыс деңгейі',volumeAria:'Дыбыс деңгейі',initial:'Бөлмені таңдап, «Дыбысты қосу» түймесін басыңыз.',claim:'SILENCE:',claimText:'қабырғадан кейін 0% дыбыс',disclaimer:'Ойындағы шкала мен дыбыс жұмыс принципін көрсетеді, бұл нысаныңыздағы өлшеу емес.',selected:'Таңдалды: ',press:'«Дыбысты қосу» түймесін басыңыз.',loadRec:'Жазба жүктелуде: ',local:'Дыбыс үшін сайтты start.bat арқылы немесе GitHub Pages-та ашыңыз.',unsupported:'Бұл браузер ойындағы дыбысты қолдамайды. Басқа браузерді қолданып көріңіз.',loadError:'Жазба жүктелмеді. Интернетті тексеріп, «Дыбысты қосу» түймесін қайта басыңыз.',paused:'Дыбыс кідіртілді. Жалғастыру үшін «Дыбысты қосу» түймесін басыңыз.',off:'Дыбыс өшірулі. Жазба сол жерден жалғасады.',silenced:'SILENCE қосулы — дыбыс деңгейі 0%.',playing:'Ойнатылуда: ',playerError:'Ойнатқыш жүктелмеді. Бетті жаңартыңыз.'},
+ en:{lead:'Choose where the noise comes from and compare different walls. See how the volume changes inside your room.',primary:'Specialist consultation',secondary:'Sound-insulation systems',note:'Interactive sound demo · audio starts only after you press play',caption:'Tap a noisy room. The waves show how much sound reaches your room.',kicker:'SOUND DEMO',title:'Which wall is quieter?',intro:'Choose a noise source, change the wall and see how much sound reaches your room.',sourceLabel:'Noise source',wallLabel:'Wall option',readout:'What happens to the sound',before:'Before wall',comparePick:'Select SILENCE to compare',compareBack:'Restore SILENCE',compareBase:'Show without SILENCE',audioOn:'Turn sound on',audioOff:'Turn sound off',loading:'Loading…',volume:'Volume',volumeAria:'Audio volume',initial:'Choose a room and press “Turn sound on”.',claim:'SILENCE:',claimText:'0% volume after wall',disclaimer:'The scale and audio illustrate the operating principle; they are not measurements from your site.',selected:'Selected: ',press:'Press “Turn sound on”.',loadRec:'Loading recording: ',local:'To use audio, open the site through start.bat or GitHub Pages.',unsupported:'This browser does not support the game audio. Try another browser.',loadError:'Could not load the recording. Check your connection and press “Turn sound on” again.',paused:'Audio is paused. Press “Turn sound on” to continue.',off:'Audio is off. Playback will resume from the same position.',silenced:'SILENCE is on — volume is 0%.',playing:'Playing: ',playerError:'Could not load the audio player. Refresh the page.'}
 };
-var state={source:'right',wall:'gas',compare:false,audio:false};
-var dpr=1,clock=0,last=0,raf=0;
+function T(){return copy[lang()]||copy.ru;}
+var route={top:{x:.48,y:.17,wall:{x:.50,y:.34},target:{x:.50,y:.53}},left:{x:.19,y:.50,wall:{x:.31,y:.50},target:{x:.49,y:.53}},right:{x:.82,y:.50,wall:{x:.70,y:.50},target:{x:.51,y:.53}},bottom:{x:.50,y:.80,wall:{x:.50,y:.68},target:{x:.50,y:.55}}};
+var state={source:'right',wall:'gas',compare:false,audio:false};var dpr=1,clock=0,last=0,raf=0;
 function resizeCanvas(){var r=canvas.getBoundingClientRect();dpr=Math.min(window.devicePixelRatio||1,2);var w=Math.max(1,Math.round(r.width*dpr)),h=Math.max(1,Math.round(r.height*dpr));if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;ctx.setTransform(dpr,0,0,dpr,0,0);}}
-function P(o,W,H){return{x:o.x*W,y:o.y*H};}
-function V(a,b){var x=b.x-a.x,y=b.y-a.y,l=Math.hypot(x,y)||1;return{x:x/l,y:y/l,nx:-y/l,ny:x/l,len:l};}
-function lerp(a,b,t){return a+(b-a)*t;}
-function wallFraction(a,w,t){return Math.hypot(w.x-a.x,w.y-a.y)/Math.hypot(t.x-a.x,t.y-a.y);}
-function pulse(src,r,alpha){ctx.beginPath();ctx.arc(src.x,src.y,r,0,Math.PI*2);ctx.strokeStyle='#8ff2d3';ctx.globalAlpha=alpha;ctx.lineWidth=2.1;ctx.stroke();ctx.globalAlpha=1;}
-function glow(p,strength){var g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,64);g.addColorStop(0,'rgba(104,240,196,'+(.34*strength)+')');g.addColorStop(1,'rgba(104,240,196,0)');ctx.fillStyle=g;ctx.fillRect(p.x-72,p.y-72,144,144);}
-function frontArc(center,dir,r,alpha,color,lw,spread){var tangent={x:-dir.y,y:dir.x};var p1={x:center.x+tangent.x*r*spread,y:center.y+tangent.y*r*spread};var p2={x:center.x-tangent.x*r*spread,y:center.y-tangent.y*r*spread};var ctrl={x:center.x-dir.x*r*.95,y:center.y-dir.y*r*.95};ctx.beginPath();ctx.moveTo(p1.x,p1.y);ctx.quadraticCurveTo(ctrl.x,ctrl.y,p2.x,p2.y);ctx.strokeStyle=color;ctx.globalAlpha=alpha;ctx.lineWidth=lw;ctx.lineCap='round';ctx.lineJoin='round';ctx.shadowBlur=alpha>.22?5:2;ctx.shadowColor=color;ctx.stroke();ctx.shadowBlur=0;ctx.globalAlpha=1;}
-function waveState(W,H){var s=route[state.source],a=P(s,W,H),wp=P(s.wall,W,H),tp=P(s.target,W,H),dir=V(a,tp),wf=wallFraction(a,wp,tp);var eff=state.compare?walls.base:walls[state.wall];return{a:a,wp:wp,tp:tp,dir:dir,wf:wf,att:Math.max(.10,eff.residual/100),silence:!state.compare&&state.wall==='silence'};}
-function drawReflectedFront(W,H){var q=waveState(W,H);
- /* Five slow primary fronts travel from the noisy room all the way toward the centre. */
- for(var i=0;i<5;i++){
-   var ph=(clock*.020+i/5)%1;
-   var c={x:lerp(q.a.x,q.tp.x,ph),y:lerp(q.a.y,q.tp.y,ph)};
-   var passed=ph>q.wf;
-   var alpha=(.78*(1-ph)+.08)*(passed?q.att:1);
-   frontArc(c,q.dir,20+ph*46,alpha,'#66e0bb',2.5,1.08);
- }
- /* A short reflected front goes back into the source room for ordinary walls only. */
- if(!q.silence){
-   var back={x:q.wp.x-q.dir.x*115,y:q.wp.y-q.dir.y*115},rdir=V(q.wp,back);
-   for(var j=0;j<2;j++){
-     var rp=(clock*.016+j*.35)%1;
-     var rc={x:lerp(q.wp.x,back.x,rp),y:lerp(q.wp.y,back.y,rp)};
-     frontArc(rc,rdir,18+rp*28,(1-rp)*.28,'#f1bb78',1.8,1);
-   }
- }
- var pp=(clock*.026)%1;pulse(q.a,10+17*pp,.34*(1-pp));
- glow(q.wp,q.silence?1:.45);
-}
+function P(o,W,H){return{x:o.x*W,y:o.y*H};}function V(a,b){var x=b.x-a.x,y=b.y-a.y,l=Math.hypot(x,y)||1;return{x:x/l,y:y/l,nx:-y/l,ny:x/l,len:l};}function lerp(a,b,t){return a+(b-a)*t;}function wallFraction(a,w,t){return Math.hypot(w.x-a.x,w.y-a.y)/Math.hypot(t.x-a.x,t.y-a.y);}
+function pulse(src,r,alpha){ctx.beginPath();ctx.arc(src.x,src.y,r,0,Math.PI*2);ctx.strokeStyle='#8ff2d3';ctx.globalAlpha=alpha;ctx.lineWidth=2.1;ctx.stroke();ctx.globalAlpha=1;}function glow(p,strength){var g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,64);g.addColorStop(0,'rgba(104,240,196,'+(.34*strength)+')');g.addColorStop(1,'rgba(104,240,196,0)');ctx.fillStyle=g;ctx.fillRect(p.x-72,p.y-72,144,144);}function frontArc(center,dir,r,alpha,color,lw,spread){var tangent={x:-dir.y,y:dir.x};var p1={x:center.x+tangent.x*r*spread,y:center.y+tangent.y*r*spread};var p2={x:center.x-tangent.x*r*spread,y:center.y-tangent.y*r*spread};var ctrl={x:center.x-dir.x*r*.95,y:center.y-dir.y*r*.95};ctx.beginPath();ctx.moveTo(p1.x,p1.y);ctx.quadraticCurveTo(ctrl.x,ctrl.y,p2.x,p2.y);ctx.strokeStyle=color;ctx.globalAlpha=alpha;ctx.lineWidth=lw;ctx.lineCap='round';ctx.lineJoin='round';ctx.shadowBlur=alpha>.22?5:2;ctx.shadowColor=color;ctx.stroke();ctx.shadowBlur=0;ctx.globalAlpha=1;}
+function waveState(W,H){var s=route[state.source],a=P(s,W,H),wp=P(s.wall,W,H),tp=P(s.target,W,H),dir=V(a,tp),wf=wallFraction(a,wp,tp);var eff=state.compare?walls.base:walls[state.wall];return{a:a,wp:wp,tp:tp,dir:dir,wf:wf,att:Math.max(0,eff.residual/100),silence:!state.compare&&state.wall==='silence'};}
+function drawReflectedFront(W,H){var q=waveState(W,H);for(var i=0;i<5;i++){var ph=(clock*.020+i/5)%1;var c={x:lerp(q.a.x,q.tp.x,ph),y:lerp(q.a.y,q.tp.y,ph)};var passed=ph>q.wf;var alpha=(.78*(1-ph)+.08)*(passed?q.att:1);if(alpha>.004)frontArc(c,q.dir,20+ph*46,alpha,'#66e0bb',2.5,1.08);}if(!q.silence){var back={x:q.wp.x-q.dir.x*115,y:q.wp.y-q.dir.y*115},rdir=V(q.wp,back);for(var j=0;j<2;j++){var rp=(clock*.016+j*.35)%1;var rc={x:lerp(q.wp.x,back.x,rp),y:lerp(q.wp.y,back.y,rp)};frontArc(rc,rdir,18+rp*28,(1-rp)*.28,'#f1bb78',1.8,1);}}var pp=(clock*.026)%1;pulse(q.a,10+17*pp,.34*(1-pp));glow(q.wp,q.silence?1:.45);}
 function animate(ts){if(!last)last=ts;var dt=Math.min(40,ts-last);last=ts;clock+=dt/16.67;resizeCanvas();var r=canvas.getBoundingClientRect(),W=r.width,H=r.height;ctx.clearRect(0,0,W,H);drawReflectedFront(W,H);raf=requestAnimationFrame(animate);}
-function render(){var s=sources[state.source],chosen=walls[state.wall],eff=state.compare?walls.base:chosen,isSilence=!state.compare&&state.wall==='silence';
- roomBtns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.game36Room===s.id));});
- sourcePills.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.game36SourcePill===s.id));});
- overlay.classList.add('has-source');boundary.dataset.side=s.side;boundary.dataset.wall=state.compare?'base':state.wall;boundary.classList.add('is-visible');
- sourceTitle.textContent=s.label;sourceMeta.textContent=s.meta;wallTitle.textContent=eff.title;meterText.textContent=eff.status;
- strength.style.setProperty('--sound-left',eff.residual+'%');strength.classList.toggle('is-silence',isSilence);
- wallBtns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.game36Wall===state.wall&&!state.compare));});
- var canCompare=state.wall==='silence';compareBtn.disabled=!canCompare;compareBtn.textContent=!canCompare?'Выберите SILENCE для сравнения':(state.compare?'Вернуть SILENCE':'Показать без SILENCE');
- if(player)applyAudioGain();
-}
-function sourceChanged(id){if(!sources[id]||state.source===id)return;state.source=id;state.compare=false;render();if(player&&player.wanted)player.play(id);else if(audioStatus)audioStatus.textContent='Выбрано: '+sources[id].label+'. Нажмите «Включить звук».';}
-roomBtns.forEach(function(b){b.addEventListener('click',function(){sourceChanged(b.dataset.game36Room);});});
-sourcePills.forEach(function(b){b.addEventListener('click',function(){sourceChanged(b.dataset.game36SourcePill);});});
-wallBtns.forEach(function(b){b.addEventListener('click',function(){state.wall=b.dataset.game36Wall;state.compare=false;render();});});
-compareBtn.addEventListener('click',function(){if(state.wall!=='silence')return;state.compare=!state.compare;render();});
-/* v41: uploaded recordings replace the synthetic oscillators and noise. */
+function applyStaticCopy(){var x=T();var lead=root.querySelector('.hero27-lead'),acts=root.querySelectorAll('.hero27-actions a'),note=root.querySelector('.hero27-note'),caption=root.querySelector('.game36-caption'),kicker=root.querySelector('.game36-kicker'),h2=root.querySelector('.game36-panel h2'),intro=h2&&h2.nextElementSibling,pills=root.querySelector('.game36-source-pills'),wallsGroup=root.querySelector('.game36-walls'),readout=root.querySelector('.game36-readout-top span'),before=root.querySelector('.game36-strength__before'),vol=root.querySelector('.game41-volume span'),volInput=root.querySelector('[data-game41-volume]'),claim=root.querySelector('[data-game36-claim]'),claimText=root.querySelector('[data-game36-claim-text]'),spec=root.querySelector('.game36-spec-note');if(lead)lead.textContent=x.lead;if(acts[0])acts[0].textContent=x.primary;if(acts[1])acts[1].textContent=x.secondary;if(note)note.textContent=x.note;if(caption)caption.textContent=x.caption;if(kicker)kicker.textContent=x.kicker;if(h2)h2.textContent=x.title;if(intro)intro.textContent=x.intro;if(pills)pills.setAttribute('aria-label',x.sourceLabel);if(wallsGroup)wallsGroup.setAttribute('aria-label',x.wallLabel);if(readout)readout.textContent=x.readout;if(before)before.textContent=x.before;if(vol)vol.textContent=x.volume;if(volInput)volInput.setAttribute('aria-label',x.volumeAria);if(claim)claim.textContent=x.claim;if(claimText)claimText.textContent=x.claimText;if(spec)spec.textContent=x.disclaimer;roomBtns.forEach(function(b){var s=sources[b.dataset.game36Room];if(s)b.setAttribute('aria-label',pick(s.label));});sourcePills.forEach(function(b){var s=sources[b.dataset.game36SourcePill];if(s)b.textContent=pick(s.short);});wallBtns.forEach(function(b){var w=walls[b.dataset.game36Wall],bb=b.querySelector('b'),sp=b.querySelector('span');if(w&&bb)bb.textContent=pick(w.title);if(w&&sp)sp.textContent=pick(w.sub);});}
+function render(){applyStaticCopy();var s=sources[state.source],chosen=walls[state.wall],eff=state.compare?walls.base:chosen,isSilence=!state.compare&&state.wall==='silence',x=T();roomBtns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.game36Room===s.id));});sourcePills.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.game36SourcePill===s.id));});overlay.classList.add('has-source');boundary.dataset.side=s.side;boundary.dataset.wall=state.compare?'base':state.wall;boundary.classList.add('is-visible');sourceTitle.textContent=pick(s.label);sourceMeta.textContent=pick(s.meta);wallTitle.textContent=pick(eff.title);meterText.textContent=pick(eff.status);strength.style.setProperty('--sound-left',eff.residual+'%');strength.classList.toggle('is-silence',isSilence);wallBtns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.game36Wall===state.wall&&!state.compare));});var canCompare=state.wall==='silence';compareBtn.disabled=!canCompare;compareBtn.textContent=!canCompare?x.comparePick:(state.compare?x.compareBack:x.compareBase);audioBtn.textContent=player&&player.phase==='loading'?x.loading:(player&&player.wanted?x.audioOff:x.audioOn);if(player)applyAudioGain();}
+function sourceChanged(id){if(!sources[id]||state.source===id)return;state.source=id;state.compare=false;render();if(player&&player.wanted)player.play(id);else if(audioStatus)audioStatus.textContent=T().selected+pick(sources[id].label)+'. '+T().press;}
+roomBtns.forEach(function(b){b.addEventListener('click',function(){sourceChanged(b.dataset.game36Room);});});sourcePills.forEach(function(b){b.addEventListener('click',function(){sourceChanged(b.dataset.game36SourcePill);});});wallBtns.forEach(function(b){b.addEventListener('click',function(){state.wall=b.dataset.game36Wall;state.compare=false;render();});});compareBtn.addEventListener('click',function(){if(state.wall!=='silence')return;state.compare=!state.compare;render();});
 var player=null,audioStatus=root.querySelector('[data-game41-audio-status]'),volumeInput=root.querySelector('[data-game41-volume]'),volumeOutput=root.querySelector('[data-game41-volume-value]');
-function audioStateChanged(info){
- state.audio=info.wanted;
- root.setAttribute('data-game41-playback',info.phase);
- audioBtn.setAttribute('aria-pressed',String(info.wanted));
- audioBtn.setAttribute('aria-busy',String(info.phase==='loading'));
- audioBtn.textContent=info.phase==='loading'?'Загружается…':(info.wanted?'Выключить звук':'Включить звук');
- if(!audioStatus)return;
- var name=sources[info.source]?sources[info.source].label:'';
- if(info.phase==='loading')audioStatus.textContent='Загружаем запись: '+name.toLowerCase()+'.';
- else if(info.phase==='playing')audioStatus.textContent='Звучит: '+name+'.';
- else if(info.phase==='error'){
-   if(info.code==='local-file')audioStatus.textContent='Для звука откройте сайт через start.bat или на GitHub Pages.';
-   else if(info.code==='unsupported')audioStatus.textContent='Этот браузер не поддерживает звук в игре. Попробуйте другой браузер.';
-   else audioStatus.textContent='Не удалось загрузить запись. Проверьте интернет и нажмите «Включить звук» ещё раз.';
- } else audioStatus.textContent=info.code==='hidden'?'Звук на паузе. Нажмите «Включить звук», чтобы продолжить.':'Звук выключен. Запись продолжится с того же места.';
-}
-if(window.SilenceRoomAudio){
- player=new window.SilenceRoomAudio({volume:.35,onState:audioStateChanged});
- // Read-only inspect() is useful when checking a published copy of the site.
- Object.defineProperty(root,'silenceRoomAudio',{value:player,configurable:true});
-} else {audioBtn.disabled=true;if(audioStatus)audioStatus.textContent='Не удалось загрузить проигрыватель. Обновите страницу.';}
-function applyAudioGain(){if(player){var eff=state.compare?walls.base:walls[state.wall];player.setAttenuation(eff.residual/100);}}
-audioBtn.addEventListener('click',function(){if(!player)return;if(player.wanted)player.pause();else{applyAudioGain();player.play(state.source);}});
-if(volumeInput)volumeInput.addEventListener('input',function(){var n=Math.max(0,Math.min(100,Number(volumeInput.value)||0));if(volumeOutput)volumeOutput.textContent=n+'%';if(player)player.setVolume(n/100);});
-document.addEventListener('visibilitychange',function(){if(document.hidden&&player&&player.wanted)player.pause('hidden');});
-window.addEventListener('pagehide',function(){if(player)player.pause('hidden');});
-window.addEventListener('resize',resizeCanvas,{passive:true});
-render();resizeCanvas();raf=requestAnimationFrame(animate);
+function audioStateChanged(info){var x=T();state.audio=info.wanted;root.setAttribute('data-game41-playback',info.phase);audioBtn.setAttribute('aria-pressed',String(info.wanted));audioBtn.setAttribute('aria-busy',String(info.phase==='loading'));audioBtn.textContent=info.phase==='loading'?x.loading:(info.wanted?x.audioOff:x.audioOn);if(!audioStatus)return;var name=sources[info.source]?pick(sources[info.source].label):'';if(info.phase==='loading')audioStatus.textContent=x.loadRec+name.toLowerCase()+'.';else if(info.phase==='playing')audioStatus.textContent=playbackMessage(info.source);else if(info.phase==='error'){if(info.code==='local-file')audioStatus.textContent=x.local;else if(info.code==='unsupported')audioStatus.textContent=x.unsupported;else audioStatus.textContent=x.loadError;}else audioStatus.textContent=info.code==='hidden'?x.paused:x.off;}
+if(window.SilenceRoomAudio){player=new window.SilenceRoomAudio({volume:.35,onState:audioStateChanged});Object.defineProperty(root,'silenceRoomAudio',{value:player,configurable:true});}else{audioBtn.disabled=true;if(audioStatus)audioStatus.textContent=T().playerError;}
+function silenceAudioMuted(){return state.wall==='silence'&&!state.compare;}function playbackMessage(id){return silenceAudioMuted()?T().silenced:T().playing+pick(sources[id||state.source].label)+'.';}function applyAudioGain(){if(!player)return;var eff=state.compare?walls.base:walls[state.wall];player.setAttenuation(eff.residual/100);if(audioStatus&&player.wanted&&player.phase==='playing')audioStatus.textContent=playbackMessage(state.source);}
+audioBtn.addEventListener('click',function(){if(!player)return;if(player.wanted)player.pause();else{applyAudioGain();player.play(state.source);}});if(volumeInput)volumeInput.addEventListener('input',function(){var n=Math.max(0,Math.min(100,Number(volumeInput.value)||0));if(volumeOutput)volumeOutput.textContent=n+'%';if(player)player.setVolume(n/100);});document.addEventListener('visibilitychange',function(){if(document.hidden&&player&&player.wanted)player.pause('hidden');});window.addEventListener('pagehide',function(){if(player)player.pause('hidden');});window.addEventListener('resize',resizeCanvas,{passive:true});document.addEventListener('silence:lang',function(){render();if(audioStatus&&!player?.wanted)audioStatus.textContent=T().initial;});
+if(audioStatus)audioStatus.textContent=T().initial;render();resizeCanvas();raf=requestAnimationFrame(animate);
 })();
